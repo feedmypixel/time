@@ -1,0 +1,44 @@
+
+RewriteEngine On
+
+#redirect carousel images to appropriate folder
+#no cookie set default to small folder
+RewriteCond %{REQUEST_URI} ^/assets/img/carousel/
+RewriteCond %{REQUEST_URI} !^/assets/img/carousel/(?:large|medium|small)(?:.*)?$
+RewriteCond %{HTTP_COOKIE} !^.*imagesize.*$ [NC]
+RewriteRule assets/img/carousel/([^\.]+)(?:\.jpg)$ assets/img/carousel/small/$1.jpg [NC,L]
+
+#cookie set use value
+RewriteCond %{REQUEST_URI} ^/assets/img/carousel/
+RewriteCond %{REQUEST_URI} !^/assets/img/carousel/(?:large|medium|small)(?:.*)?$
+RewriteCond %{HTTP_COOKIE} imagesize=(small|medium|large) [NC]
+RewriteRule assets/img/carousel/([^\.]+)(?:\.jpg)$ assets/img/carousel/%1/$1.jpg [NC,L]
+
+
+
+#VARIOUS
+DirectoryIndex index.php
+Options -Indexes
+Options +FollowSymlinks
+
+# ETAGS
+FileETag None
+
+#MOD_EXPIRES and MOD_HEADERS
+# Turn on Expires and set default to 10 years
+ExpiresActive On
+ExpiresDefault "access plus 10 years"
+
+# Set up caching for 1 year (forever?)
+<FilesMatch "\.(ico|png|html|css|js|php)$">
+ExpiresDefault A29030400
+Header append Cache-Control "public"
+</FilesMatch>
+
+# MOD_DEFLATE
+#This would compress all files except images (gif, jpg, png, flv and swf), already compressed files (like zip and tar.gz) and PDF files which makes sense because you do not gain much by compressing these file types.
+<ifmodule mod_deflate.c>
+SetOutputFilter DEFLATE
+SetEnvIfNoCase Request_URI \.(?:png)$ \
+    no-gzip dont-vary
+</ifmodule>
