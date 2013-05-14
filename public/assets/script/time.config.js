@@ -75,8 +75,8 @@ time.config = {
         {
             klassName: 'square',
             src: 'timeCover',
-            illustrator: '?',
-            title: '?',
+            illustrator: 'D. S. Chidgey',
+            title: 'Time book cover',
             extract: {
                 title: '',
                 blurb: '',
@@ -119,8 +119,8 @@ time.config = {
         {
             klassName: 'rectangle',
             src: 'timeDiagram',
-            illustrator: '?',
-            title: '?',
+            illustrator: 'D. S. Chidgey',
+            title: 'Time structure diagram',
             extract: {
                 title: '',
                 blurb: '',

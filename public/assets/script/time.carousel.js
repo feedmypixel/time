@@ -27,18 +27,16 @@
             pictureMarkup: function (detail) {
                 return [
                     '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, '">',
-                        '<div class="img-wrapper">',
+                        '<div class="img-wrapper group">',
                             '<p class="img-title">', detail.title, '</p>',
                             carousel.generateLoadingSpinner(),
                             '<p class="img-illustrator">', detail.illustrator, '</p>',
                         '</div>',
+                        '<div class="extract group">',
+                            '<p class="extract-title big-text">', detail.extract.title, '<em class="highlight medium-text"> by ', detail.extract.writer, '</em></p>',
+                            '<p class="extract-blurb medium-text">', detail.extract.blurb, '</p>',
+                        '</div>',
                     '</li>'
-                ].join('');
-            },
-            extractMarkup: function (detail) {
-                return [
-                    '<p class="extract-title">', '<em>', detail.extract.title, '</em>', detail.extract.writer, '</p>',
-                    '<p class="extract-blurb">', detail.extract.blurb, '</p>'
                 ].join('');
             }
         };

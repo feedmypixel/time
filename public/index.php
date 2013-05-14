@@ -98,10 +98,10 @@ $facebookLike = new Lazy_FacebookLikeButton(
         <div class="centered-positioned main-information limited-width group">
             <p class="quote large-text full-width center-aligned">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</p>
             <div class="third-width">
-                <p class="gutter-right medium-text light-text">&quot;The Lazy Gramophone group as a collective have demonstrated a remarkable and inspiring ethos throughout and their willingness to provide a means of expression is second to none.&quot; <em class="source highlight">Amelias Magazine</em></p>
+                <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <em class="source highlight">Rooms Magazine</em></p>
             </div>
             <div class="third-width">
-                <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <em class="source highlight">Fabric Magazine.</em></p>
+                <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <em class="source highlight">Fabric Magazine</em></p>
             </div>
             <div class="third-width">
                 <p class="gutter-right medium-text light-text">&quot;In a time when publishers are taking fewer and fewer risks on unknown writers, Lazy Gramophone are to be applauded for giving their collective a chance to shine.&quot; <em class="source highlight">Litro Magazine</em></p>
