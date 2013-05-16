@@ -20,15 +20,24 @@
 /*        width: 452px*/
     }
 
+    .carousel-wrap .square {
+        width: 346px;
+    }
+
     .carousel-wrap .square img {
         width: 346px;
         height: auto;
+    }
+
+    .carousel-wrap .rectangle {
+        width: 291px;
     }
 
     .carousel-wrap .rectangle img {
         width: 291px;
         height: auto;
     }
+
 }
 
 /* 960px/16px = 60em */
@@ -45,7 +54,7 @@
 	}
 
     .carousel-wrap {
-        height: 340px;
+        height: 900px;
 /*        width: 256px;*/
     }
 
@@ -53,13 +62,23 @@
 /*        width: 336px*/
     }
 
+    .carousel-wrap .square {
+        width: 290px;
+        height: auto;
+    }
+
     .carousel-wrap .square img {
-        width: 230px;
+        width: 290px;
+        height: auto;
+    }
+
+    .carousel-wrap .rectangle {
+        width: 290px;
         height: auto;
     }
 
     .carousel-wrap .rectangle img {
-        width: 195px;
+        width: 290px;
         height: auto;
     }
 }

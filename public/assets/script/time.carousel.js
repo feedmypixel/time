@@ -7,6 +7,7 @@
         CLASS_ERROR = 'error',
         CLASS_LOADING = 'loading',
         ACTIVE_PICTURE = 'active',
+        BY_TEXT = 'by',
         LOADING_IMG = 'assets/img/loader.gif',
         carousel,
         utils = time.utils,
@@ -25,19 +26,29 @@
         this.loadedImages = [];
         this.htmlTemplates = {
             pictureMarkup: function (detail) {
-                return [
+
+                var html = [
                     '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, '">',
                         '<div class="img-wrapper group">',
                             '<p class="img-title">', detail.title, '</p>',
                             carousel.generateLoadingSpinner(),
-                            '<p class="img-illustrator">', detail.illustrator, '</p>',
-                        '</div>',
-                        '<div class="extract group">',
-                            '<p class="extract-title big-text">', detail.extract.title, '<em class="highlight medium-text"> by ', detail.extract.writer, '</em></p>',
-                            '<p class="extract-blurb medium-text">', detail.extract.blurb, '</p>',
-                        '</div>',
-                    '</li>'
+                            '<p class="img-illustrator"><em> ', BY_TEXT, ' ', detail.illustrator, '</em></p>',
+                        '</div>'
                 ].join('');
+
+                if (detail.extract.title) {
+
+                    html += [
+                        '<div class="extract group">',
+                            '<p class="extract-title big-text">', detail.extract.title, '<em class="highlight small-text">',  BY_TEXT, ' ', detail.extract.writer, '</em></p>',
+                            '<p class="extract-blurb medium-text">', detail.extract.blurb, '</p>',
+                        '</div>'
+                    ].join('');
+                }
+
+                html += '</li>';
+
+                return html;
             }
         };
 

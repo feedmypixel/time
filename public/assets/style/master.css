@@ -194,19 +194,15 @@ h1 {
 
 /** Carousel **/
 
-
-
 .carousel-wrap {
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
-    height: 960px;
-/*    width: 524px*/
+    margin: 4em auto 0;
+    height: 930px;
 }
 
 .carousel-outer-wrap {
     margin: 2em 0;
-/*    width: 604px;*/
 }
 
 .carousel-wrap .square {
@@ -229,15 +225,16 @@ h1 {
 
 .extract {
     color: #fff;
+    padding: 0 .4em;
 }
 
 .extract-title {
-    font-size: 1.3em;
     font-weight: bold;
     margin: 1em 0 .6em;
 }
 
 .extract-title em {
+    display: block;
     font-weight: normal;
 }
 
@@ -245,22 +242,16 @@ h1 {
     color: #fff;
 }
 
-
-/**
-extract-title">', '<em>', detail.extract.title, '</em>', detail.extract.writer, '</p>',
-extract-blurb">', detail.extract.blurb, '</p>',
-**/
-
 .carousel-detail {
     position: absolute;
     width: 10000px;
     left: 0;
     top: 0;
     -webkit-transition: left 500ms ease-in-out;
-    -webkit-transform: translate3d( 0, 0, 0 );
     -moz-transition: left 500ms ease-in-out;
-    -moz-transform: translate3d( 0, 0, 0 );
     -o-transition: left 500ms ease-in-out;
+    -moz-transform: translate3d( 0, 0, 0 );
+    -webkit-transform: translate3d( 0, 0, 0 );
     -o-transform: translate3d( 0, 0, 0 );
     transform: translate3d( 0, 0, 0 );
 }
@@ -268,20 +259,28 @@ extract-blurb">', detail.extract.blurb, '</p>',
 .carousel-wrap li {
     opacity: 1;
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     -webkit-transition: opacity 400ms ease-in-out;
     -moz-transition: opacity 400ms ease-in-out;
     -o-transition: opacity 400ms ease-in-out;
     transition: opacity 400ms ease-in-out;
+    -moz-transform: translate3d( 0, 0, 0 );
+    -webkit-transform: translate3d( 0, 0, 0 );
+    -o-transform: translate3d( 0, 0, 0 );
+    transform: translate3d( 0, 0, 0 );
 }
 
 .carousel-wrap li.hidden {
-    opacity: 0.015;
+    opacity: 0.03;
 }
 
 .carousel-detail li img {
     padding: .8em;
     background-color: #fff;
+}
+
+.carousel-detail .no-edge img {
+    padding: 0;
 }
 
 .carousel-wrap .img-wrapper {
@@ -319,8 +318,8 @@ extract-blurb">', detail.extract.blurb, '</p>',
     font-size: 3em;
     color: rgba(193, 190, 190, .4);
     text-decoration: none;
-    padding: 1em 1em 1em 20%;
-    top: 40%;
+    padding: 1em 1em 1em 34%;
+    top: 20%;
 }
 
 .carousel-button:hover {
@@ -337,7 +336,7 @@ extract-blurb">', detail.extract.blurb, '</p>',
 
 .carousel-button.carousel-right {
     right: 0;
-    padding: 1em 20% 1em 1em;
+    padding: 1em 34% 1em 1em;
 }
 
 .carousel-right:before {

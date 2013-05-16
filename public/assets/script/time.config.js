@@ -51,7 +51,7 @@ time.config = {
         },
 
         {
-            klassName: 'rectangle',
+            klassName: 'rectangle no-edge',
             src: 'rimaStaines',
             illustrator: 'Rima Staines',
             title: 'The Scrimstone Circus Gospel (Childhood)',
@@ -106,7 +106,7 @@ time.config = {
             }
         },
         {
-            klassName: 'rectangle',
+            klassName: 'rectangle no-edge',
             src: 'rimaStainesGospel',
             illustrator: 'Rima Staines',
             title: 'The Scrimstone Circus Gospel (Old Age)',
@@ -150,7 +150,7 @@ time.config = {
             }
         },
         {
-            klassName: 'rectangle',
+            klassName: 'rectangle no-edge',
             src: 'rimaStainesCircus',
             illustrator: 'Rima Staines',
             title: 'The Scrimstone Circus Gospel (childhood)',
