@@ -153,10 +153,15 @@
             this.moveToPicture(middleImage);
             this.setPictureOffset();
             this.setPictureIndicator();
+            this.positionCarouselButtons();
         },
 
         createCarouselHtml: function () {
             var html = '';
+
+            if (this.pictureDetail.length > 1) {
+                html += this.createImagePositionIndicator();
+            }
 
             html += [
                 '<div class="carousel-outer-wrap centered-positioned">',
@@ -177,10 +182,6 @@
                 '</div>'
             ].join('');
 
-            if (this.pictureDetail.length > 1) {
-                html += this.createImagePositionIndicator();
-            }
-
             html += '</div>';
 
             j.setHtml(this.container, html);
@@ -199,10 +200,11 @@
         },
 
         addEvents: function () {
-            var buttons = j.query('.carousel-button'),
-                pictureIndicator = j.query('.picture-indicator')[0];
+            this.carouselButtons = j.query('.carousel-button');
 
-            j.forEach(buttons, function (button) {
+            var pictureIndicator = j.query('.picture-indicator')[0];
+
+            j.forEach(this.carouselButtons, function (button) {
                 j.attachListener(button, 'click', function (e) {
                     carousel.handleButtonClick(e, button);
                 });
@@ -430,10 +432,10 @@
 
         centerImageInViewPort: function () {
 
-            var carouselViewPortWidth = parseInt(j.getStyleComputed(this.carouselWrapper, 'width'), 10),
-                currentPictureWidth = j.getOuterSize(this.pictureElems[this.currentPictureIndex].elem)[1];
+            this.carouselViewPortWidth = parseInt(j.getStyleComputed(this.carouselWrapper, 'width'), 10);
+            this.currentPictureWidth = j.getOuterSize(this.pictureElems[this.currentPictureIndex].elem)[1];
 
-            return (carouselViewPortWidth - currentPictureWidth) / 2;
+            return (this.carouselViewPortWidth - this.currentPictureWidth) / 2;
         },
 
         setPictureOffset: function () {
@@ -445,9 +447,14 @@
             if (j.hasClass(pictureElem, CLASS_HIDDEN)) {
                 j.toggleClass(this.pictureElems[this.currentPictureIndex].elem, CLASS_HIDDEN);
             }
+        },
+
+        positionCarouselButtons: function () {
+            var carouselButtonOffset = ((this.carouselViewPortWidth / 2) - (this.currentPictureWidth / 2));
+
+            this.carouselButtons[0].style.left = carouselButtonOffset + 'px';
+            this.carouselButtons[1].style.right = carouselButtonOffset + 'px';
         }
-
-
 
         /*
         //TODO

@@ -1,27 +1,121 @@
-/* 1280px/16px = 80em */
-@media all and (max-width: 80em) {
+/* 320px/16px = 20em */
+@media all and (min-width: 20em) {
     body {
-        color: purple;
+        color: #ff1493;
+    }
+
+    .artists h2 {
+        width: 12em;
     }
 }
 
-/* 1200px/16px = 75em (used for medium image delivery) */
-@media all and (max-width: 75em) {
+/* 380px/16px = 23.750em */
+@media all and (min-width: 23.750em) {
     body {
-        color: pink;
+        color: #b22222;
     }
 
-    .carousel-wrap {
-        height: 526px;
-/*        width: 372px;*/
+    .carousel-wrap .carousel-left {
+        margin-left: -1.2em;
     }
 
-    .carousel-outer-wrap {
-/*        width: 452px*/
+    .carousel-wrap .carousel-right {
+        margin-right: -1.2em;
+    }
+
+    .carousel-wrap .carousel-right,
+    .carousel-wrap .carousel-left {
+        top: 12%;
+    }
+
+    .carousel-button,
+    .carousel-button:link,
+    .carousel-button:visited {
+        color: rgba(255, 255, 255, .3)
+    }
+
+    .artists h2 {
+        width: 16em;
+    }
+}
+
+
+/* 528px/16px = 33em */
+@media all and (min-width: 33em) {
+    body {
+        color: blue;
+    }
+
+    .buy-book {
+        position: absolute;
+        top: 78%;
+        left: 13%;
+        padding: 1.2em 2em;
+    }
+}
+
+/* 592px/16px = 37em */
+@media all and (min-width: 37em) {
+    body {
+        color: yellow;
+    }
+
+    .third-width {
+        width: 33.333%;
+        float: left;
+    }
+
+    #wrap .separator {
+        display: none;
+    }
+
+    .picture-indicator {
+        margin-top: 2.8em;
+    }
+
+    .quote {
+        padding: 1.2em 0 1.4em;
+    }
+
+    .artists {
+        display: table;
+        text-align: center;
+    }
+
+    .artists li {
+        display: inline-block;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    .artists h2 {
+        display: block;
+        width: 10em;
+        margin: 0 auto;
+    }
+}
+
+/* 768px/16px = 48em */
+@media all and (min-width: 48em) {
+    body {
+        color: orange;
+    }
+
+}
+
+/* 800px/16px = 50em (used for medium image delivery)*/
+@media all and (min-width: 50em) {
+	body {
+		color: cadetblue;
+	}
+
+    .buy-book {
+        left: 20%;
     }
 
     .carousel-wrap .square {
         width: 346px;
+        height: auto;
     }
 
     .carousel-wrap .square img {
@@ -31,6 +125,7 @@
 
     .carousel-wrap .rectangle {
         width: 291px;
+        height: auto;
     }
 
     .carousel-wrap .rectangle img {
@@ -41,107 +136,60 @@
 }
 
 /* 960px/16px = 60em */
-@media all and (max-width: 60em) {
+@media all and (min-width: 60em) {
 	body {
 		color: green;
 	}
-}
 
-/* 800px/16px = 50em (used for small image delivery)*/
-@media all and (max-width: 50em) {
-	body {
-		color: yellow;
-	}
-
-    .carousel-wrap {
-        height: 900px;
-/*        width: 256px;*/
+    .buy-book {
+        left: 25%;
     }
 
-    .carousel-outer-wrap {
-/*        width: 336px*/
+    .carousel-wrap .carousel-right,
+    .carousel-wrap .carousel-left {
+        top: 16%;
+    }
+}
+
+/* 1200px/16px = 75em (used for large image delivery) */
+@media all and (min-width: 75em) {
+    body {
+        color: pink;
+    }
+
+    .carousel-wrap {
+        height: 980px;
     }
 
     .carousel-wrap .square {
-        width: 290px;
-        height: auto;
+        width: 498px;
     }
 
     .carousel-wrap .square img {
-        width: 290px;
+        width: 498px;
         height: auto;
     }
 
     .carousel-wrap .rectangle {
-        width: 290px;
-        height: auto;
+        width: 418px;
     }
 
     .carousel-wrap .rectangle img {
-        width: 290px;
+        width: 418px;
         height: auto;
     }
+
+    .carousel-wrap .carousel-right,
+    .carousel-wrap .carousel-left {
+        top: 20%;
+    }
+
 }
 
 
-
-/* 768px/16px = 48em */
-@media all and (max-width: 48em) {
+/* 1280px/16px = 80em */
+@media all and (min-width: 80em) {
     body {
-        color: orange;
-    }
-}
-
-/* 592px/16px = 37em */
-@media all and (max-width: 37em) {
-    body {
-        color: yellow;
-    }
-}
-
-/* 528px/16px = 33em */
-@media all and (min-width: 33em) {
-    body {
-        color: blue;
-    }
-
-    .inner-footer {
-        display: table;
-        margin-top: 1em;
-    }
-    .social-links {
-        margin: 0 auto;
-    }
-    .social-links li {
-        float: left;
-        margin-right: 1.4em;
-    }
-}
-
-/* 320px/16px = 20em */
-@media all and (min-width: 20em) {
-    body {
-        color: #ff1493;
-    }
-
-    /*    #clock {
-            padding: 0;
-            margin: 0;
-        }*/
-}
-
-
-/* Retina sprites */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-    #time-logo,
-    #you-tube,
-    #fmp,
-    #fmp:hover {
-        background-image: url(../img/time_sprite_x2.png);
-        /* Translate the x2 sprite dimensions back to 1x */
-        background-size: 251px 83px;
+        color: purple;
     }
 }
