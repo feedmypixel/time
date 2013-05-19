@@ -28,7 +28,7 @@
             pictureMarkup: function (detail) {
 
                 var html = [
-                    '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, '">',
+                    '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, ' ', detail.klassName, '">',
                         '<div class="img-wrapper group">',
                             '<p class="img-title">', detail.title, '</p>',
                             carousel.generateLoadingSpinner(),
@@ -94,7 +94,7 @@
         generateLoadingSpinner: function () {
             return [
                 '<div class="throbber">',
-                    '<img class="loading-spinner" src="' + LOADING_IMG + '" />',
+                    '<img class="loading-spinner center-positioned" src="' + LOADING_IMG + '" width="40px" height="40px"/>',
                 '</div>'
             ].join('');
         },
@@ -115,7 +115,6 @@
                 if (throbber) {
                     imgWrap.replaceChild(this, throbber);
                     j.removeClass(listElem, CLASS_LOADING);
-                    j.addClass(listElem, detail.klassName);
                 }
 
                 carousel.manageLoadedImages(itr);
@@ -133,7 +132,7 @@
                 j.removeClass(listElem, CLASS_LOADING);
             };
 
-            image.src = 'assets/img/carousel/' + detail.src + '.jpg';
+            image.src = 'assets/img/responsiveImages/' + detail.src + '.jpg';
         },
 
         manageLoadedImages: function (itr) {
@@ -159,10 +158,6 @@
         createCarouselHtml: function () {
             var html = '';
 
-            if (this.pictureDetail.length > 1) {
-                html += this.createImagePositionIndicator();
-            }
-
             html += [
                 '<div class="carousel-outer-wrap centered-positioned">',
                 '<div class="carousel-wrap">',
@@ -181,6 +176,10 @@
                     '<a class="carousel-right carousel-button" href="#"></a>',
                 '</div>'
             ].join('');
+
+            if (this.pictureDetail.length > 1) {
+                html += this.createImagePositionIndicator();
+            }
 
             html += '</div>';
 

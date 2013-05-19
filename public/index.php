@@ -66,31 +66,37 @@
                 </noscript>
                 <p>Either you have turned JavaScript off or your browser doesn't support html5 elements!</p>
             </canvas>
-            <a href="http://www.lazygramophone.com/shop/time" class="buy-book center-aligned center-positioned" target="_blank">Buy Time.</a>
+            <a href="http://www.lazygramophone.com/shop/time" class="buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.<h2></h2></a>
         </div>
 
         <div class="center-positioned full-width" role="main">
             <div class="center-positioned main-information limited-width group">
-                <p class="quote large-text full-width center-aligned">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</p>
+                <h2 class="large-text quote full-width center-aligned">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</h2>
+                <div class="separator"></div>
                 <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <a class="source highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank">Rooms Magazine</a></p>
+                    <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <a class="source highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank"><h3>Rooms Magazine</h3></a></p>
                 </div>
                 <div class="separator"></div>
                 <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank">Fabric Magazine</a></p>
+                    <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h3>Fabric Magazine</h3></a></p>
                 </div>
                 <div class="separator"></div>
                 <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;In a time when publishers are taking fewer and fewer risks on unknown writers, Lazy Gramophone are to be applauded for giving their collective a chance to shine.&quot; <em class="source highlight">Litro Magazine</em></p>
+                    <p class="gutter-right medium-text light-text">&quot;In a time when publishers are taking fewer and fewer risks on unknown writers, Lazy Gramophone are to be applauded for giving their collective a chance to shine.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h3>Litro Magazine</h3></a></p>
                 </div>
                 <div class="separator"></div>
             </div>
         </div>
+
+        <div class="section-separator"></div>
+
         <div class="center-positioned full-width">
             <div id="carousel">
-                <img alt="Time Cover" src="assets/img/carousel/small/timeCover.jpg" />
+                <img alt="Time Cover" src="assets/img/responsiveImages/small/timeCover.jpg" />
             </div>
         </div>
+
+        <div class="section-separator"></div>
 
 <?php
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/artists.inc.php' );

@@ -4,8 +4,8 @@
         color: #ff1493;
     }
 
-    .artists h2 {
-        width: 12em;
+    #clock {
+        padding-left: 1em;
     }
 }
 
@@ -34,8 +34,16 @@
         color: rgba(255, 255, 255, .3)
     }
 
+    .carousel-button:hover {
+        color: #0076a5;
+    }
+
     .artists h2 {
-        width: 16em;
+        width: 12em;
+    }
+
+    #clock {
+        padding-left: 3em;
     }
 }
 
@@ -48,14 +56,23 @@
 
     .buy-book {
         position: absolute;
-        top: 78%;
+        top: 73%;
         left: 13%;
         padding: 1.2em 2em;
+    }
+
+    #clock {
+        padding-left: 4.5em;
     }
 }
 
 /* 592px/16px = 37em */
 @media all and (min-width: 37em) {
+
+    html {
+        font-size: 1.2em;
+    }
+
     body {
         color: yellow;
     }
@@ -92,6 +109,27 @@
         display: block;
         width: 10em;
         margin: 0 auto;
+        font-size: 1em;
+    }
+
+    .buy-book {
+        left: 18%;
+    }
+
+    .carousel-outer-wrap {
+        margin: 3.2em 0 1.8em;
+    }
+
+    .quote {
+        padding: 1.2em 0 1.4em;
+    }
+
+    .section-separator {
+        display: block;
+    }
+
+    .footer {
+        margin-top: 5em;
     }
 }
 
@@ -99,6 +137,10 @@
 @media all and (min-width: 48em) {
     body {
         color: orange;
+    }
+
+    .buy-book {
+        left: 23%;
     }
 
 }
@@ -113,24 +155,38 @@
         left: 20%;
     }
 
+    .carousel-wrap .rectangle .throbber {
+        width: 353px;
+        height: 419px;
+    }
+
+    .carousel-wrap .square .throbber {
+        width: 420px;
+        height: 419px;
+    }
+
     .carousel-wrap .square {
-        width: 346px;
+        width: 420px;
         height: auto;
     }
 
     .carousel-wrap .square img {
-        width: 346px;
+        width: 420px;
         height: auto;
     }
 
     .carousel-wrap .rectangle {
-        width: 291px;
+        width: 353px;
         height: auto;
     }
 
     .carousel-wrap .rectangle img {
-        width: 291px;
+        width: 353px;
         height: auto;
+    }
+
+    .buy-book {
+        left: 28%;
     }
 
 }
@@ -142,7 +198,7 @@
 	}
 
     .buy-book {
-        left: 25%;
+        left: 33%;
     }
 
     .carousel-wrap .carousel-right,
@@ -159,6 +215,16 @@
 
     .carousel-wrap {
         height: 980px;
+    }
+
+    .carousel-wrap .rectangle .throbber {
+        width: 418px;
+        height: 496px;
+    }
+
+    .carousel-wrap .square .throbber {
+        width: 498px;
+        height: 496px;
     }
 
     .carousel-wrap .square {

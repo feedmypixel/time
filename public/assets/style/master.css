@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    font: 400 100%/1.6em Garamond, Helvetica, sans-serif;
+    font: 400 100%/1.6em 'Open Sans', 'Helvetica Neue', HelveticaNeue, 'Helvetica-Neue', Helvetica, sans-serif;
     background-color: #fff;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -85,12 +85,18 @@ h1 {
     display: inline-block;
 }
 
-.separator {
+.separator,
+.section-separator {
     border-style: solid;
     border-width: 0 0 1px 0;
     border-color: #5f5f5f;
     border-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, .05);
+    margin: 1.2em 2em;
+}
+
+.section-separator {
+    display: none;
     margin: 1.2em 2em 1em;
 }
 
@@ -112,7 +118,7 @@ h1 {
 
 /** Main info, blurb, social links etc **/
 .main-information {
-    margin-bottom: 1.8em;
+    margin-bottom: 1.6em;
 }
 
 .source {
@@ -130,7 +136,9 @@ h1 {
 }
 
 .large-text {
-    font-size: 1.6em;
+    font-size: 1.8em;
+    line-height: 1.4em;
+    letter-spacing: .04em;
 }
 
 .big-text {
@@ -150,7 +158,7 @@ h1 {
 }
 
 .quote {
-    padding: .8em 0 1.4em;
+    padding: 1em 0 0;
 }
 
 .highlight {
@@ -172,7 +180,7 @@ h1 {
     font-weight: 900;
     font-size: 1.2em;
     width: 4.8em;
-    margin-top: 1.4em;
+    margin-top: 2em;
     margin-bottom: .6em;
     border-radius: 4px;
     display: block;
@@ -220,7 +228,7 @@ h1 {
 }
 
 .carousel-outer-wrap {
-
+    margin: 1em 0;
 }
 
 .carousel-wrap .square {
@@ -240,6 +248,30 @@ h1 {
 .carousel-wrap .rectangle img {
     width: 290px;
     height: auto;
+}
+
+/* throbber and error message */
+.carousel-wrap .square .throbber,
+.carousel-wrap .rectangle .throbber {
+    width: 290px;
+    height: 287px;
+}
+
+.carousel-wrap .throbber .loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin-top: 12em;
+    padding: 0;
+}
+
+.carousel-wrap .error {
+    background-color: #db602f;
+    color: #fff;
+    padding: .2em;
+    border-radius: 4px;
+    margin: 3em 1em;
+    text-align: center;
+    font-weight: 500;
 }
 
 .extract {
@@ -290,7 +322,11 @@ h1 {
 }
 
 .carousel-wrap li.hidden {
-    opacity: 0.03;
+    opacity: 0.05;
+}
+
+.loading .throbber {
+
 }
 
 .carousel-detail li img {
@@ -304,7 +340,7 @@ h1 {
 
 .carousel-wrap .img-wrapper {
     position: relative;
-    border: 2px solid #191715;
+    border: 2px solid transparent;
 }
 
 .carousel-wrap .img-title,
@@ -390,18 +426,15 @@ h1 {
 
 /** artists section **/
 
-
-
-
-.artists {
-/*    display: table;
-    text-align: center;*/
-}
-
 .artists li {
     text-align: left;
     padding-left: .4em;
-    min-width: 12em;
+    min-width: 11em;
+}
+
+.artists .separator {
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, .05);
 }
 
 .artists a {
@@ -410,12 +443,12 @@ h1 {
 }
 
 .artists span {
-    background-image: url(../img/artists.png);
+    background-image: url(../img/responsiveImages/artistsSprite.jpg);
     width: 80px;
     height: 80px;
     display: inline-block;
     vertical-align: middle;
-    margin: .2em;
+    margin: .4em;
     border: 4px solid #fff;
 }
 
@@ -425,41 +458,10 @@ h1 {
 	text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 11em;
+    width: 9em;
     padding-left: .2em;
+    font-size: 1.2em;
 }
-
-
-.rahima-fitzwilliam-hall span {
-    background-position: 0 0;
-}
-.tom-harris span {
-    background-position: -80px 0;
-}
-.sam-rawlings span {
-    background-position: -160px 0;
-}
-.carl-laurance span {
-    background-position: -240px 0;
-}
-.megan-leonie-hall span {
-    background-position: -320px 0;
-}
-.guy-j-jackson span {
-    background-position: -400px 0;
-}
-.jude-melling span {
-    background-position: -480px 0;
-}
-.liz-adams span {
-    background-position: -560px 0;
-}
-.maddie-joyce span {
-    background-position: -640px 0;
-}
-
-
-
 
 
 
