@@ -1,8 +1,8 @@
 /* 320px/16px = 20em */
 @media all and (min-width: 20em) {
-    body {
+/*    body {
         color: #ff1493;
-    }
+    }*/
 
     #clock {
         padding-left: 1em;
@@ -11,9 +11,9 @@
 
 /* 380px/16px = 23.750em */
 @media all and (min-width: 23.750em) {
-    body {
+/*    body {
         color: #b22222;
-    }
+    }*/
 
     .carousel-wrap .carousel-left {
         margin-left: -1.2em;
@@ -38,7 +38,7 @@
         color: #0076a5;
     }
 
-    .artists h2 {
+    .artist-name {
         width: 12em;
     }
 
@@ -50,9 +50,9 @@
 
 /* 528px/16px = 33em */
 @media all and (min-width: 33em) {
-    body {
+/*    body {
         color: blue;
-    }
+    }*/
 
     .buy-book {
         position: absolute;
@@ -73,9 +73,9 @@
         font-size: 1.2em;
     }
 
-    body {
+/*    body {
         color: yellow;
-    }
+    }*/
 
     .third-width {
         width: 33.333%;
@@ -105,11 +105,11 @@
         text-align: center;
     }
 
-    .artists h2 {
+    .artist-name {
         display: block;
         width: 10em;
         margin: 0 auto;
-        font-size: 1em;
+        font-size: .8em;
     }
 
     .buy-book {
@@ -135,9 +135,9 @@
 
 /* 768px/16px = 48em */
 @media all and (min-width: 48em) {
-    body {
+/*    body {
         color: orange;
-    }
+    }*/
 
     .buy-book {
         left: 23%;
@@ -147,12 +147,16 @@
 
 /* 800px/16px = 50em (used for medium image delivery)*/
 @media all and (min-width: 50em) {
-	body {
+/*	body {
 		color: cadetblue;
-	}
+	}*/
 
     .buy-book {
-        left: 20%;
+        left: 28%;
+    }
+
+    .carousel-wrap {
+        height: 1030px;
     }
 
     .carousel-wrap .rectangle .throbber {
@@ -184,18 +188,13 @@
         width: 353px;
         height: auto;
     }
-
-    .buy-book {
-        left: 28%;
-    }
-
 }
 
 /* 960px/16px = 60em */
 @media all and (min-width: 60em) {
-	body {
+/*	body {
 		color: green;
-	}
+	}*/
 
     .buy-book {
         left: 33%;
@@ -209,12 +208,12 @@
 
 /* 1200px/16px = 75em (used for large image delivery) */
 @media all and (min-width: 75em) {
-    body {
+/*    body {
         color: pink;
-    }
+    }*/
 
     .carousel-wrap {
-        height: 980px;
+        height: 1070px;
     }
 
     .carousel-wrap .rectangle .throbber {
@@ -250,12 +249,16 @@
         top: 20%;
     }
 
+    .artists li {
+        min-width: 12em;
+    }
+
 }
 
 
 /* 1280px/16px = 80em */
 @media all and (min-width: 80em) {
-    body {
+/*    body {
         color: purple;
-    }
+    }*/
 }

@@ -30,21 +30,21 @@
                 var html = [
                     '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, ' ', detail.klassName, '">',
                         '<div class="img-wrapper group">',
-                            '<p class="img-title">', detail.title, '</p>',
+                            '<h2 class="img-title">', detail.title, '</h2>',
                             carousel.generateLoadingSpinner(),
-                            '<p class="img-illustrator"><em> ', BY_TEXT, ' ', detail.illustrator, '</em></p>',
+                            '<h3 class="img-illustrator"><em> ', BY_TEXT, ' ', detail.illustrator, '</em></h3>',
                         '</div>'
                 ].join('');
 
-                if (detail.extract.title) {
+                //if (detail.extract.title) {
 
                     html += [
                         '<div class="extract group">',
-                            '<p class="extract-title big-text">', detail.extract.title, '<em class="highlight small-text">',  BY_TEXT, ' ', detail.extract.writer, '</em></p>',
+                            '<div class="extract-title big-text"><h2>', detail.extract.title, '</h2><h3 class="highlight mini-text">',  BY_TEXT, ' ', detail.extract.writer, '</h3></div>',
                             '<p class="extract-blurb medium-text">', detail.extract.blurb, '</p>',
                         '</div>'
                     ].join('');
-                }
+                //}
 
                 html += '</li>';
 

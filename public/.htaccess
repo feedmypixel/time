@@ -1,5 +1,16 @@
+#AuthName "Time prototype"
+#AuthType basic
+#AuthUserFile /home/apache/vhosts/www.lazygramophone.com/.htpasswd
+#Require valid-user
 
 RewriteEngine On
+
+#RewriteCond %{REQUEST_FILENAME} -s [OR] # The request is a regular file with size > 0
+#RewriteCond %{REQUEST_FILENAME} -l [OR] # The request is to a file that is a symlink
+#RewriteCond %{REQUEST_FILENAME} -d [OR] # The request is to a directory that exists
+
+# if any of the above conditions are true, then simply handle the request as-is
+#RewriteRule ^.*$ - [NC,L]
 
 #redirect carousel images to appropriate folder
 #no cookie set default to small folder
@@ -18,7 +29,7 @@ RewriteRule assets/img/responsiveImages/([^\.]+)(?:\.jpg)$ assets/img/responsive
 
 #VARIOUS
 DirectoryIndex index.php
-Options +Indexes
+Options -Indexes
 Options +FollowSymlinks
 
 # ETAGS

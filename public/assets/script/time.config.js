@@ -28,6 +28,17 @@ time.config = {
             }
         },
         {
+            klassName: 'square',
+            src: 'timeBookIllustrations',
+            illustrator: 'D. S. Chidgey',
+            title: 'Illustrations',
+            extract: {
+                title: '',
+                blurb: 'The stories and poems included in the book were passed to a huge variety of illustrators, artists and photographers. They interpreted the words as literally or loosely, drawing out the meaning that was conveyed to them upon reading.',
+                writer: ''
+            }
+        },
+        {
             klassName: 'rectangle',
             src: 'claudForsbrey',
             illustrator: 'Claud Forsbrey',
@@ -62,6 +73,17 @@ time.config = {
             }
         },
         {
+            klassName: 'square',
+            src: 'timeBookText',
+            illustrator: 'Dan Prescott',
+            title: 'Type Setting',
+            extract: {
+                title: '',
+                blurb: 'Each section of the book has been designed and type set in a distinctive fashion to echo the epoch of the stories.',
+                writer: ''
+            }
+        },
+        {
             klassName: 'rectangle',
             src: 'andrewWalter',
             illustrator: 'Andrew Walter',
@@ -78,9 +100,9 @@ time.config = {
             illustrator: 'D. S. Chidgey',
             title: 'Time book cover',
             extract: {
-                title: '',
-                blurb: '',
-                writer: ''
+                title: 'Initially Inspired',
+                blurb: 'Initially inspired by a discussion on gamebooks, this project has taken over three years to grow into what you are now holding in your hands. The importance of collaboration has always been central to Lazy Gramophone Press\'s ethos, especially the pairing of words and images. This project therefore, is our chance to bring everyone together under one cover, all focused upon the same theme in order to produce a unique portrait of time.',
+                writer: 'Sam Rawlings'
             }
         },
         {
@@ -106,6 +128,17 @@ time.config = {
             }
         },
         {
+            klassName: 'square',
+            src: 'timeBookFirstPage',
+            illustrator: 'D. S. Chidgey',
+            title: '',
+            extract: {
+                title: 'Time',
+                blurb: '"Time does not belong to me It spreads itself like air I move about in it, but have no place" <br /><br />written by ivor cutler Printed with permission of the Estate of Ivor Cutler: <br /><a href="http://www.ivorcutler.org">www.ivorcutler.org</a> <br />Time_',
+                writer: 'Ivor Cutler (with permission of the estate of Ivor Cutler)'
+            }
+        },
+        {
             klassName: 'rectangle no-edge',
             src: 'rimaStainesGospel',
             illustrator: 'Rima Staines',
@@ -122,8 +155,19 @@ time.config = {
             illustrator: 'D. S. Chidgey',
             title: 'Time structure diagram',
             extract: {
+                title: 'A Visual Guide',
+                blurb: 'The stories in this book have been structured around a Central Story. The Central Story is biographical in that it follows the course of a character\'s life through childhood to adolescence–adulthood and then on into old age.',
+                writer: 'Sam Rawlings'
+            }
+        },
+        {
+            klassName: 'square',
+            src: 'timeBookPrinting',
+            illustrator: 'D. S. Chidgey',
+            title: 'Printing',
+            extract: {
                 title: '',
-                blurb: '',
+                blurb: 'We work very closely with our printers to ensure our vision on screen translates to the finished pages.',
                 writer: ''
             }
         },

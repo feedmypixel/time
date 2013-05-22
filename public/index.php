@@ -36,6 +36,7 @@
     </script>
 <?php
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/meta.inc.php' );
+    require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/headerIcons.inc.php' );
 ?>
 
 <link href="assets/style/reset.css" rel="stylesheet"/>
@@ -62,11 +63,12 @@
             <h1 class="time-logo">Time.</h1>
             <canvas id="clock" role="complementary">
                 <noscript>
-                    <img src="assets/img/static_clock.png" alt="Time."/>
+                    <div class="static-clock-wrapper center-positioned">
+                        <img alt="Time." src="assets/img/static_clock.png" />
+                    </div>
                 </noscript>
-                <p>Either you have turned JavaScript off or your browser doesn't support html5 elements!</p>
             </canvas>
-            <a href="http://www.lazygramophone.com/shop/time" class="buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.<h2></h2></a>
+            <a href="http://www.lazygramophone.com/shop/time" class="buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
         </div>
 
         <div class="center-positioned full-width" role="main">
@@ -74,15 +76,15 @@
                 <h2 class="large-text quote full-width center-aligned">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</h2>
                 <div class="separator"></div>
                 <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <a class="source highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank"><h3>Rooms Magazine</h3></a></p>
+                    <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <a class="source highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank"><h2>Rooms Magazine</h2></a></p>
                 </div>
                 <div class="separator"></div>
                 <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h3>Fabric Magazine</h3></a></p>
+                    <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Fabric Magazine</h2></a></p>
                 </div>
                 <div class="separator"></div>
                 <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;In a time when publishers are taking fewer and fewer risks on unknown writers, Lazy Gramophone are to be applauded for giving their collective a chance to shine.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h3>Litro Magazine</h3></a></p>
+                    <p class="gutter-right medium-text light-text">&quot;In a time when publishers are taking fewer and fewer risks on unknown writers, Lazy Gramophone are to be applauded for giving their collective a chance to shine.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Litro Magazine</h2></a></p>
                 </div>
                 <div class="separator"></div>
             </div>
@@ -92,7 +94,13 @@
 
         <div class="center-positioned full-width">
             <div id="carousel">
-                <img alt="Time Cover" src="assets/img/responsiveImages/small/timeCover.jpg" />
+                <noscript>
+                    <?php
+                        require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/carouselNoScript.inc.php' );
+                    ?>
+                </noscript>
+
+
             </div>
         </div>
 
@@ -104,7 +112,7 @@
 
         <div class="footer full-width group" role="contentinfo">
             <div class="inner-footer limited-width center-positioned">
-                <a href="http://www.lazygramophone.com" class="lazygramophone" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">Lazygramophone</a>
+                <h2><a href="http://www.lazygramophone.com" class="lazygramophone" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">Lazygramophone</a></h2>
                 <ul class="group social-links">
                     <li>
                         <a href="https://www.facebook.com/pages/Lazy-Gramophone-Artists-Press/183721095020338" title="Lazy gramophone on facebook" target="_blank" role="link">
