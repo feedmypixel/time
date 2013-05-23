@@ -23,7 +23,6 @@
         this.pictureDetail = pictureDetail;
         this.currentPictureIndex = 0;
         this.offset = 0;
-        this.loadedImages = [];
         this.htmlTemplates = {
             pictureMarkup: function (detail) {
 
@@ -61,6 +60,8 @@
         buildCarousel: function () {
             this.createCarouselHtml();
             this.setUpCarouselProperties();
+            this.calculatePriorityImages();
+            this.loadPriorityImages();
             this.addEvents();
         },
 
@@ -70,6 +71,8 @@
             j.attachWindowListener('resize',
                 utils.debounce(function () {
                     carousel.buildCarousel();
+                    //TODO refactor
+                    carousel.loadImageQueue();
                 }, 10, false));
         },
 
@@ -80,6 +83,7 @@
 
             var pictureElements = Array.prototype.slice.call(this.pictureContainer.childNodes);
 
+            // preserve the index of the pictures
             this.pictureElems = pictureElements.map(function (picture, i) {
                 return {
                     index: i,
@@ -102,7 +106,8 @@
         setupCarouselImages: function (detail, i) {
 
             var image = new Image(),
-                itr = ++i; //nth-of-type uses 1 for the first occurrence of element
+                itr = ++i, //nth-of-type uses 1 for the first occurrence of element
+                imgSource;
 
             image.onload = function () {
 
@@ -132,30 +137,110 @@
                 j.removeClass(listElem, CLASS_LOADING);
             };
 
-            image.src = 'assets/img/responsiveImages/' + detail.src + '.jpg';
+            imgSource = 'assets/img/responsiveImages/' + detail.src + '.jpg';
+
+            this.imageQueue.push({
+                imgObj: image,
+                imgSrc: imgSource,
+                imgIndex: itr,
+                loaded: false
+            });
         },
 
-        manageLoadedImages: function (itr) {
 
-            this.loadedImages.push(itr);
+        /**
+         * get amount of images
+         * get screen width * density
+         * work out halfway point of images
+         * calculate how many images are to be on screen
+         * load images on screen straight away, load others after page loaded
+         * small screen don't load until page loaded
+         */
 
-            if (this.loadedImages.length === this.pictureItemCount) {
-                this.centerCarousel();
-                this.loadedImages = [];
+        getPeripheralImageWidths: function (imageIndex) {
+
+            var totalWidths = 0,
+                imageWalk = {
+                    forward: function (itr) {
+                        var index = this.middleImage + itr;
+                        this.priorityImages.push(index);
+
+                        return index;
+                    },
+                    backward: function (itr) {
+                        var index = this.middleImage - itr;
+                        this.priorityImages.push(index);
+
+                        return index;
+                    }
+                };
+
+            totalWidths += j.getOuterSize(this.pictureElems[imageWalk.forward.call(this, imageIndex)].elem)[1];
+            totalWidths += j.getOuterSize(this.pictureElems[imageWalk.backward.call(this, imageIndex)].elem)[1];
+
+            return totalWidths;
+        },
+
+        calculatePriorityImages: function () {
+
+            this.priorityImages = [];
+
+            this.middleImage = Math.round(this.pictureItemCount / 2) - 1;
+            this.screenWidth = parseInt(utils.getCookie('screenwidth'), 10);
+            this.priorityImages.push(this.middleImage);
+
+            var totalImageWidth = j.getOuterSize(this.pictureElems[this.middleImage].elem)[1];
+
+
+            for (var i = 1; totalImageWidth < this.screenWidth; i++) {
+
+                totalImageWidth += this.getPeripheralImageWidths(i);
             }
         },
 
+        //TODO refactor
+        loadPriorityImages: function () {
+
+            var imageIndex,
+                i = 0,
+                imgDetail;
+
+            while ((imageIndex = this.priorityImages[i++])) {
+                imgDetail = this.imageQueue[imageIndex];
+                imgDetail.imgObj.src = imgDetail.imgSrc;
+                imgDetail.loaded = true;
+            }
+        },
+
+        //TODO refactor
+        loadImageQueue: function () {
+
+            var image,
+                i = 0;
+
+            while ((image = this.imageQueue[i++])) {
+                if (!image.loaded) {
+                    image.imgObj.src = image.imgSrc;
+                }
+            }
+        },
+
+        //TODO refactor
+        manageLoadedImages: function (itr) {
+            this.centerCarousel();
+        },
+
         centerCarousel: function () {
-
-            var middleImage = Math.round(this.pictureItemCount / 2) - 1;
-
-            this.moveToPicture(middleImage);
+            this.moveToPicture(this.middleImage);
             this.setPictureOffset();
             this.setPictureIndicator();
             this.positionCarouselButtons();
         },
 
         createCarouselHtml: function () {
+
+            this.imageQueue = [];
+
             var html = '';
 
             html += [
@@ -199,9 +284,9 @@
         },
 
         addEvents: function () {
-            this.carouselButtons = j.query('.carousel-button');
 
             var pictureIndicator = j.query('.picture-indicator')[0];
+            this.carouselButtons = j.query('.carousel-button');
 
             j.forEach(this.carouselButtons, function (button) {
                 j.attachListener(button, 'click', function (e) {
@@ -233,6 +318,10 @@
                     carousel.handleTouchEnd(e);
                 });
             }
+
+            j.attachWindowListener('load', function () {
+                carousel.loadImageQueue();
+            });
         },
 
         handleTouchStart: function (e) {
@@ -454,13 +543,6 @@
             this.carouselButtons[0].style.left = carouselButtonOffset + 'px';
             this.carouselButtons[1].style.right = carouselButtonOffset + 'px';
         }
-
-        /*
-        //TODO
-        load in images that are on screen, from 'middle' image out wards after load.
-        length of clock hands
-         */
-
     };
 
     time.Carousel = Carousel;

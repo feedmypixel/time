@@ -8,7 +8,7 @@
             //if (doc.cookie.indexOf('imagesize') === -1) {
 
                 var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
-                    actualScreenWidth = Math.max(screen.width, screen.height) * pixelRatio,
+                    actualScreenWidth = parseInt(Math.max(screen.width, screen.height) * pixelRatio, 10),
                     imageSize,
                     expiresTime = new Date;
 
@@ -29,7 +29,7 @@
                         break;
                 }
 
-                doc.cookie='imagesize=' + imageSize + '; expires=' + expiresTime.toUTCString() + '; path=/';
+                doc.cookie = 'imagesize=' + imageSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
            // }
 
         }(window, document));

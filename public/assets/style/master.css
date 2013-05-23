@@ -280,6 +280,10 @@ h1 {
     margin: 1em 0 .6em;
 }
 
+.extract-title h3 {
+    font-style: italic;
+}
+
 .extract-title em {
     display: block;
     font-weight: normal;
