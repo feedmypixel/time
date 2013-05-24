@@ -292,9 +292,23 @@ h1 {
 .extract-title em h2 {
     display: inline;
 }
+
 .extract-blurb {
     color: #fff;
 }
+
+.extract-blurb .tab-left {
+    padding-left: 2em;
+}
+
+.extract-blurb .top-margin {
+    padding-top: 1em;
+}
+
+.extract-blurb .bottom-margin {
+    padding-bottom: 1em;
+}
+
 
 .carousel-detail {
     position: absolute;

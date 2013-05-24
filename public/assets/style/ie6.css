@@ -14,8 +14,3 @@
 .alert-box a:hover{
     text-decoration: none;
 }
-#time-logo,
-#you-tube,
-#fmp {
-    background-image: url(../img/time_sprite_8bit.png);
-}

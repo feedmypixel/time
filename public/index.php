@@ -9,27 +9,27 @@
 
                 var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
                     actualScreenWidth = parseInt(Math.max(screen.width, screen.height) * pixelRatio, 10),
-                    imageSize,
+                    viewportSize,
                     expiresTime = new Date;
 
                 expiresTime.setDate(expiresTime.getDate() + 1000);
 
                 switch (true) {
                     case actualScreenWidth <= 800:
-                        imageSize = 'small';
+                        viewportSize = 'small';
                         break;
                     case actualScreenWidth > 800 && actualScreenWidth <= 1200:
-                        imageSize = 'medium';
+                        viewportSize = 'medium';
                         break;
                     case actualScreenWidth > 1200:
-                        imageSize = 'large';
+                        viewportSize = 'large';
                         break;
                     default:
-                        imageSize = 'small';
+                        viewportSize = 'small';
                         break;
                 }
 
-                doc.cookie = 'imagesize=' + imageSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
+                doc.cookie = 'viewportsize=' + viewportSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
            // }
 
         }(window, document));
@@ -96,11 +96,10 @@
             <div id="carousel">
                 <noscript>
                     <?php
+                        /* display list of images and text when JS is off */
                         require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/carouselNoScript.inc.php' );
                     ?>
                 </noscript>
-
-
             </div>
         </div>
 

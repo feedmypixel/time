@@ -32,7 +32,6 @@
     }());
 
     var DEVICE_PIXEL_RATIO = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : 1,
-        TIME_LOGO_IMAGE = 'assets/img/time_title.png',
         CLOCK_CANVAS_ID = 'clock',
         STATIC_CLOCK_BACKGROUND_IMG = 'assets/img/static_clock.png',
         STATIC_CLOCK_BACKGROUND_IMG_PNG8 = 'assets/img/static_clock_8bit.png',
@@ -53,6 +52,7 @@
             minutes: 0,
             hours: 0
         },
+        config = time.config,
         utils = {
             negateNumber: function (number) {
                 return (Math.abs(parseInt(number, 10)) * -1);
@@ -165,7 +165,7 @@
             imageScaledWidth = imageScaledHeight * 0.8525641,
             devicePixelRatioWidthDivideByTwo = (canvasDetail.devicePixelRatio.width / 2);
 
-        logoImage.src = TIME_LOGO_IMAGE;
+        logoImage.src = config.app.clock.timeTitleImage;
 
         ctx.save();
         ctx.rotate(Math.PI / 2);

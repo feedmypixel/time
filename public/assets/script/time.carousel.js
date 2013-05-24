@@ -23,29 +23,43 @@
         this.pictureDetail = pictureDetail;
         this.currentPictureIndex = 0;
         this.offset = 0;
+        this.loadedImages = [];
         this.htmlTemplates = {
             pictureMarkup: function (detail) {
 
-                var html = [
-                    '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, ' ', detail.klassName, '">',
-                        '<div class="img-wrapper group">',
-                            '<h2 class="img-title">', detail.title, '</h2>',
-                            carousel.generateLoadingSpinner(),
-                            '<h3 class="img-illustrator"><em> ', BY_TEXT, ' ', detail.illustrator, '</em></h3>',
-                        '</div>'
-                ].join('');
+                var pictureTitle = detail.title ? [
+                        '<h2 class="img-title">', detail.title, '</h2>'
+                    ].join('') : '',
 
-                //if (detail.extract.title) {
+                    pictureIllustrator = detail.illustrator ? [
+                        '<h3 class="img-illustrator"><em> ', BY_TEXT, ' ', detail.illustrator, '</em></h3>'
+                    ].join('') : '',
 
-                    html += [
-                        '<div class="extract group">',
-                            '<div class="extract-title big-text"><h2>', detail.extract.title, '</h2><h3 class="highlight mini-text">',  BY_TEXT, ' ', detail.extract.writer, '</h3></div>',
-                            '<p class="extract-blurb medium-text">', detail.extract.blurb, '</p>',
-                        '</div>'
+                    extractTitle = detail.extract.title ? [
+                        '<h2>', detail.extract.title, '</h2>'
+                    ].join('') : '',
+
+                    extractWriter = detail.extract.writer ? [
+                        '<h3 class="highlight mini-text">',  BY_TEXT, ' ', detail.extract.writer, '</h3>'
+                    ].join('') : '',
+
+                    extractBlurb = detail.extract.blurb ? [
+                        '<div class="extract-blurb medium-text">', detail.extract.blurb, '</div>'
+                    ].join('') : '',
+
+                    html = [
+                        '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, ' ', detail.klassName, '">',
+                            '<div class="img-wrapper group">',
+                                pictureTitle,
+                                carousel.generateLoadingSpinner(),
+                                pictureIllustrator,
+                            '</div>',
+                            '<div class="extract group">',
+                            '<div class="extract-title big-text">', extractTitle, extractWriter, '</div>',
+                                extractBlurb,
+                            '</div>',
+                        '</li>'
                     ].join('');
-                //}
-
-                html += '</li>';
 
                 return html;
             }
@@ -61,7 +75,6 @@
             this.createCarouselHtml();
             this.setUpCarouselProperties();
             this.calculatePriorityImages();
-            this.loadPriorityImages();
             this.addEvents();
         },
 
@@ -149,14 +162,11 @@
 
 
         /**
-         * get amount of images
-         * get screen width * density
-         * work out halfway point of images
-         * calculate how many images are to be on screen
-         * load images on screen straight away, load others after page loaded
-         * small screen don't load until page loaded
+         * Starting with the middle image walk forward and backwards along the carousel images getting a pair of
+         * image widths each time.
+         * @param imageIndex
+         * @returns {number}
          */
-
         getPeripheralImageWidths: function (imageIndex) {
 
             var totalWidths = 0,
@@ -175,7 +185,9 @@
                     }
                 };
 
+            //walk forwards
             totalWidths += j.getOuterSize(this.pictureElems[imageWalk.forward.call(this, imageIndex)].elem)[1];
+            //walk backwards
             totalWidths += j.getOuterSize(this.pictureElems[imageWalk.backward.call(this, imageIndex)].elem)[1];
 
             return totalWidths;
@@ -187,14 +199,21 @@
 
             this.middleImage = Math.round(this.pictureItemCount / 2) - 1;
             this.screenWidth = parseInt(utils.getCookie('screenwidth'), 10);
-            this.priorityImages.push(this.middleImage);
+            this.viewportSize = utils.getCookie('viewportsize');
 
-            var totalImageWidth = j.getOuterSize(this.pictureElems[this.middleImage].elem)[1];
+            /** small viewport only load carousel images on window load event**/
+            if (this.screenWidth && this.viewportSize && 'small' !==  this.viewportSize) {
+                this.priorityImages.push(this.middleImage);
 
+                //middle image
+                var totalImageWidth = j.getOuterSize(this.pictureElems[this.middleImage].elem)[1];
 
-            for (var i = 1; totalImageWidth < this.screenWidth; i++) {
+                for (var i = 1; totalImageWidth < this.screenWidth; i++) {
 
-                totalImageWidth += this.getPeripheralImageWidths(i);
+                    totalImageWidth += this.getPeripheralImageWidths(i);
+                }
+
+                this.loadPriorityImages();
             }
         },
 
@@ -221,13 +240,24 @@
             while ((image = this.imageQueue[i++])) {
                 if (!image.loaded) {
                     image.imgObj.src = image.imgSrc;
+                    image.loaded = true;
                 }
             }
         },
 
-        //TODO refactor
         manageLoadedImages: function (itr) {
-            this.centerCarousel();
+
+            this.loadedImages.push(itr);
+
+            // only load when all priority images have loaded or all images have loaded
+            if (this.loadedImages.length === this.priorityImages.length || this.loadedImages.length === this.pictureItemCount) {
+                this.centerCarousel();
+
+                //reset loadedImages array
+                if (this.loadedImages.length === this.pictureItemCount) {
+                    this.loadedImages = [];
+                }
+            }
         },
 
         centerCarousel: function () {

@@ -1,4 +1,5 @@
 <?php
+
 $artists = array(
     (object) array('name' => 'Rahima Fitzwilliam Hall', 'uri' => ''),
     (object) array('name' => 'Tom Harris', 'uri' => 'journal/tom-harris-five-things'),
@@ -30,14 +31,14 @@ $artists = array(
     (object) array('name' => 'Jeannie Paske', 'uri' => 'journal/jeannie-paskes-five-things'),
     (object) array('name' => 'Mat Lloyd', 'uri' => 'journal/mat-lloyds-five-things'),
     (object) array('name' => 'James Kamo', 'uri' => 'furryrocks'),
-    (object) array('name' => 'Musa Okwonga', 'uri' => ''),
+    (object) array('name' => 'Musa Okwonga', 'uri' => 'http://www.okwonga.com/'),
     (object) array('name' => 'Jake Ellis', 'uri' => 'jake_ellis'),
     (object) array('name' => 'Hannah Stephenson', 'uri' => 'journal/hannah-stephensons-five-things'),
     (object) array('name' => 'Zophiel Webb', 'uri' => 'journal/zophiel-webbs-five-things'),
     (object) array('name' => 'Adam Green', 'uri' => 'journal/adam-greens-five-things'),
     (object) array('name' => 'Paula Afonso', 'uri' => 'polinafonso'),
     (object) array('name' => 'Francis K Wolfe', 'uri' => 'franceskwolfe'),
-    (object) array('name' => 'Diego Mallo', 'uri' => ''),
+    (object) array('name' => 'Diego Mallo', 'uri' => 'http://www.diegomallo.com/'),
     (object) array('name' => 'Vincent J Prince', 'uri' => 'journal/vincent-j-princes-five-things'),
     (object) array('name' => 'Matt Black', 'uri' => 'journal/matt-blacks-five-things'),
     (object) array('name' => 'Rupert J. Munck', 'uri' => 'rupertjmunck'),
@@ -63,13 +64,15 @@ $html = '<div class="center-positioned full-width">
 
 foreach ($artists as $artist) {
 
+    $artistUri = 'http' === substr($artist->uri, 0, 4) ? $artist->uri : 'http://www.lazygramophone.com/' . $artist->uri;
+
     $className = strtolower(str_replace(' ', '-', $artist->name));
 
     $style = 'background-position: ' . ($horizontal === 0 ? $horizontal : '-' . $horizontal . 'px') .' '
                                      . ($vertical === 0 ? $vertical : '-' . $vertical . 'px');
 
     $html .= '<li>
-                  <a href="http://www.lazygramophone.com/' . $artist->uri . '" target="_blank">
+                  <a href="' . $artistUri . '" target="_blank">
                       <span style="' . $style . '"></span>
                       <h4 class="highlight artist-name">' . $artist->name . '</h4>
                   </a>
