@@ -1,4 +1,6 @@
-time.utils = (function (win, doc, time) {
+time.utils = (function (win, doc, j, time) {
+
+    var userHasScrolled = false;
 
     function buildCarousel() {
         var carouselContainer = doc.getElementById('carousel'),
@@ -26,6 +28,15 @@ time.utils = (function (win, doc, time) {
     function initApplication() {
         buildClock();
         buildCarousel();
+        addEvents();
+    }
+
+    function addEvents() {
+        var htmlElem = doc.getElementsByTagName('html')[0];
+
+        j.attachListener(htmlElem, 'touchmove', function () {
+            userHasScrolled = true;
+        });
     }
 
     // Cookie functions from http://www.quirksmode.org/js/cookies.html
@@ -78,11 +89,23 @@ time.utils = (function (win, doc, time) {
         };
     }
 
+    function hideAddressBar() {
+        setTimeout(function () {
+            win.scrollTo(0, 1);
+        }, 1000);
+	}
+
+    function hasUserScrolled() {
+        return userHasScrolled;
+    }
+
     return {
         initApp: initWhenReady,
         isTouchAvailable: isTouchAvailable,
         getCookie: getCookie,
-        debounce: debounce
+        debounce: debounce,
+        hideAddressBar: hideAddressBar,
+        hasUserScrolled: hasUserScrolled
     };
 
-}(window, document, time));
+}(window, document, jessie, time));

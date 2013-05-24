@@ -246,15 +246,7 @@
     }
 
     .artists li {
-        min-width: 12em;
+        min-width: 10em;
     }
 
-}
-
-
-/* 1280px/16px = 80em */
-@media all and (min-width: 80em) {
-/*    body {
-        color: purple;
-    }*/
 }

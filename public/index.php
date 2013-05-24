@@ -143,11 +143,6 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
             </div>
         </div>
 
-        <!--TODO look into this some more is it really working well? -->
-        <div id="preload-images">
-            <img src="assets/img/time_title.png" width="1" height="1" alt="" />
-        </div>
-
         <script type="text/javascript" src="assets/script/jessie.js"></script>
         <script type="text/javascript" src="assets/script/time.js"></script>
         <script type="text/javascript" src="assets/script/time.config.js"></script>

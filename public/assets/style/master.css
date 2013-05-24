@@ -316,12 +316,13 @@ h1 {
     left: 0;
     top: 0;
     -webkit-transition: left 500ms ease-in-out;
-    -moz-transition: left 500ms ease-in-out;
-    -o-transition: left 500ms ease-in-out;
-    -moz-transform: translate3d( 0, 0, 0 );
+       -moz-transition: left 500ms ease-in-out;
+         -o-transition: left 500ms ease-in-out;
+            transition: left 500ms ease-in-out;
+/*    -moz-transform: translate3d( 0, 0, 0 );
     -webkit-transform: translate3d( 0, 0, 0 );
     -o-transform: translate3d( 0, 0, 0 );
-    transform: translate3d( 0, 0, 0 );
+    transform: translate3d( 0, 0, 0 );*/
 }
 
 .carousel-wrap li {
@@ -329,13 +330,13 @@ h1 {
     display: table-cell;
     vertical-align: top;
     -webkit-transition: opacity 400ms ease-in-out;
-    -moz-transition: opacity 400ms ease-in-out;
-    -o-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
-    -moz-transform: translate3d( 0, 0, 0 );
+       -moz-transition: opacity 400ms ease-in-out;
+         -o-transition: opacity 400ms ease-in-out;
+            transition: opacity 400ms ease-in-out;
+/*    -moz-transform: translate3d( 0, 0, 0 );
     -webkit-transform: translate3d( 0, 0, 0 );
     -o-transform: translate3d( 0, 0, 0 );
-    transform: translate3d( 0, 0, 0 );
+    transform: translate3d( 0, 0, 0 );*/
 }
 
 .carousel-wrap li.hidden {
@@ -446,7 +447,7 @@ h1 {
 .artists li {
     text-align: left;
     padding-left: .4em;
-    min-width: 10em;
+    min-width: 9em;
 }
 
 .artists .separator {
@@ -601,14 +602,4 @@ h1 {
 .static-clock-wrapper img {
     width: 100%;
     height: auto;
-}
-
-
-
-
-
-/**TODO is this needed?*/
-/** preload images **/
-#preload-images {
-    display: none;
 }

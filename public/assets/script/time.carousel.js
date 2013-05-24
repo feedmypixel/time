@@ -25,7 +25,7 @@
         this.offset = 0;
         this.loadedImages = [];
         this.htmlTemplates = {
-            pictureMarkup: function (detail) {
+            pictureMarkup: function (detail, itr) {
 
                 var pictureTitle = detail.title ? [
                         '<h2 class="img-title">', detail.title, '</h2>'
@@ -48,7 +48,7 @@
                     ].join('') : '',
 
                     html = [
-                        '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, ' ', detail.klassName, '">',
+                        '<li class="', CLASS_LOADING, ' ', CLASS_HIDDEN, ' ', detail.klassName, ' picture-', itr, '">',
                             '<div class="img-wrapper group">',
                                 pictureTitle,
                                 carousel.generateLoadingSpinner(),
@@ -84,15 +84,14 @@
             j.attachWindowListener('resize',
                 utils.debounce(function () {
                     carousel.buildCarousel();
-                    //TODO refactor
                     carousel.loadImageQueue();
                 }, 10, false));
         },
 
         setUpCarouselProperties: function () {
-            this.pictureContainer = j.query('.carousel-detail', this.container)[0];
-            this.pictureIndicator = j.query('.picture-indicator', this.container)[0];
-            this.carouselWrapper = j.query('.carousel-wrap', this.container)[0];
+            this.pictureContainer = j.getDescendantsByClassName(this.container, 'carousel-detail')[0];
+            this.pictureIndicator = j.getDescendantsByClassName(this.container, 'picture-indicator')[0];
+            this.carouselWrapper = j.getDescendantsByClassName(this.container, 'carousel-wrap')[0];
 
             var pictureElements = Array.prototype.slice.call(this.pictureContainer.childNodes);
 
@@ -119,15 +118,14 @@
         setupCarouselImages: function (detail, i) {
 
             var image = new Image(),
-                itr = ++i, //nth-of-type uses 1 for the first occurrence of element
                 imgSource;
 
             image.onload = function () {
 
                 this.alt = detail.title;
 
-                var listElem = j.query('.carousel-detail li:nth-of-type(' + itr + ')', carousel.pictureContainer)[0],
-                    imgWrap = j.query('.img-wrapper', listElem)[0],
+                var listElem = j.getDescendantsByClassName(carousel.pictureContainer, 'picture-' + i)[0],
+                    imgWrap = j.getDescendantsByClassName(listElem, 'img-wrapper')[0],
                     throbber = j.getDescendantsByClassName(imgWrap, 'throbber')[0];
 
                 if (throbber) {
@@ -135,11 +133,12 @@
                     j.removeClass(listElem, CLASS_LOADING);
                 }
 
-                carousel.manageLoadedImages(itr);
+                carousel.manageLoadedImages(i);
             };
 
             image.onerror = function () {
-                var listElem = j.query('.carousel-detail li:nth-of-type(' + itr + ')', carousel.pictureContainer)[0],
+
+                var listElem = j.getDescendantsByClassName(carousel.pictureContainer, 'picture-' + i)[0],
                     errorElem = doc.createElement('div'),
                     errorTextElem = doc.createTextNode(LOADING_ERROR);
 
@@ -155,7 +154,7 @@
             this.imageQueue.push({
                 imgObj: image,
                 imgSrc: imgSource,
-                imgIndex: itr,
+                imgIndex: i,
                 loaded: false
             });
         },
@@ -256,6 +255,10 @@
                 //reset loadedImages array
                 if (this.loadedImages.length === this.pictureItemCount) {
                     this.loadedImages = [];
+
+                    if (!utils.hasUserScrolled()) {
+                        utils.hideAddressBar();
+                    }
                 }
             }
         },
@@ -281,7 +284,7 @@
             ].join('');
 
             j.forEach(this.pictureDetail, function (pictureDetail, i) {
-                html += carousel.htmlTemplates.pictureMarkup(pictureDetail);
+                html += carousel.htmlTemplates.pictureMarkup(pictureDetail, i);
 
                 carousel.setupCarouselImages(pictureDetail, i);
             });
@@ -315,8 +318,8 @@
 
         addEvents: function () {
 
-            var pictureIndicator = j.query('.picture-indicator')[0];
-            this.carouselButtons = j.query('.carousel-button');
+            var pictureIndicator = j.getDescendantsByClassName(this.container, 'picture-indicator')[0];
+            this.carouselButtons = j.getDescendantsByClassName(this.container, 'carousel-button');
 
             j.forEach(this.carouselButtons, function (button) {
                 j.attachListener(button, 'click', function (e) {
@@ -506,8 +509,8 @@
 
         setPictureIndicator: function () {
 
-            var previouslyFocused = j.query('.' + ACTIVE_PICTURE, this.pictureIndicator)[0],
-                focused = j.query('.picture-' + this.currentPictureIndex, this.pictureIndicator)[0];
+            var previouslyFocused = j.getDescendantsByClassName(this.pictureIndicator, ACTIVE_PICTURE)[0],
+                focused = j.getDescendantsByClassName(this.pictureIndicator, 'picture-' + this.currentPictureIndex)[0];
 
             j.removeClass(previouslyFocused, ACTIVE_PICTURE);
             j.addClass(focused, ACTIVE_PICTURE);
