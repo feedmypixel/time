@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
   __                  _                   ___  _              _
  / _|  ___   ___   __| |  /\/\   _   _   / _ \(_)__  __  ___ | |
@@ -8,9 +9,6 @@
 
 Currently beta, mail bugs(at)feedmypixel(dot)com
 !-->
-
-
-<!DOCTYPE html>
 <html>
 <head>
     <script>
