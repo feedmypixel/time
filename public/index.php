@@ -8,6 +8,11 @@
                                  |___/
 
 Currently beta, mail bugs(at)feedmypixel(dot)com
+
+Good in latest Chrome, firefox, safari, Opera, IE 10, 9, Android 2.3 - 4.1, OSX 4, 5, 6
+Works in IE 8 but needs presentation work,
+Need to do work on IE 7 & 6
+
 !-->
 <html>
 <head>

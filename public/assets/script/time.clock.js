@@ -81,7 +81,7 @@
             buildClock();
         } else {
             //drop in an image for non html5 capable browsers
-            var image = new Image();
+            var image = doc.createElement('img');
             image.src = utils.isIE6() ? STATIC_CLOCK_BACKGROUND_IMG_PNG8 : STATIC_CLOCK_BACKGROUND_IMG;
 
             image.onload = function () {
