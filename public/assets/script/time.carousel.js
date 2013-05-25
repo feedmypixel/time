@@ -89,19 +89,22 @@
         },
 
         setUpCarouselProperties: function () {
+
+            this.pictureElems = [];
             this.pictureContainer = j.getDescendantsByClassName(this.container, 'carousel-detail')[0];
             this.pictureIndicator = j.getDescendantsByClassName(this.container, 'picture-indicator')[0];
             this.carouselWrapper = j.getDescendantsByClassName(this.container, 'carousel-wrap')[0];
 
-            var pictureElements = Array.prototype.slice.call(this.pictureContainer.childNodes);
+            var pictureElements = j.toArray(this.pictureContainer.childNodes);
 
-            // preserve the index of the pictures
-            this.pictureElems = pictureElements.map(function (picture, i) {
-                return {
+           // preserve the index of the pictures
+            for (var i =0; i < pictureElements.length; i++) {
+
+                this.pictureElems.push({
                     index: i,
-                    elem: picture
-                };
-            });
+                    elem: pictureElements[i]
+                });
+            }
 
             this.pictureItemCount = this.pictureElems.length;
             this.lastPictureItem = this.pictureItemCount - 1;
@@ -117,7 +120,8 @@
 
         setupCarouselImages: function (detail, i) {
 
-            var image = new Image(),
+            //TODO change this back to create a new image object once chrome has fixed their issue
+            var image = doc.createElement('img'),
                 imgSource;
 
             image.onload = function () {
@@ -145,6 +149,7 @@
                 errorElem.className = CLASS_ERROR;
                 errorElem.appendChild(errorTextElem);
 
+                j.toggleClass(listElem, CLASS_HIDDEN);
                 listElem.replaceChild(errorElem, listElem.firstChild);
                 j.removeClass(listElem, CLASS_LOADING);
             };
@@ -161,8 +166,8 @@
 
 
         /**
-         * Starting with the middle image walk forward and backwards along the carousel images getting a pair of
-         * image widths each time.
+         * Starting with the middle image walk forward and backwards along the carousel images going outwards
+         * toward the edges of the page getting a pair of image widths each time.
          * @param imageIndex
          * @returns {number}
          */
@@ -202,6 +207,8 @@
 
             /** small viewport only load carousel images on window load event**/
             if (this.screenWidth && this.viewportSize && 'small' !==  this.viewportSize) {
+
+                //add middle image
                 this.priorityImages.push(this.middleImage);
 
                 //middle image
@@ -216,7 +223,7 @@
             }
         },
 
-        //TODO refactor
+
         loadPriorityImages: function () {
 
             var imageIndex,
@@ -225,12 +232,11 @@
 
             while ((imageIndex = this.priorityImages[i++])) {
                 imgDetail = this.imageQueue[imageIndex];
-                imgDetail.imgObj.src = imgDetail.imgSrc;
-                imgDetail.loaded = true;
+                this.applyImageSrcValue(imgDetail);
             }
         },
 
-        //TODO refactor
+
         loadImageQueue: function () {
 
             var image,
@@ -238,24 +244,28 @@
 
             while ((image = this.imageQueue[i++])) {
                 if (!image.loaded) {
-                    image.imgObj.src = image.imgSrc;
-                    image.loaded = true;
+                    this.applyImageSrcValue(image);
                 }
             }
+        },
+
+        applyImageSrcValue: function (imgDetail) {
+            imgDetail.imgObj.src = imgDetail.imgSrc;
+            imgDetail.loaded = true;
         },
 
         manageLoadedImages: function (itr) {
 
             this.loadedImages.push(itr);
 
-            // only load when all priority images have loaded or all images have loaded
+            // only load when all priority images have loaded or when all images have loaded
             if (this.loadedImages.length === this.priorityImages.length || this.loadedImages.length === this.pictureItemCount) {
                 this.centerCarousel();
 
-                //reset loadedImages array
+                //reset loadedImages array when all images have loaded
                 if (this.loadedImages.length === this.pictureItemCount) {
                     this.loadedImages = [];
-
+                } else if (this.loadedImages.length === this.priorityImages.length) {
                     if (!utils.hasUserScrolled()) {
                         utils.hideAddressBar();
                     }
@@ -553,7 +563,7 @@
 
         centerImageInViewPort: function () {
 
-            this.carouselViewPortWidth = parseInt(j.getStyleComputed(this.carouselWrapper, 'width'), 10);
+            this.carouselViewPortWidth = j.getOuterSize(this.carouselWrapper)[1];
             this.currentPictureWidth = j.getOuterSize(this.pictureElems[this.currentPictureIndex].elem)[1];
 
             return (this.carouselViewPortWidth - this.currentPictureWidth) / 2;

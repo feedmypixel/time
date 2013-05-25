@@ -340,7 +340,7 @@ h1 {
 }
 
 .carousel-wrap li.hidden {
-    opacity: 0.05;
+    opacity: 0.03;
 }
 
 .loading .throbber {

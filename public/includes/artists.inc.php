@@ -1,7 +1,7 @@
 <?php
 
 $artists = array(
-    (object) array('name' => 'Rahima Fitzwilliam Hall', 'uri' => ''),
+    (object) array('name' => 'Rahima Fitzwilliam Hall', 'uri' => 'himihall'),
     (object) array('name' => 'Tom Harris', 'uri' => 'journal/tom-harris-five-things'),
     (object) array('name' => 'Sam Rawlings', 'uri' => 'samrawlings'),
     (object) array('name' => 'Carl Laurence', 'uri' => 'journal/carl-laurences-five-things'),
@@ -36,7 +36,7 @@ $artists = array(
     (object) array('name' => 'Hannah Stephenson', 'uri' => 'journal/hannah-stephensons-five-things'),
     (object) array('name' => 'Zophiel Webb', 'uri' => 'journal/zophiel-webbs-five-things'),
     (object) array('name' => 'Adam Green', 'uri' => 'journal/adam-greens-five-things'),
-    (object) array('name' => 'Paula Afonso', 'uri' => 'polinafonso'),
+    (object) array('name' => 'Paula Afonso', 'uri' => ''),
     (object) array('name' => 'Francis K Wolfe', 'uri' => 'franceskwolfe'),
     (object) array('name' => 'Diego Mallo', 'uri' => 'http://www.diegomallo.com/'),
     (object) array('name' => 'Vincent J Prince', 'uri' => 'journal/vincent-j-princes-five-things'),

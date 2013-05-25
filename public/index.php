@@ -1,37 +1,43 @@
+<!--
+  __                  _                   ___  _              _
+ / _|  ___   ___   __| |  /\/\   _   _   / _ \(_)__  __  ___ | |
+| |_  / _ \ / _ \ / _` | /    \ | | | | / /_)/| |\ \/ / / _ \| |
+|  _||  __/|  __/| (_| |/ /\/\ \| |_| |/ ___/ | | >  < |  __/| |
+|_|   \___| \___| \__,_|\/    \/ \__, |\/     |_|/_/\_\ \___||_| 2013
+                                 |___/
+
+Currently beta, mail bugs(at)feedmypixel(dot)com
+!-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <script>
         (function (win, doc) {
-            //set image size to be used
-            //TODO potentially leave this so its always set
-            //if (doc.cookie.indexOf('imagesize') === -1) {
+            var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
+                actualScreenWidth = parseInt(Math.max(screen.width, screen.height) * pixelRatio, 10),
+                viewportSize,
+                expiresTime = new Date;
 
-                var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
-                    actualScreenWidth = parseInt(Math.max(screen.width, screen.height) * pixelRatio, 10),
-                    viewportSize,
-                    expiresTime = new Date;
+            expiresTime.setDate(expiresTime.getDate() + 1000);
 
-                expiresTime.setDate(expiresTime.getDate() + 1000);
+            switch (true) {
+                case actualScreenWidth <= 800:
+                    viewportSize = 'small';
+                    break;
+                case actualScreenWidth > 800 && actualScreenWidth <= 1200:
+                    viewportSize = 'medium';
+                    break;
+                case actualScreenWidth > 1200:
+                    viewportSize = 'large';
+                    break;
+                default:
+                    viewportSize = 'small';
+                    break;
+            }
 
-                switch (true) {
-                    case actualScreenWidth <= 800:
-                        viewportSize = 'small';
-                        break;
-                    case actualScreenWidth > 800 && actualScreenWidth <= 1200:
-                        viewportSize = 'medium';
-                        break;
-                    case actualScreenWidth > 1200:
-                        viewportSize = 'large';
-                        break;
-                    default:
-                        viewportSize = 'small';
-                        break;
-                }
-
-                doc.cookie = 'viewportsize=' + viewportSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
-           // }
-
+            doc.cookie = 'viewportsize=' + viewportSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
         }(window, document));
     </script>
 <?php
@@ -39,12 +45,16 @@
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/headerIcons.inc.php' );
 ?>
 
-<link href="assets/style/reset.css" rel="stylesheet"/>
-<link href="assets/style/master.css" rel="stylesheet"/>
-<link href="assets/style/mediaQuery.css" rel="stylesheet"/>
+    <link href="assets/style/time.min.css" rel="stylesheet"/>
+
+    <!--
+    <link href="assets/style/reset.css" rel="stylesheet"/>
+    <link href="assets/style/master.css" rel="stylesheet"/>
+    <link href="assets/style/mediaQuery.css" rel="stylesheet"/>
+    -->
 
 <!--[if lte IE 6]>
-<link href="assets/style/ie6.css" rel="stylesheet"/>
+    <link href="assets/style/ie6.css" rel="stylesheet"/>
 <![endif]-->
 
 <title>Time. - A collaborative project from Lazy Gramophone | Arts Collective & Independent Publisher</title>
@@ -81,10 +91,6 @@
                 <div class="separator"></div>
                 <div class="third-width">
                     <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Fabric Magazine</h2></a></p>
-                </div>
-                <div class="separator"></div>
-                <div class="third-width">
-                    <p class="gutter-right medium-text light-text">&quot;In a time when publishers are taking fewer and fewer risks on unknown writers, Lazy Gramophone are to be applauded for giving their collective a chance to shine.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Litro Magazine</h2></a></p>
                 </div>
                 <div class="separator"></div>
             </div>
@@ -130,7 +136,7 @@
                     </li>
                 </ul>
                 <div class="mini-text copyright" role="contentinfo">
-                    <p>&#169; All content copyright <a href="http://www.lazygramophone.com" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">www.lazygramophone.com</a> &amp; respective artists
+                    <p>&#169; All content copyright <a href="http://www.lazygramophone.com" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">www.lazygramophone.com</a> &amp; respective artists
 <?php
 
 ini_set('date.timezone', 'Europe/London');
@@ -143,12 +149,18 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
             </div>
         </div>
 
+        <script type="text/javascript" src="assets/script/time.min.js"></script>
+
+
+<!--
         <script type="text/javascript" src="assets/script/jessie.js"></script>
         <script type="text/javascript" src="assets/script/time.js"></script>
         <script type="text/javascript" src="assets/script/time.config.js"></script>
         <script type="text/javascript" src="assets/script/time.utils.js"></script>
         <script type="text/javascript" src="assets/script/time.clock.js"></script>
-        <script type="text/javascript" src="assets/script/time.carousel.js"></script>
+        <script type="text/javascript" src="assets/script/time.carousel.js"></script>-->
+
+
         <script type="text/javascript">
             time.utils.initApp();
         </script>

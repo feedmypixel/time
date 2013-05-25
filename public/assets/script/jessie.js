@@ -22,7 +22,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 /*
 Return URI:
-http://127.0.0.1:1337/?attachListener=3&hasClass=3&addClass=3&removeClass=3&getStyleComputed=1&toggleClass=1&getDescendantsByClassName=2&cancelDefault=3&forEach=2&delegateTagNameListener=1&getOuterSize=1&query=1&attachWindowListener=3&getDescendantsByTagName=1&delegateListener=1&getElementTagName=1&getElementParentElement=3&toArray=2&getEventTarget=1&setHtml=1
+http://127.0.0.1:1337/?attachListener=3&hasClass=3&addClass=3&removeClass=3&toggleClass=1&getDescendantsByClassName=2&cancelDefault=3&forEach=2&delegateTagNameListener=1&getOuterSize=1&query=1&attachWindowListener=3&getDescendantsByTagName=1&delegateListener=1&getElementTagName=1&getElementParentElement=3&toArray=1&getEventTarget=2&setHtml=1
 */
 
 var jessie;
@@ -58,27 +58,34 @@ jessie = jessie || {};
 
 /*
 Description:
-Relies on W3C `e.target`
+For both W3C `e.target` and MS `e.srcElement`
+*/
+
+/*
+See: <a href="https://groups.google.com/forum/#!starred/comp.lang.javascript/uUsSVH7Vcvg">Article</a>
+If you will be using a forked rendition to support IE 8-
 */
 
 /*
 Degrades:
-IE8, IE7, IE6, IE5.5, IE5, IE4, IE3, Opera 7.6
+IE4, IE3, NN4
 */
 
 var getEventTarget;
 
-if(html && isHostMethod(html, 'addEventListener')) {
-	getEventTarget = function(e) {
-		var target = e.target;
+getEventTarget = function(e) {
+	var target = e.target;
+	if (target) {
 		// Check if not an element (e.g. a text node)
 		if (1 != target.nodeType) {
 			// Set reference to parent node (which must be an element)
 			target = target.parentNode;
 		}
-		return target;
-	};
-}
+	} else {
+		target = e.srcElement;
+	}
+	return target;
+};
 
 
 
@@ -146,19 +153,17 @@ else if(html && isHostMethod(html, 'attachEvent')) {
 
 /*
 Description:
-Relies on `Array.prototype.slice`
 */
 
 var toArray;
 
-if (canCall && Array.prototype.slice) {
-	try {
-		Array.prototype.slice.call(arguments, 0);
-		toArray = function(a) {
-			return Array.prototype.slice.call(a, 0);
-		};
-	} catch(e) {}
-}
+toArray = function(a) {
+	var result = [];
+	for (var i = 0, l = a.length; i < l; i++) {
+		result[i] = a[i];
+	}
+	return result;
+};
 
 
 
@@ -600,35 +605,6 @@ if (hasClass && addClass && removeClass) {
 }
 
 
-
-/*
-Description:
-Relies on `document.defaultView.getComputedStyle` which degrades in IE8-
-and compatibility modes. No float styles with this one and camel-case
-names.
-*/
-
-/*
-Degrades:
-IE8, IE7, IE6, IE5.5, IE5, IE4, IE3
-*/
-
-/*
-Author:
-David Mark
-*/
-
-var getStyleComputed;
-
-if (isHostObjectProperty(globalDocument, 'defaultView') &&
-	isHostMethod(globalDocument.defaultView, 'getComputedStyle')) {
-	getStyleComputed = function(el, style) {
-		
-		return document.defaultView.getComputedStyle(el, null)[style];
-	};
-}
-
-
 jessie.isHostMethod = isHostMethod;
 jessie.isHostObjectProperty = isHostObjectProperty;
 jessie.areFeatures = areFeatures;
@@ -651,7 +627,6 @@ jessie.forEach = forEach;
 jessie.cancelDefault = cancelDefault;
 jessie.getDescendantsByClassName = getDescendantsByClassName;
 jessie.toggleClass = toggleClass;
-jessie.getStyleComputed = getStyleComputed;
 
 	globalDocument = html = null;
 

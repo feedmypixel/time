@@ -63,7 +63,11 @@
             isIE6: function () {
                 return (/msie\s6/.test(win.navigator.userAgent.toLowerCase()));
             }
-        };
+        },
+        logoImage = doc.createElement('img');
+        //TODO change this back to create a new image object once chrome has fixed their issue
+
+    logoImage.src = config.app.clock.timeTitleImage;
 
     function init() {
 
@@ -160,19 +164,15 @@
     }
 
     function drawTimeLogo() {
-        var logoImage = new Image(),
-            imageScaledHeight = (canvasDetail.devicePixelRatio.width / 1.36752137),
+        var imageScaledHeight = (canvasDetail.devicePixelRatio.width / 1.36752137),
             imageScaledWidth = imageScaledHeight * 0.8525641,
             devicePixelRatioWidthDivideByTwo = (canvasDetail.devicePixelRatio.width / 2);
 
-        logoImage.src = config.app.clock.timeTitleImage;
-
-        ctx.save();
-        ctx.rotate(Math.PI / 2);
-        ctx.translate((devicePixelRatioWidthDivideByTwo - imageScaledWidth), -devicePixelRatioWidthDivideByTwo);
-        ctx.drawImage(logoImage, 0, 0, imageScaledWidth, imageScaledHeight);
-        ctx.restore();
-
+            ctx.save();
+            ctx.rotate(Math.PI / 2);
+            ctx.translate((devicePixelRatioWidthDivideByTwo - imageScaledWidth), -devicePixelRatioWidthDivideByTwo);
+            ctx.drawImage(logoImage, 0, 0, imageScaledWidth, imageScaledHeight);
+            ctx.restore();
     }
 
     function calcTime() {
