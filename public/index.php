@@ -19,7 +19,7 @@ Need to do work on IE 7 & 6
     <script>
         (function (win, doc) {
             var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
-                actualScreenWidth = parseInt(Math.max(screen.width, screen.height) * pixelRatio, 10),
+                actualScreenWidth = parseInt(Math.max(doc.documentElement.clientWidth, doc.documentElement.clientHeight) * pixelRatio, 10),
                 viewportSize,
                 expiresTime = new Date;
 
