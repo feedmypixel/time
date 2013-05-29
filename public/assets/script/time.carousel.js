@@ -388,9 +388,9 @@
                 deltaY = this.startYpos - touchDetail.pageY;
 
             //stop the screen from scrolling up/down if they have only moved up/down by a certain amount
-/*            if (Math.abs(deltaX) > 15 || Math.abs(deltaY) < 5) {
+            if (Math.abs(deltaX) > 15 || Math.abs(deltaY) < 5) {
                 e.preventDefault();
-            }*/
+            }
         },
 
         handleTouchEnd: function (e) {
