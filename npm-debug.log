@@ -1,0 +1,724 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-cssmin',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.2.21
+3 info using node@v0.10.7
+4 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/package.json
+5 warn package.json time@0.1.0 No repository field.
+6 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt/package.json
+7 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-concat/package.json
+8 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-uglify/package.json
+9 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/package.json
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'grunt-contrib-cssmin', null ]
+12 verbose cache add name=undefined spec="grunt-contrib-cssmin" args=["grunt-contrib-cssmin",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'grunt-contrib-cssmin',
+13 verbose parsed url   path: 'grunt-contrib-cssmin',
+13 verbose parsed url   href: 'grunt-contrib-cssmin' }
+14 silly lockFile 82d3c5ce-grunt-contrib-cssmin grunt-contrib-cssmin
+15 verbose lock grunt-contrib-cssmin /home/feedmypixel/.npm/82d3c5ce-grunt-contrib-cssmin.lock
+16 silly lockFile 82d3c5ce-grunt-contrib-cssmin grunt-contrib-cssmin
+17 silly lockFile 82d3c5ce-grunt-contrib-cssmin grunt-contrib-cssmin
+18 verbose addNamed [ 'grunt-contrib-cssmin', '' ]
+19 verbose addNamed [ null, '' ]
+20 silly lockFile b94ab2cf-grunt-contrib-cssmin grunt-contrib-cssmin@
+21 verbose lock grunt-contrib-cssmin@ /home/feedmypixel/.npm/b94ab2cf-grunt-contrib-cssmin.lock
+22 silly addNameRange { name: 'grunt-contrib-cssmin', range: '', hasData: false }
+23 verbose url raw grunt-contrib-cssmin
+24 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-cssmin' ]
+25 verbose url resolved https://registry.npmjs.org/grunt-contrib-cssmin
+26 info trying registry request attempt 1 at 08:12:40
+27 http GET https://registry.npmjs.org/grunt-contrib-cssmin
+28 http 200 https://registry.npmjs.org/grunt-contrib-cssmin
+29 silly registry.get cb [ 200,
+29 silly registry.get   { vary: 'Accept',
+29 silly registry.get     server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+29 silly registry.get     etag: '"72GEN8XQ41WJAOY4JMI18IB8T"',
+29 silly registry.get     date: 'Sat, 25 May 2013 07:12:40 GMT',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'content-length': '27131' } ]
+30 silly addNameRange number 2 { name: 'grunt-contrib-cssmin', range: '', hasData: true }
+31 silly addNameRange versions [ 'grunt-contrib-cssmin',
+31 silly addNameRange   [ '0.4.0', '0.4.1', '0.4.2', '0.5.0', '0.6.0' ] ]
+32 verbose addNamed [ 'grunt-contrib-cssmin', '0.6.0' ]
+33 verbose addNamed [ '0.6.0', '0.6.0' ]
+34 silly lockFile bfd1eaa3-grunt-contrib-cssmin-0-6-0 grunt-contrib-cssmin@0.6.0
+35 verbose lock grunt-contrib-cssmin@0.6.0 /home/feedmypixel/.npm/bfd1eaa3-grunt-contrib-cssmin-0-6-0.lock
+36 silly lockFile 91a0f58a-n-grunt-contrib-cssmin-0-6-0-tgz https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz
+37 verbose lock https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz /home/feedmypixel/.npm/91a0f58a-n-grunt-contrib-cssmin-0-6-0-tgz.lock
+38 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz',
+38 verbose addRemoteTarball   'f250e81906a235e608aa59d5365eab6c57e8524b' ]
+39 info retry fetch attempt 1 at 08:12:42
+40 verbose fetch to= /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/tmp.tgz
+41 http GET https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz
+42 http 200 https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz
+43 verbose tar unpack /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/tmp.tgz
+44 silly lockFile c1be2370-2255-0-30397795769385993-package /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+45 verbose lock /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package /home/feedmypixel/.npm/c1be2370-2255-0-30397795769385993-package.lock
+46 silly lockFile d988c6e3-2255-0-30397795769385993-tmp-tgz /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/tmp.tgz
+47 verbose lock /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/tmp.tgz /home/feedmypixel/.npm/d988c6e3-2255-0-30397795769385993-tmp-tgz.lock
+48 silly gunzTarPerm modes [ '755', '644' ]
+49 silly gunzTarPerm extractEntry package.json
+50 silly gunzTarPerm extractEntry .npmignore
+51 silly gunzTarPerm extractEntry README.md
+52 silly gunzTarPerm extractEntry Gruntfile.js
+53 silly gunzTarPerm extractEntry CHANGELOG
+54 silly gunzTarPerm extractEntry CONTRIBUTING.md
+55 silly gunzTarPerm extractEntry .jshintrc
+56 silly gunzTarPerm extractEntry LICENSE-MIT
+57 silly gunzTarPerm extractEntry .travis.yml
+58 silly gunzTarPerm extractEntry docs/cssmin-examples.md
+59 silly gunzTarPerm extractEntry docs/cssmin-options.md
+60 silly gunzTarPerm extractEntry docs/cssmin-overview.md
+61 silly gunzTarPerm extractEntry docs/overview.md
+62 silly gunzTarPerm extractEntry AUTHORS
+63 silly gunzTarPerm extractEntry tasks/cssmin.js
+64 silly gunzTarPerm extractEntry test/cssmin_test.js
+65 silly gunzTarPerm extractEntry test/expected/input_bannered.css
+66 silly gunzTarPerm extractEntry test/expected/style.css
+67 silly gunzTarPerm extractEntry test/expected/with-banner.css
+68 silly gunzTarPerm extractEntry test/fixtures/input_bannered.css
+69 silly gunzTarPerm extractEntry test/fixtures/input_one.css
+70 silly gunzTarPerm extractEntry test/fixtures/input_two.css
+71 verbose read json /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package/package.json
+72 silly lockFile c1be2370-2255-0-30397795769385993-package /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+73 silly lockFile c1be2370-2255-0-30397795769385993-package /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+74 silly lockFile d988c6e3-2255-0-30397795769385993-tmp-tgz /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/tmp.tgz
+75 silly lockFile d988c6e3-2255-0-30397795769385993-tmp-tgz /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/tmp.tgz
+76 verbose from cache /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package/package.json
+77 verbose tar pack [ '/home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz',
+77 verbose tar pack   '/home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package' ]
+78 verbose tarball /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+79 verbose folder /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+80 silly lockFile c1be2370-2255-0-30397795769385993-package /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+81 verbose lock /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package /home/feedmypixel/.npm/c1be2370-2255-0-30397795769385993-package.lock
+82 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+83 verbose lock /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz /home/feedmypixel/.npm/0c53cdf1-contrib-cssmin-0-6-0-package-tgz.lock
+84 silly lockFile c1be2370-2255-0-30397795769385993-package /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+85 silly lockFile c1be2370-2255-0-30397795769385993-package /home/feedmypixel/tmp/npm-14418/1369465962255-0.30397795769385993/package
+86 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+87 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+88 silly lockFile a163fc12-unt-contrib-cssmin-0-6-0-package /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package
+89 verbose lock /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package /home/feedmypixel/.npm/a163fc12-unt-contrib-cssmin-0-6-0-package.lock
+90 silly lockFile a163fc12-unt-contrib-cssmin-0-6-0-package /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package
+91 silly lockFile a163fc12-unt-contrib-cssmin-0-6-0-package /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package
+92 verbose tar unpack /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+93 silly lockFile a163fc12-unt-contrib-cssmin-0-6-0-package /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package
+94 verbose lock /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package /home/feedmypixel/.npm/a163fc12-unt-contrib-cssmin-0-6-0-package.lock
+95 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+96 verbose lock /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz /home/feedmypixel/.npm/0c53cdf1-contrib-cssmin-0-6-0-package-tgz.lock
+97 silly gunzTarPerm modes [ '755', '644' ]
+98 silly gunzTarPerm extractEntry package.json
+99 silly gunzTarPerm extractEntry .npmignore
+100 silly gunzTarPerm extractEntry README.md
+101 silly gunzTarPerm extractEntry Gruntfile.js
+102 silly gunzTarPerm extractEntry CHANGELOG
+103 silly gunzTarPerm extractEntry CONTRIBUTING.md
+104 silly gunzTarPerm extractEntry .jshintrc
+105 silly gunzTarPerm extractEntry LICENSE-MIT
+106 silly gunzTarPerm extractEntry .travis.yml
+107 silly gunzTarPerm extractEntry docs/cssmin-examples.md
+108 silly gunzTarPerm extractEntry docs/cssmin-options.md
+109 silly gunzTarPerm extractEntry docs/cssmin-overview.md
+110 silly gunzTarPerm extractEntry docs/overview.md
+111 silly gunzTarPerm extractEntry AUTHORS
+112 silly gunzTarPerm extractEntry tasks/cssmin.js
+113 silly gunzTarPerm extractEntry test/cssmin_test.js
+114 silly gunzTarPerm extractEntry test/expected/input_bannered.css
+115 silly gunzTarPerm extractEntry test/expected/style.css
+116 silly gunzTarPerm extractEntry test/expected/with-banner.css
+117 silly gunzTarPerm extractEntry test/fixtures/input_bannered.css
+118 silly gunzTarPerm extractEntry test/fixtures/input_one.css
+119 silly gunzTarPerm extractEntry test/fixtures/input_two.css
+120 verbose read json /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package/package.json
+121 silly lockFile a163fc12-unt-contrib-cssmin-0-6-0-package /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package
+122 silly lockFile a163fc12-unt-contrib-cssmin-0-6-0-package /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package
+123 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+124 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+125 verbose from cache /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package/package.json
+126 verbose chmod /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz 644
+127 verbose chown /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz [ 1000, 1000 ]
+128 silly lockFile 91a0f58a-n-grunt-contrib-cssmin-0-6-0-tgz https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz
+129 silly lockFile 91a0f58a-n-grunt-contrib-cssmin-0-6-0-tgz https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz
+130 silly lockFile bfd1eaa3-grunt-contrib-cssmin-0-6-0 grunt-contrib-cssmin@0.6.0
+131 silly lockFile bfd1eaa3-grunt-contrib-cssmin-0-6-0 grunt-contrib-cssmin@0.6.0
+132 silly lockFile b94ab2cf-grunt-contrib-cssmin grunt-contrib-cssmin@
+133 silly lockFile b94ab2cf-grunt-contrib-cssmin grunt-contrib-cssmin@
+134 silly resolved [ { name: 'grunt-contrib-cssmin',
+134 silly resolved     description: 'Compress CSS files.',
+134 silly resolved     version: '0.6.0',
+134 silly resolved     homepage: 'https://github.com/gruntjs/grunt-contrib-cssmin',
+134 silly resolved     author: { name: 'Grunt Team', url: 'http://gruntjs.com/' },
+134 silly resolved     repository:
+134 silly resolved      { type: 'git',
+134 silly resolved        url: 'git://github.com/gruntjs/grunt-contrib-cssmin.git' },
+134 silly resolved     bugs: { url: 'https://github.com/gruntjs/grunt-contrib-cssmin/issues' },
+134 silly resolved     licenses: [ [Object] ],
+134 silly resolved     main: 'Gruntfile.js',
+134 silly resolved     engines: { node: '>= 0.8.0' },
+134 silly resolved     scripts: { test: 'grunt test' },
+134 silly resolved     dependencies: { 'clean-css': '~1.0.0', 'grunt-lib-contrib': '~0.6.0' },
+134 silly resolved     devDependencies:
+134 silly resolved      { 'grunt-contrib-jshint': '~0.2.0',
+134 silly resolved        'grunt-contrib-nodeunit': '~0.1.2',
+134 silly resolved        'grunt-contrib-clean': '~0.4.0',
+134 silly resolved        'grunt-contrib-internal': '~0.4.2',
+134 silly resolved        grunt: '~0.4.0' },
+134 silly resolved     peerDependencies: { grunt: '~0.4.0' },
+134 silly resolved     keywords: [ 'gruntplugin' ],
+134 silly resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+134 silly resolved     readme: '# grunt-contrib-cssmin [![Build Status](https://secure.travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](http://travis-ci.org/gruntjs/grunt-contrib-cssmin)\n\n> Compress CSS files.\n\n\n\n## Getting Started\nThis plugin requires Grunt `~0.4.0`\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-contrib-cssmin --save-dev\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks(\'grunt-contrib-cssmin\');\n```\n\n*This plugin was designed to work with Grunt 0.4.x. If you\'re still using grunt v0.3.x it\'s strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can\'t please use [v0.3.2](https://github.com/gruntjs/grunt-contrib-cssmin/tree/grunt-0.3-stable).*\n\n\n\n## Cssmin task\n_Run this task with the `grunt cssmin` command._\n\nTask targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.\n\nFiles are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).\n### Options\n\n#### banner\n\nType: `String`\nDefault: `null`\n\nPrefix the compressed source with the given banner, with a linebreak inbetween.\n\n#### keepSpecialComments\n\nType: `String` `Number`\nDefault: `\'*\'`\n\nTo keep or remove special comments, exposing the underlying option from [clean-css](https://github.com/GoalSmashers/clean-css).. `\'*\'` for keeping all (default), `1` for keeping first one, `0` for removing all.\n\n#### report\nChoices: `false`, `\'min\'`, `\'gzip\'`\nDefault: `false`\n\nEither do not report anything, report only minification result, or report minification and gzip results.\nThis is useful to see exactly how well clean-css is performing but using `\'gzip\'` will make the task take 5-10x longer to complete.\n\nExample ouput using `\'gzip\'`:\n\n```\nOriginal: 198444 bytes.\nMinified: 101615 bytes.\nGzipped:  20084 bytes.\n```\n### Usage Examples\n\n```js\ncssmin: {\n  compress: {\n    files: {\n      \'path/to/output.css\': [\'path/to/input_one.css\', \'path/to/input_two.css\']\n    }\n  },\n  with_banner: {\n    options: {\n      banner: \'/* My minified css file */\'\n    },\n    files: {\n      \'path/to/output.css\': [\'path/to/**/*.css\']\n    }\n  }\n}\n```\n\n\n## Release History\n\n * 2013-04-05   v0.6.0   Update clean-css dependency to ~1.0.0\n * 2013-03-14   v0.5.0   Support for \'report\' option (false by default)\n * 2013-03-10   v0.4.2   Add banner option Support clean-css keepSpecialComments\n * 2013-02-17   v0.4.1   Update clean-css dependency to ~0.10.0\n * 2013-02-15   v0.4.0   First official release for Grunt 0.4.0.\n * 2013-01-23   v0.4.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.\n * 2013-01-09   v0.4.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.files api.\n * 2012-11-01   v0.3.2   Update clean-css dep.\n * 2012-10-12   v0.3.1   Rename grunt-contrib-lib dep to grunt-lib-contrib.\n * 2012-09-23   v0.3.0   Options no longer accepted from global config key.\n * 2012-09-10   v0.2.0   Refactored from grunt-contrib into individual repo.\n\n---\n\nTask submitted by [Tim Branyen](http://goingslowly.com/)\n\n*This file was generated on Fri Apr 05 2013 09:03:50.*\n',
+134 silly resolved     readmeFilename: 'README.md',
+134 silly resolved     _id: 'grunt-contrib-cssmin@0.6.0',
+134 silly resolved     dist: { shasum: '29c4ab122e67176a7d4c308a5675d971b08aa5e1' },
+134 silly resolved     _from: 'grunt-contrib-cssmin@',
+134 silly resolved     _resolved: 'https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.6.0.tgz' } ]
+135 info install grunt-contrib-cssmin@0.6.0 into /mnt/hgfs/feedmypixel/Sites/fmp/public/time
+136 info installOne grunt-contrib-cssmin@0.6.0
+137 verbose from cache /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package/package.json
+138 info /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin unbuild
+139 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/package.json
+140 verbose tar unpack /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+141 silly lockFile 0ae6bb5a-ode-modules-grunt-contrib-cssmin /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin
+142 verbose lock /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin /home/feedmypixel/.npm/0ae6bb5a-ode-modules-grunt-contrib-cssmin.lock
+143 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+144 verbose lock /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz /home/feedmypixel/.npm/0c53cdf1-contrib-cssmin-0-6-0-package-tgz.lock
+145 silly gunzTarPerm modes [ '755', '644' ]
+146 silly gunzTarPerm extractEntry package.json
+147 silly gunzTarPerm extractEntry .npmignore
+148 silly gunzTarPerm extractEntry README.md
+149 silly gunzTarPerm extractEntry Gruntfile.js
+150 silly gunzTarPerm extractEntry CHANGELOG
+151 silly gunzTarPerm extractEntry CONTRIBUTING.md
+152 silly gunzTarPerm extractEntry .jshintrc
+153 silly gunzTarPerm extractEntry LICENSE-MIT
+154 silly gunzTarPerm extractEntry .travis.yml
+155 silly gunzTarPerm extractEntry docs/cssmin-examples.md
+156 silly gunzTarPerm extractEntry docs/cssmin-options.md
+157 silly gunzTarPerm extractEntry docs/cssmin-overview.md
+158 silly gunzTarPerm extractEntry docs/overview.md
+159 silly gunzTarPerm extractEntry AUTHORS
+160 silly gunzTarPerm extractEntry tasks/cssmin.js
+161 silly gunzTarPerm extractEntry test/cssmin_test.js
+162 silly gunzTarPerm extractEntry test/expected/input_bannered.css
+163 silly gunzTarPerm extractEntry test/expected/style.css
+164 silly gunzTarPerm extractEntry test/expected/with-banner.css
+165 silly gunzTarPerm extractEntry test/fixtures/input_bannered.css
+166 silly gunzTarPerm extractEntry test/fixtures/input_one.css
+167 silly gunzTarPerm extractEntry test/fixtures/input_two.css
+168 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/package.json
+169 silly lockFile 0ae6bb5a-ode-modules-grunt-contrib-cssmin /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin
+170 silly lockFile 0ae6bb5a-ode-modules-grunt-contrib-cssmin /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin
+171 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+172 silly lockFile 0c53cdf1-contrib-cssmin-0-6-0-package-tgz /home/feedmypixel/.npm/grunt-contrib-cssmin/0.6.0/package.tgz
+173 info preinstall grunt-contrib-cssmin@0.6.0
+174 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/package.json
+175 verbose readDependencies using package.json deps
+176 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/package.json
+177 verbose readDependencies using package.json deps
+178 verbose cache add [ 'clean-css@~1.0.0', null ]
+179 verbose cache add name=undefined spec="clean-css@~1.0.0" args=["clean-css@~1.0.0",null]
+180 verbose parsed url { protocol: null,
+180 verbose parsed url   slashes: null,
+180 verbose parsed url   auth: null,
+180 verbose parsed url   host: null,
+180 verbose parsed url   port: null,
+180 verbose parsed url   hostname: null,
+180 verbose parsed url   hash: null,
+180 verbose parsed url   search: null,
+180 verbose parsed url   query: null,
+180 verbose parsed url   pathname: 'clean-css@~1.0.0',
+180 verbose parsed url   path: 'clean-css@~1.0.0',
+180 verbose parsed url   href: 'clean-css@~1.0.0' }
+181 verbose cache add name="clean-css" spec="~1.0.0" args=["clean-css","~1.0.0"]
+182 verbose parsed url { protocol: null,
+182 verbose parsed url   slashes: null,
+182 verbose parsed url   auth: null,
+182 verbose parsed url   host: null,
+182 verbose parsed url   port: null,
+182 verbose parsed url   hostname: null,
+182 verbose parsed url   hash: null,
+182 verbose parsed url   search: null,
+182 verbose parsed url   query: null,
+182 verbose parsed url   pathname: '~1.0.0',
+182 verbose parsed url   path: '~1.0.0',
+182 verbose parsed url   href: '~1.0.0' }
+183 verbose addNamed [ 'clean-css', '~1.0.0' ]
+184 verbose addNamed [ null, '>=1.0.0- <1.1.0-' ]
+185 silly lockFile d998c3b6-clean-css-1-0-0 clean-css@~1.0.0
+186 verbose lock clean-css@~1.0.0 /home/feedmypixel/.npm/d998c3b6-clean-css-1-0-0.lock
+187 verbose cache add [ 'grunt-lib-contrib@~0.6.0', null ]
+188 verbose cache add name=undefined spec="grunt-lib-contrib@~0.6.0" args=["grunt-lib-contrib@~0.6.0",null]
+189 verbose parsed url { protocol: null,
+189 verbose parsed url   slashes: null,
+189 verbose parsed url   auth: null,
+189 verbose parsed url   host: null,
+189 verbose parsed url   port: null,
+189 verbose parsed url   hostname: null,
+189 verbose parsed url   hash: null,
+189 verbose parsed url   search: null,
+189 verbose parsed url   query: null,
+189 verbose parsed url   pathname: 'grunt-lib-contrib@~0.6.0',
+189 verbose parsed url   path: 'grunt-lib-contrib@~0.6.0',
+189 verbose parsed url   href: 'grunt-lib-contrib@~0.6.0' }
+190 verbose cache add name="grunt-lib-contrib" spec="~0.6.0" args=["grunt-lib-contrib","~0.6.0"]
+191 verbose parsed url { protocol: null,
+191 verbose parsed url   slashes: null,
+191 verbose parsed url   auth: null,
+191 verbose parsed url   host: null,
+191 verbose parsed url   port: null,
+191 verbose parsed url   hostname: null,
+191 verbose parsed url   hash: null,
+191 verbose parsed url   search: null,
+191 verbose parsed url   query: null,
+191 verbose parsed url   pathname: '~0.6.0',
+191 verbose parsed url   path: '~0.6.0',
+191 verbose parsed url   href: '~0.6.0' }
+192 verbose addNamed [ 'grunt-lib-contrib', '~0.6.0' ]
+193 verbose addNamed [ null, '>=0.6.0- <0.7.0-' ]
+194 silly lockFile 572493f7-grunt-lib-contrib-0-6-0 grunt-lib-contrib@~0.6.0
+195 verbose lock grunt-lib-contrib@~0.6.0 /home/feedmypixel/.npm/572493f7-grunt-lib-contrib-0-6-0.lock
+196 silly addNameRange { name: 'clean-css', range: '>=1.0.0- <1.1.0-', hasData: false }
+197 silly addNameRange { name: 'grunt-lib-contrib',
+197 silly addNameRange   range: '>=0.6.0- <0.7.0-',
+197 silly addNameRange   hasData: false }
+198 verbose url raw clean-css
+199 verbose url resolving [ 'https://registry.npmjs.org/', './clean-css' ]
+200 verbose url resolved https://registry.npmjs.org/clean-css
+201 info trying registry request attempt 1 at 08:12:43
+202 http GET https://registry.npmjs.org/clean-css
+203 verbose url raw grunt-lib-contrib
+204 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-lib-contrib' ]
+205 verbose url resolved https://registry.npmjs.org/grunt-lib-contrib
+206 info trying registry request attempt 1 at 08:12:43
+207 verbose etag "93SMCQ3P9YJ240BSTK50693ZJ"
+208 http GET https://registry.npmjs.org/grunt-lib-contrib
+209 http 304 https://registry.npmjs.org/grunt-lib-contrib
+210 silly registry.get cb [ 304,
+210 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+210 silly registry.get     etag: '"93SMCQ3P9YJ240BSTK50693ZJ"',
+210 silly registry.get     date: 'Sat, 25 May 2013 07:12:43 GMT',
+210 silly registry.get     'content-length': '0' } ]
+211 verbose etag grunt-lib-contrib from cache
+212 silly addNameRange number 2 { name: 'grunt-lib-contrib',
+212 silly addNameRange   range: '>=0.6.0- <0.7.0-',
+212 silly addNameRange   hasData: true }
+213 silly addNameRange versions [ 'grunt-lib-contrib',
+213 silly addNameRange   [ '0.3.0',
+213 silly addNameRange     '0.3.1',
+213 silly addNameRange     '0.4.0',
+213 silly addNameRange     '0.5.1',
+213 silly addNameRange     '0.5.2',
+213 silly addNameRange     '0.5.3',
+213 silly addNameRange     '0.6.0',
+213 silly addNameRange     '0.6.1' ] ]
+214 verbose addNamed [ 'grunt-lib-contrib', '0.6.1' ]
+215 verbose addNamed [ '0.6.1', '0.6.1' ]
+216 silly lockFile 0ef65a81-grunt-lib-contrib-0-6-1 grunt-lib-contrib@0.6.1
+217 verbose lock grunt-lib-contrib@0.6.1 /home/feedmypixel/.npm/0ef65a81-grunt-lib-contrib-0-6-1.lock
+218 verbose read json /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package/package.json
+219 silly lockFile 0ef65a81-grunt-lib-contrib-0-6-1 grunt-lib-contrib@0.6.1
+220 silly lockFile 0ef65a81-grunt-lib-contrib-0-6-1 grunt-lib-contrib@0.6.1
+221 silly lockFile 572493f7-grunt-lib-contrib-0-6-0 grunt-lib-contrib@~0.6.0
+222 silly lockFile 572493f7-grunt-lib-contrib-0-6-0 grunt-lib-contrib@~0.6.0
+223 http 200 https://registry.npmjs.org/clean-css
+224 silly registry.get cb [ 200,
+224 silly registry.get   { vary: 'Accept',
+224 silly registry.get     server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+224 silly registry.get     etag: '"23S484K0VAMGX1R548TVSNARA"',
+224 silly registry.get     date: 'Sat, 25 May 2013 07:12:43 GMT',
+224 silly registry.get     'content-type': 'application/json',
+224 silly registry.get     'content-length': '93524' } ]
+225 silly addNameRange number 2 { name: 'clean-css', range: '>=1.0.0- <1.1.0-', hasData: true }
+226 silly addNameRange versions [ 'clean-css',
+226 silly addNameRange   [ '0.1.0',
+226 silly addNameRange     '0.2.0',
+226 silly addNameRange     '0.2.1',
+226 silly addNameRange     '0.2.2',
+226 silly addNameRange     '0.2.3',
+226 silly addNameRange     '0.2.4',
+226 silly addNameRange     '0.2.5',
+226 silly addNameRange     '0.2.6',
+226 silly addNameRange     '0.3.0',
+226 silly addNameRange     '0.3.1',
+226 silly addNameRange     '0.3.2',
+226 silly addNameRange     '0.3.3',
+226 silly addNameRange     '0.4.0',
+226 silly addNameRange     '0.4.1',
+226 silly addNameRange     '0.4.2',
+226 silly addNameRange     '0.5.0',
+226 silly addNameRange     '0.6.0',
+226 silly addNameRange     '0.7.0',
+226 silly addNameRange     '0.8.0',
+226 silly addNameRange     '0.8.1',
+226 silly addNameRange     '0.8.2',
+226 silly addNameRange     '0.8.3',
+226 silly addNameRange     '0.9.0',
+226 silly addNameRange     '0.9.1',
+226 silly addNameRange     '0.10.0',
+226 silly addNameRange     '0.10.1',
+226 silly addNameRange     '0.10.2',
+226 silly addNameRange     '1.0.0',
+226 silly addNameRange     '1.0.1',
+226 silly addNameRange     '1.0.2',
+226 silly addNameRange     '1.0.3',
+226 silly addNameRange     '1.0.4' ] ]
+227 verbose addNamed [ 'clean-css', '1.0.4' ]
+228 verbose addNamed [ '1.0.4', '1.0.4' ]
+229 silly lockFile 40862ecd-clean-css-1-0-4 clean-css@1.0.4
+230 verbose lock clean-css@1.0.4 /home/feedmypixel/.npm/40862ecd-clean-css-1-0-4.lock
+231 silly lockFile bad6d5c6-rg-clean-css-clean-css-1-0-4-tgz https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz
+232 verbose lock https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz /home/feedmypixel/.npm/bad6d5c6-rg-clean-css-clean-css-1-0-4-tgz.lock
+233 verbose addRemoteTarball [ 'https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz',
+233 verbose addRemoteTarball   '75534686f99b9e91ebd999dc246844c6ffdd7c2d' ]
+234 info retry fetch attempt 1 at 08:12:45
+235 verbose fetch to= /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/tmp.tgz
+236 http GET https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz
+237 http 200 https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz
+238 verbose tar unpack /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/tmp.tgz
+239 silly lockFile ee9e2093-65646-0-2576878222171217-package /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+240 verbose lock /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package /home/feedmypixel/.npm/ee9e2093-65646-0-2576878222171217-package.lock
+241 silly lockFile e9cfaef7-65646-0-2576878222171217-tmp-tgz /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/tmp.tgz
+242 verbose lock /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/tmp.tgz /home/feedmypixel/.npm/e9cfaef7-65646-0-2576878222171217-tmp-tgz.lock
+243 silly gunzTarPerm modes [ '755', '644' ]
+244 silly gunzTarPerm extractEntry package.json
+245 silly gunzTarPerm extractEntry .npmignore
+246 silly gunzTarPerm extractEntry README.md
+247 silly gunzTarPerm extractEntry LICENSE
+248 silly gunzTarPerm extractEntry index.js
+249 silly gunzTarPerm extractEntry bin/cleancss
+250 silly gunzTarPerm extractEntry History.md
+251 silly gunzTarPerm extractEntry lib/clean.js
+252 verbose read json /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package/package.json
+253 silly lockFile ee9e2093-65646-0-2576878222171217-package /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+254 silly lockFile ee9e2093-65646-0-2576878222171217-package /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+255 silly lockFile e9cfaef7-65646-0-2576878222171217-tmp-tgz /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/tmp.tgz
+256 silly lockFile e9cfaef7-65646-0-2576878222171217-tmp-tgz /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/tmp.tgz
+257 verbose from cache /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package/package.json
+258 verbose tar pack [ '/home/feedmypixel/.npm/clean-css/1.0.4/package.tgz',
+258 verbose tar pack   '/home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package' ]
+259 verbose tarball /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+260 verbose folder /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+261 silly lockFile ee9e2093-65646-0-2576878222171217-package /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+262 verbose lock /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package /home/feedmypixel/.npm/ee9e2093-65646-0-2576878222171217-package.lock
+263 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+264 verbose lock /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz /home/feedmypixel/.npm/caf25df7--npm-clean-css-1-0-4-package-tgz.lock
+265 silly lockFile ee9e2093-65646-0-2576878222171217-package /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+266 silly lockFile ee9e2093-65646-0-2576878222171217-package /home/feedmypixel/tmp/npm-14418/1369465965646-0.2576878222171217/package
+267 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+268 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+269 silly lockFile 6342e53d-ixel-npm-clean-css-1-0-4-package /home/feedmypixel/.npm/clean-css/1.0.4/package
+270 verbose lock /home/feedmypixel/.npm/clean-css/1.0.4/package /home/feedmypixel/.npm/6342e53d-ixel-npm-clean-css-1-0-4-package.lock
+271 silly lockFile 6342e53d-ixel-npm-clean-css-1-0-4-package /home/feedmypixel/.npm/clean-css/1.0.4/package
+272 silly lockFile 6342e53d-ixel-npm-clean-css-1-0-4-package /home/feedmypixel/.npm/clean-css/1.0.4/package
+273 verbose tar unpack /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+274 silly lockFile 6342e53d-ixel-npm-clean-css-1-0-4-package /home/feedmypixel/.npm/clean-css/1.0.4/package
+275 verbose lock /home/feedmypixel/.npm/clean-css/1.0.4/package /home/feedmypixel/.npm/6342e53d-ixel-npm-clean-css-1-0-4-package.lock
+276 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+277 verbose lock /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz /home/feedmypixel/.npm/caf25df7--npm-clean-css-1-0-4-package-tgz.lock
+278 silly gunzTarPerm modes [ '755', '644' ]
+279 silly gunzTarPerm extractEntry package.json
+280 silly gunzTarPerm extractEntry .npmignore
+281 silly gunzTarPerm extractEntry README.md
+282 silly gunzTarPerm extractEntry LICENSE
+283 silly gunzTarPerm extractEntry index.js
+284 silly gunzTarPerm extractEntry History.md
+285 silly gunzTarPerm extractEntry bin/cleancss
+286 silly gunzTarPerm extractEntry lib/clean.js
+287 verbose read json /home/feedmypixel/.npm/clean-css/1.0.4/package/package.json
+288 silly lockFile 6342e53d-ixel-npm-clean-css-1-0-4-package /home/feedmypixel/.npm/clean-css/1.0.4/package
+289 silly lockFile 6342e53d-ixel-npm-clean-css-1-0-4-package /home/feedmypixel/.npm/clean-css/1.0.4/package
+290 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+291 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+292 verbose from cache /home/feedmypixel/.npm/clean-css/1.0.4/package/package.json
+293 verbose chmod /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz 644
+294 verbose chown /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz [ 1000, 1000 ]
+295 silly lockFile bad6d5c6-rg-clean-css-clean-css-1-0-4-tgz https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz
+296 silly lockFile bad6d5c6-rg-clean-css-clean-css-1-0-4-tgz https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz
+297 silly lockFile 40862ecd-clean-css-1-0-4 clean-css@1.0.4
+298 silly lockFile 40862ecd-clean-css-1-0-4 clean-css@1.0.4
+299 silly lockFile d998c3b6-clean-css-1-0-0 clean-css@~1.0.0
+300 silly lockFile d998c3b6-clean-css-1-0-0 clean-css@~1.0.0
+301 silly resolved [ { name: 'grunt-lib-contrib',
+301 silly resolved     description: 'Common functionality shared across grunt-contrib tasks.',
+301 silly resolved     version: '0.6.1',
+301 silly resolved     homepage: 'http://github.com/gruntjs/grunt-lib-contrib',
+301 silly resolved     author: { name: 'Grunt Team', url: 'http://gruntjs.com/' },
+301 silly resolved     repository:
+301 silly resolved      { type: 'git',
+301 silly resolved        url: 'git://github.com/gruntjs/grunt-lib-contrib.git' },
+301 silly resolved     bugs: { url: 'https://github.com/gruntjs/grunt-lib-contrib/issues' },
+301 silly resolved     licenses: [ [Object] ],
+301 silly resolved     engines: { node: '>= 0.8.0' },
+301 silly resolved     scripts: { test: 'grunt test' },
+301 silly resolved     devDependencies:
+301 silly resolved      { 'grunt-contrib-jshint': '~0.1.1',
+301 silly resolved        'grunt-contrib-nodeunit': '~0.1.2',
+301 silly resolved        grunt: '~0.4.0' },
+301 silly resolved     main: 'lib/contrib',
+301 silly resolved     dependencies: { 'zlib-browserify': '0.0.1' },
+301 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+301 silly resolved     readme: '# grunt-lib-contrib [![Build Status](https://secure.travis-ci.org/gruntjs/grunt-lib-contrib.png?branch=master)](http://travis-ci.org/gruntjs/grunt-lib-contrib)\n\n> Common functionality shared across grunt-contrib tasks.\n\nThe purpose of grunt-lib-contrib is to explore solutions to common problems task writers encounter, and to ease the upgrade path for contrib tasks.\n\n**These APIs should be considered highly unstable. Depend on them at your own risk!**\n\n_Over time, some of the functionality provided here may be incorporated directly into grunt for mainstream use. Until then, you may require `grunt-lib-contrib` as a dependency in your projects, but be very careful to specify an exact version number instead of a range, as backwards-incompatible changes are likely to be introduced._\n\n### Helper Functions\n\n#### getNamespaceDeclaration(ns)\n\nThis helper is used to build JS namespace declarations.\n\n#### optsToArgs(options)\n\nConvert an object to an array of CLI arguments, which can be used with `child_process.spawn()`.\n\n```js\n// Example\n{\n  fooBar: \'a\',        // [\'--foo-bar\', \'a\']\n  fooBar: 1,          // [\'--foo-bar\', \'1\']\n  fooBar: true,       // [\'--foo-bar\']\n  fooBar: false,      //\n  fooBar: [\'a\', \'b\']  // [\'--foo-bar\', \'a\', \'--foo-bar\', \'b\']\n}\n```\n\n#### stripPath(pth, strip)\n\nStrip a path from a path. normalize both paths for best results.\n\n#### minMaxInfo(min, max, report)\n\nHelper for logging compressed, uncompressed and gzipped sizes of strings.\n\n#### report\nChoices: `false`, `\'min\'`, `\'gzip\'`\nDefault: `false`\n\nEither do not report anything, report only minification result, or report minification and gzip results.\n\n**Important** Including `\'gzip\'` results can make this task 5-10x slower depending on the size of the file.\n\n\n```js\nvar max = grunt.file.read(\'max.js\');\nvar min = minify(max);\nminMaxInfo(min, max, \'gzip\');\n```\n\nWould print:\n\n```\nOriginal: 495 bytes.\nMinified: 396 bytes.\nGzipped: 36 bytes.\n```\n\n--\n\n*Lib submitted by [Tyler Kellen](https://goingslowly.com/).*',
+301 silly resolved     readmeFilename: 'README.md',
+301 silly resolved     _id: 'grunt-lib-contrib@0.6.1',
+301 silly resolved     _from: 'grunt-lib-contrib@~0.6.0' },
+301 silly resolved   { name: 'clean-css',
+301 silly resolved     version: '1.0.4',
+301 silly resolved     author:
+301 silly resolved      { name: 'Jakub Pawlowicz',
+301 silly resolved        email: 'jakub@goalsmashers.com',
+301 silly resolved        url: 'http://twitter.com/GoalSmashers' },
+301 silly resolved     description: 'A well-tested CSS minifier',
+301 silly resolved     keywords: [ 'css', 'minifier' ],
+301 silly resolved     homepage: 'https://github.com/GoalSmashers/clean-css',
+301 silly resolved     repository:
+301 silly resolved      { type: 'git',
+301 silly resolved        url: 'https://github.com/GoalSmashers/clean-css.git' },
+301 silly resolved     bin: { cleancss: './bin/cleancss' },
+301 silly resolved     main: 'index.js',
+301 silly resolved     scripts:
+301 silly resolved      { bench: 'node ./test/bench.js',
+301 silly resolved        check: 'jshint .',
+301 silly resolved        prepublish: 'jshint .',
+301 silly resolved        test: 'vows' },
+301 silly resolved     dependencies: { commander: '1.1.x' },
+301 silly resolved     devDependencies: { vows: '0.7.x', jshint: '1.1.x' },
+301 silly resolved     engines: { node: '>=0.6.0' },
+301 silly resolved     readmeFilename: 'README.md',
+301 silly resolved     license: 'MIT',
+301 silly resolved     readme: '[![NPM version](https://badge.fury.io/js/clean-css.png)](http://badge.fury.io/js/clean-css)\n[![Build Status](https://secure.travis-ci.org/GoalSmashers/clean-css.png)](http://travis-ci.org/GoalSmashers/clean-css)\n[![Dependency Status](https://gemnasium.com/GoalSmashers/clean-css.png)](https://gemnasium.com/GoalSmashers/clean-css)\n\n## What is clean-css?\n\nClean-css is a [node.js](http://nodejs.org/) library for minifying CSS files.\nIt does the same job as YUI Compressor\'s CSS minifier, but much faster thanks\nto many speed optimizations and node.js\' V8 engine.\n\n\n## Usage\n\n### What are the requirements?\n\n```\nnode.js 0.6.0+ on UN*X (fully tested on OS X 10.6+ and CentOS)\nnode.js 0.8.0+ on Windows\n```\n\n### How to install clean-css?\n\n```\nnpm install clean-css\n```\n\n### How to use clean-css CLI?\n\nClean-css accepts the following command line arguments (please make sure\nyou use `<source-file>` as the very last argument to avoid potential issues):\n\n```\ncleancss [options] <source-file>\n\n-h, --help                  Output usage information\n-v, --version               Output the version number\n-e, --remove-empty          Remove empty declarations (e.g. a{})\n-b, --keep-line-breaks      Keep line breaks\n--s0                        Remove all special comments (i.e. /*! special comment */)\n--s1                        Remove all special comments but the first one\n-r, --root [root-path]      Set a root path to which resolve absolute @import rules\n-o, --output [output-file]  Use [output-file] as output instead of STDOUT\n```\n\n#### Examples:\n\nTo minify a **public.css** file into **public-min.css** do:\n\n```\ncleancss -o public-min.css public.css\n```\n\nTo minify the same **public.css** into the standard output skip the `-o` parameter:\n\n```\ncleancss public.css\n```\n\nMore likely you would like to concatenate a couple of files.\nIf you are on a Unix-like system:\n\n```bash\ncat one.css two.css three.css | cleancss -o merged-and-minified.css\n```\n\nOn Windows:\n\n```bat\ntype one.css two.css three.css | cleancss -o merged-and-minified.css\n```\n\nOr even gzip the result at once:\n\n```bash\ncat one.css two.css three.css | cleancss | gzip -9 -c > merged-minified-and-gzipped.css.gz\n```\n\n### How to use clean-css programmatically?\n\n```js\nvar cleanCSS = require(\'clean-css\');\nvar source = "a{font-weight:bold;}";\nvar minimized = cleanCSS.process(source);\n```\n\nProcess method accepts a hash as a second parameter, i.e.,\n`cleanCSS.process(source, options)` with the following options available:\n\n* `keepSpecialComments` - `*` for keeping all (default), `1` for keeping first one, `0` for removing all\n* `keepBreaks` - whether to keep line breaks (default is false)\n* `removeEmpty` - whether to remove empty elements (default is false)\n* `debug` - turns on debug mode measuring time spent on cleaning up\n  (run `npm run bench` to see example)\n* `root` - path with which to resolve absolute @import rules\n* `relativeTo` - path with which to resolve relative @import rules\n\n### What are the clean-css\' dev commands?\n\nFirst clone the source, then run:\n\n* `npm run bench` for clean-css benchmarks (see [test/bench.js](/test/bench.js) for details)\n* `npm run check` to check JS sources with [JSHint](https://github.com/jshint/jshint/)\n* `npm test` for the test suite\n\n### How do you preserve a comment block?\n\nUse the `/*!` notation instead of the standard one `/*`:\n\n```css\n/*!\n  Important comments included in minified output.\n*/\n```\n\n\n## Acknowledgments\n\n* Vincent Voyer ([@vvo](https://github.com/vvo)) for a patch with better\n  empty element regex and for inspiring us to do many performance improvements\n  in 0.4 release.\n* Isaac ([@facelessuser](https://github.com/facelessuser)) for pointing out\n  a flaw in clean-css\' stateless mode.\n* Jan Michael Alonzo ([@jmalonzo](https://github.com/jmalonzo)) for a patch\n  removing node.js\'s old \'sys\' package.\n* [@XhmikosR](https://github.com/XhmikosR) for suggesting new features\n  (option to remove special comments and strip out URLs quotation) and pointing\n  out numerous improvements (JSHint, media queries).\n\n## License\n\nClean-css is released under the [MIT License](/LICENSE).\n',
+301 silly resolved     bugs: { url: 'https://github.com/GoalSmashers/clean-css/issues' },
+301 silly resolved     _id: 'clean-css@1.0.4',
+301 silly resolved     dist: { shasum: 'aecc781caf70b9aa68a8929b52b21392f34ab6b7' },
+301 silly resolved     _from: 'clean-css@~1.0.0',
+301 silly resolved     _resolved: 'https://registry.npmjs.org/clean-css/-/clean-css-1.0.4.tgz' } ]
+302 info install grunt-lib-contrib@0.6.1 into /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin
+303 info install clean-css@1.0.4 into /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin
+304 info installOne grunt-lib-contrib@0.6.1
+305 info installOne clean-css@1.0.4
+306 verbose from cache /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package/package.json
+307 info /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib unbuild
+308 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/package.json
+309 verbose from cache /home/feedmypixel/.npm/clean-css/1.0.4/package/package.json
+310 info /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css unbuild
+311 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css/package.json
+312 verbose tar unpack /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package.tgz
+313 silly lockFile b446d90c-n-node-modules-grunt-lib-contrib /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib
+314 verbose lock /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib /home/feedmypixel/.npm/b446d90c-n-node-modules-grunt-lib-contrib.lock
+315 silly lockFile 364d91ce-nt-lib-contrib-0-6-1-package-tgz /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package.tgz
+316 verbose lock /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package.tgz /home/feedmypixel/.npm/364d91ce-nt-lib-contrib-0-6-1-package-tgz.lock
+317 verbose tar unpack /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+318 silly lockFile 598cb4ab-ib-cssmin-node-modules-clean-css /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css
+319 verbose lock /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css /home/feedmypixel/.npm/598cb4ab-ib-cssmin-node-modules-clean-css.lock
+320 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+321 verbose lock /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz /home/feedmypixel/.npm/caf25df7--npm-clean-css-1-0-4-package-tgz.lock
+322 silly gunzTarPerm modes [ '755', '644' ]
+323 silly gunzTarPerm modes [ '755', '644' ]
+324 silly gunzTarPerm extractEntry package.json
+325 silly gunzTarPerm extractEntry package.json
+326 silly gunzTarPerm extractEntry .npmignore
+327 silly gunzTarPerm extractEntry README.md
+328 silly gunzTarPerm extractEntry .npmignore
+329 silly gunzTarPerm extractEntry README.md
+330 silly gunzTarPerm extractEntry Gruntfile.js
+331 silly gunzTarPerm extractEntry AUTHORS
+332 silly gunzTarPerm extractEntry LICENSE
+333 silly gunzTarPerm extractEntry index.js
+334 silly gunzTarPerm extractEntry CHANGELOG
+335 silly gunzTarPerm extractEntry .jshintrc
+336 silly gunzTarPerm extractEntry History.md
+337 silly gunzTarPerm extractEntry bin/cleancss
+338 silly gunzTarPerm extractEntry lib/clean.js
+339 silly gunzTarPerm extractEntry LICENSE-MIT
+340 silly gunzTarPerm extractEntry .gitattributes
+341 silly gunzTarPerm extractEntry lib/contrib.js
+342 silly gunzTarPerm extractEntry .travis.yml
+343 silly gunzTarPerm extractEntry test/lib_test.js
+344 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/package.json
+345 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css/package.json
+346 silly lockFile b446d90c-n-node-modules-grunt-lib-contrib /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib
+347 silly lockFile b446d90c-n-node-modules-grunt-lib-contrib /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib
+348 silly lockFile 364d91ce-nt-lib-contrib-0-6-1-package-tgz /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package.tgz
+349 silly lockFile 364d91ce-nt-lib-contrib-0-6-1-package-tgz /home/feedmypixel/.npm/grunt-lib-contrib/0.6.1/package.tgz
+350 silly lockFile 598cb4ab-ib-cssmin-node-modules-clean-css /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css
+351 silly lockFile 598cb4ab-ib-cssmin-node-modules-clean-css /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css
+352 info preinstall grunt-lib-contrib@0.6.1
+353 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+354 silly lockFile caf25df7--npm-clean-css-1-0-4-package-tgz /home/feedmypixel/.npm/clean-css/1.0.4/package.tgz
+355 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/package.json
+356 verbose readDependencies using package.json deps
+357 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/package.json
+358 verbose readDependencies using package.json deps
+359 info preinstall clean-css@1.0.4
+360 verbose cache add [ 'zlib-browserify@0.0.1', null ]
+361 verbose cache add name=undefined spec="zlib-browserify@0.0.1" args=["zlib-browserify@0.0.1",null]
+362 verbose parsed url { protocol: null,
+362 verbose parsed url   slashes: null,
+362 verbose parsed url   auth: null,
+362 verbose parsed url   host: null,
+362 verbose parsed url   port: null,
+362 verbose parsed url   hostname: null,
+362 verbose parsed url   hash: null,
+362 verbose parsed url   search: null,
+362 verbose parsed url   query: null,
+362 verbose parsed url   pathname: 'zlib-browserify@0.0.1',
+362 verbose parsed url   path: 'zlib-browserify@0.0.1',
+362 verbose parsed url   href: 'zlib-browserify@0.0.1' }
+363 verbose cache add name="zlib-browserify" spec="0.0.1" args=["zlib-browserify","0.0.1"]
+364 verbose parsed url { protocol: null,
+364 verbose parsed url   slashes: null,
+364 verbose parsed url   auth: null,
+364 verbose parsed url   host: null,
+364 verbose parsed url   port: null,
+364 verbose parsed url   hostname: null,
+364 verbose parsed url   hash: null,
+364 verbose parsed url   search: null,
+364 verbose parsed url   query: null,
+364 verbose parsed url   pathname: '0.0.1',
+364 verbose parsed url   path: '0.0.1',
+364 verbose parsed url   href: '0.0.1' }
+365 verbose addNamed [ 'zlib-browserify', '0.0.1' ]
+366 verbose addNamed [ '0.0.1', '0.0.1' ]
+367 silly lockFile 84e77944-zlib-browserify-0-0-1 zlib-browserify@0.0.1
+368 verbose lock zlib-browserify@0.0.1 /home/feedmypixel/.npm/84e77944-zlib-browserify-0-0-1.lock
+369 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css/package.json
+370 verbose readDependencies using package.json deps
+371 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/clean-css/package.json
+372 verbose readDependencies using package.json deps
+373 verbose url raw zlib-browserify/0.0.1
+374 verbose url resolving [ 'https://registry.npmjs.org/', './zlib-browserify/0.0.1' ]
+375 verbose url resolved https://registry.npmjs.org/zlib-browserify/0.0.1
+376 info trying registry request attempt 1 at 08:12:46
+377 verbose etag "BEXXRYROH2PKIK1GXB4B42SHB"
+378 http GET https://registry.npmjs.org/zlib-browserify/0.0.1
+379 verbose cache add [ 'commander@1.1.x', null ]
+380 verbose cache add name=undefined spec="commander@1.1.x" args=["commander@1.1.x",null]
+381 verbose parsed url { protocol: null,
+381 verbose parsed url   slashes: null,
+381 verbose parsed url   auth: null,
+381 verbose parsed url   host: null,
+381 verbose parsed url   port: null,
+381 verbose parsed url   hostname: null,
+381 verbose parsed url   hash: null,
+381 verbose parsed url   search: null,
+381 verbose parsed url   query: null,
+381 verbose parsed url   pathname: 'commander@1.1.x',
+381 verbose parsed url   path: 'commander@1.1.x',
+381 verbose parsed url   href: 'commander@1.1.x' }
+382 verbose cache add name="commander" spec="1.1.x" args=["commander","1.1.x"]
+383 verbose parsed url { protocol: null,
+383 verbose parsed url   slashes: null,
+383 verbose parsed url   auth: null,
+383 verbose parsed url   host: null,
+383 verbose parsed url   port: null,
+383 verbose parsed url   hostname: null,
+383 verbose parsed url   hash: null,
+383 verbose parsed url   search: null,
+383 verbose parsed url   query: null,
+383 verbose parsed url   pathname: '1.1.x',
+383 verbose parsed url   path: '1.1.x',
+383 verbose parsed url   href: '1.1.x' }
+384 verbose addNamed [ 'commander', '1.1.x' ]
+385 verbose addNamed [ null, '>=1.1.0- <1.2.0-' ]
+386 silly lockFile 2ddf9fd4-commander-1-1-x commander@1.1.x
+387 verbose lock commander@1.1.x /home/feedmypixel/.npm/2ddf9fd4-commander-1-1-x.lock
+388 silly addNameRange { name: 'commander', range: '>=1.1.0- <1.2.0-', hasData: false }
+389 verbose url raw commander
+390 verbose url resolving [ 'https://registry.npmjs.org/', './commander' ]
+391 verbose url resolved https://registry.npmjs.org/commander
+392 info trying registry request attempt 1 at 08:12:46
+393 http GET https://registry.npmjs.org/commander
+394 http 304 https://registry.npmjs.org/zlib-browserify/0.0.1
+395 silly registry.get cb [ 304,
+395 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+395 silly registry.get     etag: '"BEXXRYROH2PKIK1GXB4B42SHB"',
+395 silly registry.get     date: 'Sat, 25 May 2013 07:12:46 GMT',
+395 silly registry.get     'content-length': '0' } ]
+396 verbose etag zlib-browserify/0.0.1 from cache
+397 verbose read json /home/feedmypixel/.npm/zlib-browserify/0.0.1/package/package.json
+398 silly lockFile 84e77944-zlib-browserify-0-0-1 zlib-browserify@0.0.1
+399 silly lockFile 84e77944-zlib-browserify-0-0-1 zlib-browserify@0.0.1
+400 silly resolved [ { name: 'zlib-browserify',
+400 silly resolved     version: '0.0.1',
+400 silly resolved     description: 'Wrapper for zlib.js to allow for browserifyication',
+400 silly resolved     main: 'index.js',
+400 silly resolved     directories: { test: 'test' },
+400 silly resolved     dependencies: {},
+400 silly resolved     devDependencies: { tap: '~0.3.3' },
+400 silly resolved     scripts: { test: './node_modules/tap test/*.test.js' },
+400 silly resolved     repository:
+400 silly resolved      { type: 'git',
+400 silly resolved        url: 'git://github.com/brianloveswords/zlib-browserify.git' },
+400 silly resolved     keywords: [ 'zlib', 'browserify' ],
+400 silly resolved     author: { name: 'Brian J. Brennan' },
+400 silly resolved     license: 'MIT',
+400 silly resolved     gitHead: '4be9419f0e8e9dec9629c8a538b33a4efd7df17b',
+400 silly resolved     readmeFilename: 'readme.md',
+400 silly resolved     readme: 'Zlib in yo\' browser.\n',
+400 silly resolved     bugs: { url: 'https://github.com/brianloveswords/zlib-browserify/issues' },
+400 silly resolved     _id: 'zlib-browserify@0.0.1',
+400 silly resolved     _from: 'zlib-browserify@0.0.1' } ]
+401 info install zlib-browserify@0.0.1 into /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib
+402 info installOne zlib-browserify@0.0.1
+403 verbose from cache /home/feedmypixel/.npm/zlib-browserify/0.0.1/package/package.json
+404 info /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify unbuild
+405 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/package.json
+406 verbose tar unpack /home/feedmypixel/.npm/zlib-browserify/0.0.1/package.tgz
+407 silly lockFile 686113cf-rib-node-modules-zlib-browserify /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify
+408 verbose lock /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify /home/feedmypixel/.npm/686113cf-rib-node-modules-zlib-browserify.lock
+409 silly lockFile 824c58e5-lib-browserify-0-0-1-package-tgz /home/feedmypixel/.npm/zlib-browserify/0.0.1/package.tgz
+410 verbose lock /home/feedmypixel/.npm/zlib-browserify/0.0.1/package.tgz /home/feedmypixel/.npm/824c58e5-lib-browserify-0-0-1-package-tgz.lock
+411 silly gunzTarPerm modes [ '755', '644' ]
+412 silly gunzTarPerm extractEntry package.json
+413 silly gunzTarPerm extractEntry .npmignore
+414 silly gunzTarPerm extractEntry index.js
+415 silly gunzTarPerm extractEntry zlib.js
+416 silly gunzTarPerm extractEntry readme.md
+417 silly gunzTarPerm extractEntry test/zlib.test.js
+418 verbose read json /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/package.json
+419 silly lockFile 686113cf-rib-node-modules-zlib-browserify /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify
+420 silly lockFile 686113cf-rib-node-modules-zlib-browserify /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify
+421 silly lockFile 824c58e5-lib-browserify-0-0-1-package-tgz /home/feedmypixel/.npm/zlib-browserify/0.0.1/package.tgz
+422 silly lockFile 824c58e5-lib-browserify-0-0-1-package-tgz /home/feedmypixel/.npm/zlib-browserify/0.0.1/package.tgz
+423 info preinstall zlib-browserify@0.0.1
+424 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/package.json
+425 verbose readDependencies using package.json deps
+426 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/package.json
+427 verbose readDependencies using package.json deps
+428 silly resolved []
+429 verbose about to build /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify
+430 info build /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify
+431 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/package.json
+432 verbose linkStuff [ false,
+432 verbose linkStuff   false,
+432 verbose linkStuff   false,
+432 verbose linkStuff   '/mnt/hgfs/feedmypixel/Sites/fmp/public/time/node_modules/grunt-contrib-cssmin/node_modules/grunt-lib-contrib/node_modules' ]
+433 info linkStuff zlib-browserify@0.0.1
+434 verbose from cache /mnt/hgfs/feedmypixel/Sites/fmp/public/time/package.json
+435 error TypeError: Object.keys called on non-object
+435 error     at Function.keys (native)
+435 error     at /usr/local/lib/node_modules/npm/lib/build.js:111:18
+435 error     at process._tickCallback (node.js:415:13)
+436 error If you need help, you may report this log at:
+436 error     <http://github.com/isaacs/npm/issues>
+436 error or email it to:
+436 error     <npm-@googlegroups.com>
+437 error System Linux 3.2.0-41-generic-pae
+438 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "grunt-contrib-cssmin" "--save-dev"
+439 error cwd /mnt/hgfs/feedmypixel/Sites/fmp/public/time
+440 error node -v v0.10.7
+441 error npm -v 1.2.21
+442 error type called_on_non_object
+443 verbose exit [ 1, true ]
