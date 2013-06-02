@@ -14,10 +14,18 @@ Works in IE 8 but needs presentation work,
 Need to do work on IE 7 & 6
 
 !-->
-<html>
+<!-- //TODO adjust relevant styles here -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
     <script>
         (function (win, doc) {
+
+            doc.documentElement.removeAttribute('class');
+            
             var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
                 actualScreenWidth = parseInt(Math.max(doc.documentElement.clientWidth, doc.documentElement.clientHeight) * pixelRatio, 10),
                 viewportSize,
