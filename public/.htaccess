@@ -1,3 +1,5 @@
+SetEnv APPLICATION_ENVIRONMENT development
+
 RewriteEngine On
 
 #redirect carousel images to appropriate folder

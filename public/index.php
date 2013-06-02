@@ -46,15 +46,21 @@ Need to do work on IE 7 & 6
 <?php
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/meta.inc.php' );
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/headerIcons.inc.php' );
+
+    $environment = getenv('APPLICATION_ENVIRONMENT');
+
+    if ('development' === $environment) {
 ?>
-
-    <link href="assets/style/time.min.css" rel="stylesheet"/>
-
-    <!--
-    <link href="assets/style/reset.css" rel="stylesheet"/>
-    <link href="assets/style/master.css" rel="stylesheet"/>
-    <link href="assets/style/mediaQuery.css" rel="stylesheet"/>
-    -->
+        <!-- dev non concatenated styles -->
+        <link href="assets/style/reset.css" rel="stylesheet"/>
+        <link href="assets/style/master.css" rel="stylesheet"/>
+        <link href="assets/style/mediaQuery.css" rel="stylesheet"/>
+<?php
+    } else { ?>
+        <link href="assets/style/time.min.css" rel="stylesheet"/>
+<?php
+    }
+?>
 
 <!--[if lte IE 6]>
     <link href="assets/style/ie6.css" rel="stylesheet"/>
@@ -74,13 +80,9 @@ Need to do work on IE 7 & 6
 <![endif]-->
         <div class="center-positioned limited-width header" role="banner">
             <h1 class="time-logo">Time.</h1>
-            <canvas id="clock" role="complementary">
-                <noscript>
-                    <div class="static-clock-wrapper center-positioned">
-                        <img alt="Time." src="assets/img/static_clock.png" />
-                    </div>
-                </noscript>
-            </canvas>
+            <div class="static-clock-wrapper center-positioned" id="clock">
+                <img alt="Time." src="assets/img/static_clock.png" />
+            </div>
             <a href="http://www.lazygramophone.com/shop/time" class="buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
         </div>
 
@@ -152,17 +154,23 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
             </div>
         </div>
 
-        <script type="text/javascript" src="assets/script/time.min.js"></script>
-
-
-<!--
+<?php
+    if ('development' === $environment) {
+?>
+        <!-- dev non concatenated scripts -->
         <script type="text/javascript" src="assets/script/jessie.js"></script>
         <script type="text/javascript" src="assets/script/time.js"></script>
         <script type="text/javascript" src="assets/script/time.config.js"></script>
         <script type="text/javascript" src="assets/script/time.utils.js"></script>
         <script type="text/javascript" src="assets/script/time.clock.js"></script>
-        <script type="text/javascript" src="assets/script/time.carousel.js"></script>-->
-
+        <script type="text/javascript" src="assets/script/time.carousel.js"></script>
+<?php
+    } else {
+?>
+        <script type="text/javascript" src="assets/script/time.min.js"></script>
+<?php
+    }
+?>
 
         <script type="text/javascript">
             time.utils.initApp();

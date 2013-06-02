@@ -37,6 +37,8 @@
         STATIC_CLOCK_BACKGROUND_IMG_PNG8 = 'assets/img/static_clock_8bit.png',
         CLOCK_BACK_DETAIL_COLOUR = '#0076a5',
         CLOCK_HAND_COLOUR = '#242323',
+        CLOCK_ROLE_ATTRIBUTE = 'complementary',
+        CLOCK_CLASS_NAME = 'static-clock-wrapper center-positioned',
         CLOCK_MAX_SIZE = 540,
         CLOCK_MIN_SIZE = 300,
         CLOCK_RESIZE_BUFFER = 75,
@@ -44,6 +46,7 @@
         backwardFiveMinuteStore,
         ctx,
         now,
+        canvasPlaceholder,
         canvas,
         clockDetail,
         canvasDetail,
@@ -71,7 +74,12 @@
 
     function init() {
 
-        canvas = doc.getElementById(CLOCK_CANVAS_ID);
+        canvasPlaceholder = doc.getElementById(CLOCK_CANVAS_ID);
+        canvas = doc.createElement('canvas');
+        canvas.role = CLOCK_ROLE_ATTRIBUTE;
+        canvas.className = CLOCK_CLASS_NAME;
+
+        canvasPlaceholder.parentNode.replaceChild(canvas, canvasPlaceholder);
 
         try {
             ctx =  canvas.getContext('2d');
@@ -83,6 +91,7 @@
             //drop in an image for non html5 capable browsers
             var image = doc.createElement('img');
             image.src = utils.isIE6() ? STATIC_CLOCK_BACKGROUND_IMG_PNG8 : STATIC_CLOCK_BACKGROUND_IMG;
+            image.className = CLOCK_CLASS_NAME;
 
             image.onload = function () {
                 canvas.parentNode.replaceChild(image, canvas);
