@@ -136,10 +136,16 @@ h1 {
     font-size: 2.2em;
 }
 
+
 .large-text {
     font-size: 1.8em;
     line-height: 1.4em;
     letter-spacing: .04em;
+}
+
+.large-big-text {
+    font-weight: 900;
+    font-size: 1.6em;
 }
 
 .big-text {
@@ -159,7 +165,11 @@ h1 {
 }
 
 .quote {
-    padding: 1em 0 0;
+    padding: 1.2em 0 0;
+}
+
+.feedback {
+    margin: .8em;
 }
 
 .highlight {
@@ -178,25 +188,18 @@ h1 {
 }
 
 .buy-book {
-    font-weight: 900;
-    font-size: 1.2em;
-    width: 4.8em;
-    margin-top: 2em;
-    margin-bottom: .6em;
-    border-radius: 4px;
+    margin: .6em .4em 0;
+    border-radius: 3px;
     display: block;
-    padding: 1.2em 3em;
-    text-shadow: 1px 1px 1px #a66c00;
+    padding: 1em 3em;
     border-width: 1px solid #ffa500;
     background-color: #ffa500;
-    background: -moz-linear-gradient(top,  #ffa500 0%, #cc8500 79%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa500), color-stop(79%,#cc8500));
-    background: -webkit-linear-gradient(top,  #ffa500 0%,#cc8500 79%);
-    background: -o-linear-gradient(top,  #ffa500 0%,#cc8500 79%);
-    background: -ms-linear-gradient(top,  #ffa500 0%,#cc8500 79%);
-    background: linear-gradient(to bottom,  #ffa500 0%,#cc8500 79%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa500', endColorstr='#cc8500',GradientType=0 );
-    box-shadow: 0px 0px 9px 1px rgba(0,0,0,.2), inset 0px 0px 9px 1px rgba(255,255,255,.2);
+}
+
+.buy-book:hover,
+.buy-book:active,
+.buy-book:link {
+
 }
 
 /** Logo **/
@@ -444,13 +447,28 @@ h1 {
 
 /** artists section **/
 
-.artists li {
-    text-align: left;
-    padding-left: .4em;
-    min-width: 9em;
+.artists {
+    margin-bottom: 1.4em;
 }
 
+.artists li {
+    text-align: left;
+    min-width: 9em;
+    padding: .4em 0;
+}
+
+.artists li:hover {
+    background-color: rgba(255, 255, 255, .05);
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.artists li.last {
+    margin-bottom: 1.2em;
+}
+
+.artists li.separator:hover,
 .artists .separator {
+    background-color: transparent;
     border-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, .05);
 }
@@ -458,17 +476,27 @@ h1 {
 .artists a {
     display: block;
     overflow: hidden;
-    color: #0076a5
 }
 
+.artists a,
+.artists:hover,
+.artists:active,
+.artists:link {
+    text-decoration: none;
+}
+
+/**
+//TODO find out screen size and alter artists php to use the larger sprite to render larger background images
+**/
 .artists span {
     background-image: url(../img/responsiveImages/artistsSprite.jpg);
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
     margin: .4em;
-    border: 4px solid #fff;
+    border: 6px solid #fff;
+    border-radius: 1px;
 }
 
 .artist-name {
@@ -480,6 +508,9 @@ h1 {
     width: 9em;
     padding-left: .2em;
     font-size: 1.2em;
+    color: #fff;
+    font-weight: normal;
+    text-decoration: none;
 }
 
 

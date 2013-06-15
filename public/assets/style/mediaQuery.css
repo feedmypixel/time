@@ -3,10 +3,6 @@
 /*    body {
         color: #ff1493;
     }*/
-
-    #clock {
-        padding-left: 1em;
-    }
 }
 
 /* 380px/16px = 23.750em */
@@ -55,14 +51,16 @@
     }*/
 
     .buy-book {
-        position: absolute;
-        top: 73%;
-        left: 13%;
-        padding: 1.2em 2em;
+        width: 25%;
+        margin: 1em auto;
     }
 
     #clock {
         padding-left: 4.5em;
+    }
+
+    .static-clock-wrapper {
+        padding-left: 4em;
     }
 }
 
@@ -81,6 +79,10 @@
         /*width: 33.333%;*/
         width: 50%;
         float: left;
+    }
+
+    .feedback {
+        margin: .8em 0;
     }
 
     #wrap .separator {
@@ -109,10 +111,6 @@
         font-size: .8em;
     }
 
-    .buy-book {
-        left: 18%;
-    }
-
     .carousel-outer-wrap {
         margin: 3.2em 0 1.8em;
     }
@@ -136,10 +134,6 @@
         color: orange;
     }*/
 
-    .buy-book {
-        left: 23%;
-    }
-
 }
 
 /* 800px/16px = 50em (used for medium image delivery)*/
@@ -147,10 +141,6 @@
 /*	body {
 		color: cadetblue;
 	}*/
-
-    .buy-book {
-        left: 28%;
-    }
 
     .carousel-wrap {
         height: 1030px;
@@ -192,10 +182,6 @@
 /*	body {
 		color: green;
 	}*/
-
-    .buy-book {
-        left: 33%;
-    }
 
     .carousel-wrap .carousel-right,
     .carousel-wrap .carousel-left {

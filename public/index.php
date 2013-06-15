@@ -91,18 +91,18 @@ Need to do work on IE 7 & 6
             <div class="static-clock-wrapper center-positioned" id="clock">
                 <img alt="Time." src="assets/img/static_clock.png" />
             </div>
-            <a href="http://www.lazygramophone.com/shop/time" class="buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
+            <a href="http://www.lazygramophone.com/shop/time" class="large-big-text buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
         </div>
 
         <div class="center-positioned full-width" role="main">
             <div class="center-positioned main-information limited-width group">
                 <h2 class="large-text quote full-width center-aligned">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</h2>
                 <div class="separator"></div>
-                <div class="third-width">
+                <div class="third-width feedback">
                     <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <a class="source highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank"><h2>Rooms Magazine</h2></a></p>
                 </div>
                 <div class="separator"></div>
-                <div class="third-width">
+                <div class="third-width feedback">
                     <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Fabric Magazine</h2></a></p>
                 </div>
                 <div class="separator"></div>

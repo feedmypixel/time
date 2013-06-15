@@ -31,7 +31,7 @@
         }
     }());
 
-    var DEVICE_PIXEL_RATIO = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : 1,
+    var DEVICE_PIXEL_RATIO = 1,
         CLOCK_CANVAS_ID = 'clock',
         STATIC_CLOCK_BACKGROUND_IMG = 'assets/img/static_clock.png',
         STATIC_CLOCK_BACKGROUND_IMG_PNG8 = 'assets/img/static_clock_8bit.png',
@@ -39,9 +39,9 @@
         CLOCK_HAND_COLOUR = '#242323',
         CLOCK_ROLE_ATTRIBUTE = 'complementary',
         CLOCK_CLASS_NAME = 'static-clock-wrapper center-positioned',
-        CLOCK_MAX_SIZE = 540,
-        CLOCK_MIN_SIZE = 300,
-        CLOCK_RESIZE_BUFFER = 75,
+        CLOCK_MAX_SIZE = 420,
+        CLOCK_MIN_SIZE = 230,
+        CLOCK_RESIZE_BUFFER = 20,
         backwardThreeSecondStore,
         backwardFiveMinuteStore,
         ctx,

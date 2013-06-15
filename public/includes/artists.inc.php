@@ -57,12 +57,15 @@ $artists = array(
     (object) array('name' => 'Claud Forsbrey', 'uri' => 'claudforsb'),
 );
 
-$i = $horizontal = $vertical = 0;
+$i = 1;
+$horizontal = $vertical = 0;
 $html = '<div class="center-positioned full-width">
             <ul class="artists group">
                 <li class="separator"></li>';
 
 foreach ($artists as $artist) {
+
+    $lastListInSectionClass = (($i % 6) === 0) ? 'last' : '';
 
     $artistUri = 'http' === substr($artist->uri, 0, 4) ? $artist->uri : 'http://www.lazygramophone.com/' . $artist->uri;
 
@@ -71,21 +74,26 @@ foreach ($artists as $artist) {
     $style = 'background-position: ' . ($horizontal === 0 ? $horizontal : '-' . $horizontal . 'px') .' '
                                      . ($vertical === 0 ? $vertical : '-' . $vertical . 'px');
 
-    $html .= '<li>
+    $html .= '<li class="' . $lastListInSectionClass . '">
                   <a href="' . $artistUri . '" target="_blank">
                       <span style="' . $style . '"></span>
-                      <h4 class="highlight artist-name">' . $artist->name . '</h4>
+                      <h4 class="artist-name">' . $artist->name . '</h4>
                   </a>
-              </li>
-              <li class="separator"></li>';
+              </li>';
 
-    $i++;
-    $horizontal += 80;
+
+    $horizontal += 40;
 
     if (($i % 10) === 0) {
         $horizontal = 0;
-        $vertical += 80;
+        $vertical += 40;
     }
+
+    if (($i % 6) === 0 && $i !== count($artists)) {
+        $html .= '<li class="separator"></li>';
+    }
+
+    $i++;
 }
 
 $html .= '</ul>
