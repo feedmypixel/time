@@ -455,6 +455,7 @@ h1 {
     text-align: left;
     min-width: 9em;
     padding: .4em 0;
+    border-radius: 3px;
 }
 
 .artists li:hover {
