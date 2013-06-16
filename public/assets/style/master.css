@@ -9,6 +9,7 @@ body {
     color: #fff;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    -webkit-background-clip: padding-box;
 }
 
 @font-face {
@@ -494,7 +495,6 @@ h1 {
     vertical-align: middle;
     margin: .4em;
     border: 6px solid #fff;
-    border-radius: 1px;
 }
 
 .artist-name {
