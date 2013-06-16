@@ -82,11 +82,11 @@ foreach ($artists as $artist) {
               </li>';
 
 
-    $horizontal += 40;
+    $horizontal += 80;
 
     if (($i % 10) === 0) {
         $horizontal = 0;
-        $vertical += 40;
+        $vertical += 80;
     }
 
     if (($i % 6) === 0 && $i !== count($artists)) {
