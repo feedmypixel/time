@@ -14,7 +14,6 @@ Works in IE 8 but needs presentation work,
 Need to do work on IE 7 & 6
 
 !-->
-<!-- //TODO adjust relevant styles here -->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -87,7 +86,7 @@ Need to do work on IE 7 & 6
 ?>
 <![endif]-->
         <div class="center-positioned limited-width header" role="banner">
-            <h1 class="time-logo">Time.</h1>
+            <h1 class="time-logo">Lazy Gramophone - Time.</h1>
             <div class="static-clock-wrapper center-positioned" id="clock">
                 <img alt="Time." src="assets/img/static_clock.png" />
             </div>
