@@ -14,11 +14,12 @@ Works in IE 8 but needs presentation work,
 Need to do work on IE 7 & 6
 
 !-->
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
 <head>
     <script>
         (function (win, doc) {
@@ -52,7 +53,14 @@ Need to do work on IE 7 & 6
     </script>
 <?php
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/meta.inc.php' );
-    require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/headerIcons.inc.php' );
+?>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<?php
 
     $environment = getenv('APPLICATION_ENVIRONMENT');
 
@@ -64,7 +72,9 @@ Need to do work on IE 7 & 6
         <link href="assets/style/mediaQuery.css" rel="stylesheet"/>
 <?php
     } else { ?>
+        <!-- build:css assets/style/time.min.css -->
         <link href="assets/style/time.min.css" rel="stylesheet"/>
+        <!-- endbuild -->
 <?php
     }
 ?>
@@ -90,7 +100,6 @@ Need to do work on IE 7 & 6
             <div class="static-clock-wrapper center-positioned" id="clock">
                 <img alt="Time." src="assets/img/static_clock.png" />
             </div>
-            <a href="http://www.lazygramophone.com/shop/time" class="large-big-text buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
         </div>
 
         <div class="center-positioned full-width" role="main">
@@ -102,10 +111,28 @@ Need to do work on IE 7 & 6
                 </div>
                 <div class="separator"></div>
                 <div class="third-width feedback">
-                    <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Fabric Magazine</h2></a></p>
+                    <p class="gutter-right medium-text light-text">&quot;An intriguing book project from one of the most innovative groups of creative people in the city.&quot; <a class="source highlight" href="http://www.huffingtonpost.co.uk/musa-okwonga/the-time-project-by-lazy-gramophone-interview_b_3529191.html" target="_blank"><h2>Huffington Post</h2></a></p>
                 </div>
                 <div class="separator"></div>
+                <div class="third-width feedback">
+                    <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Fabric Magazine</h2></a></p>
+                </div>
             </div>
+            <div class="center-positioned main-information limited-width group">
+                <div class="separator"></div>
+                <div class="third-width feedback">
+                    <p class="gutter-right medium-text light-text">&quot;Lazy Gramophone’s anthology, Time, lives up to the high bar it sets for itself.&quot; <a class="source highlight" href="http://annexemagazine.com/review-time-edited-by-sam-rawlings/" target="_blank"><h2>Annexe Magazine</h2></a></p>
+                </div>
+                <div class="separator"></div>
+                <div class="third-width feedback">
+                    <p class="gutter-right medium-text light-text">&quot;Time is a bold multimedia enigma, unafraid to take risks, and almost always compelling.&quot; <a class="source highlight" href="http://www.litro.co.uk/2013/08/book-review-time-an-anthology-by-lazy-gramophone-ed-sam-rawlings/" target="_blank"><h2>Litro</h2></a></p>
+                </div>
+                <div class="separator"></div>
+                <div class="third-width feedback">
+                    <p class="gutter-right medium-text light-text">&quot;Time is a fascinating collection littered with not only wonderful literature but also fabulous illustrations that ultimately make it a credit to any book-lover's shelves.&quot; <a class="source highlight" href="http://sabotagereviews.com/2013/08/04/time-ed-sam-rawlings/" target="_blank"><h2>Sabotage</h2></a></p>
+                </div>
+            </div>
+            <a href="http://www.lazygramophone.com/shop/time" class="large-big-text buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
         </div>
 
         <div class="section-separator"></div>
@@ -174,7 +201,9 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
 <?php
     } else {
 ?>
+        <!-- build:js assets/script/time.min.js -->
         <script type="text/javascript" src="assets/script/time.min.js"></script>
+        <!-- endbuild -->
 <?php
     }
 ?>

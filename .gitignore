@@ -4,7 +4,4 @@ nbproject
 Thumbs.db
 Desktop.ini
 node_modules
-public/assets/script/time.min.js
-public/assets/script/time.prod.js
-public/assets/style/time.min.css
-public/assets/style/time.prod.css
+dist
