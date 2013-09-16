@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             assets: {
                 files: [{
                     src: [
-                        'dist/public/assets/img/*.{png}',
+                        //'dist/public/assets/img/*.png',
                         'dist/public/assets/fonts/*.{eot,svg,ttf,woff}',
                         'dist/public/assets/script/*',
                         'dist/public/assets/style/*',
@@ -94,10 +94,20 @@ module.exports = function(grunt) {
                     to: 'production'
                 }]
             }
+        },
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/public/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dist/public/'
+                }]
+            }
         }
     });
 
-    // These plugins provide necessary tasks.
+    // tasks
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -106,8 +116,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    // Default task.
+    // default task
     grunt.registerTask('default', [
         'clean:folderStructure',
         'copy',
@@ -117,6 +128,7 @@ module.exports = function(grunt) {
         'cssmin',
         'rev',
         'usemin',
-        'replace'
+        'replace',
+        'imagemin'
     ]);
 };

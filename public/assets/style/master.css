@@ -63,19 +63,19 @@ h1 {
 }
 
 .carousel-left:before {
-    content: '\f053';
+    content: '\f137';
 }
 
 .carousel-right:before {
-    content: '\f054';
+    content: '\f138';
 }
 
 .facebook:before {
-    content: "\e002";
+    content: "\e000";
 }
 
 .twitter:before {
-    content: "\e000";
+    content: "\f099";
 }
 
 .youtube:before {
@@ -84,16 +84,15 @@ h1 {
 
 
 
-.quote-left:before {
-	content: "\f10d";
+.icon-list:before {
+	content: "\e001";
 }
-.quote-right:before {
-	content: "\f10e";
+.icon-left-quote:before {
+	content: "\e002";
 }
-.menu:before {
-	content: "\f0c9";
+.icon-right-quote:before {
+	content: "\e003";
 }
-
 
 
 

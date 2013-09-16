@@ -14,10 +14,9 @@ Works in IE 8 but needs presentation work,
 Need to do work on IE 7 & 6
 
 !-->
-<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
-<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+
+<!--[if IE 8]>     <html class="ie ie-8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie-9"> <![endif]-->
 <!--[if gt IE 9]>  <html> <![endif]-->
 <!--[if !IE]><!--> <html> <!--<![endif]-->
 <head>
@@ -51,9 +50,32 @@ Need to do work on IE 7 & 6
             doc.cookie = 'viewportsize=' + viewportSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
         }(window, document));
     </script>
-<?php
-    require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/meta.inc.php' );
-?>
+<meta charset="utf-8">
+<meta name="viewport"                   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="HandheldFriendly"           content="true"/>
+<meta name="apple-touch-fullscreen"     content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="author"                     content="feedMyPixel&#46;com"/>
+<meta name="description"                content="Time - A Lazy Gramophone Press collaborative project"/>
+<meta name="keywords"                   content="Time, lazy gramophone, LazyGramophone"/>
+<meta name="copyright"                  content="LazyGramophone&copy;"/>
+<meta name="rating"                     content="general"/>
+<meta http-equiv="imagetoolbar"         content="no"/>
+<meta name="Rating"                     content="general"/>
+<meta name="Distribution"               content="Global"/>
+<meta http-equiv="content-script-type"  content="text/javascript"/>
+
+<!-- twitter card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@lazygramophone">
+<meta name="twitter:creator" content="@lazygramophone">
+<meta name="twitter:url" content="http://time.lazygramophone.com">
+<meta name="twitter:title" content="Time - A Lazy Gramophone Press collaborative project">
+<meta name="twitter:description" content="&#34;It is through Time that we pay testament to the power of collaboration.&#34;
+The stories in this book have been structured around a Central Story. The Central Story is biographical in that it follows the course of a character’s life through childhood to adolescence–adulthood and then on into old age.
+Initially inspired by a discussion on gamebooks, this project has taken over three years to grow into what you are now holding in your hands. The importance of collaboration has always been central to Lazy Gramophone Press’s ethos, especially the pairing of words and images. This project therefore, is our chance to bring everyone together under one cover, all focused upon the same theme in order to produce a unique portrait of time.">
+<meta name="twitter:image" content="http://time.lazygramophone.com/assets/img/time_social.png">
+
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
