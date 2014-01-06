@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--[if !IE]><!-->
 <!--
   __                  _                   ___  _              _
  / _|  ___   ___   __| |  /\/\   _   _   / _ \(_)__  __  ___ | |
@@ -6,64 +7,31 @@
 |  _||  __/|  __/| (_| |/ /\/\ \| |_| |/ ___/ | | >  < |  __/| |
 |_|   \___| \___| \__,_|\/    \/ \__, |\/     |_|/_/\_\ \___||_| 2013
                                  |___/
-
-Currently beta, mail bugs(at)feedmypixel(dot)com
-
-Good in latest Chrome, firefox, safari, Opera, IE 10, 9, Android 2.3 - 4.1, OSX 4, 5, 6
-Works in IE 8 but needs presentation work,
-Need to do work on IE 7 & 6
-
 !-->
+<!--<![endif]-->
 
-<!--[if IE 8]>     <html class="ie ie-8"> <![endif]-->
-<!--[if IE 9]>     <html class="ie ie-9"> <![endif]-->
+<!--[if lt IE 7]>  <html class="ie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lt-ie9"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9"> <![endif]-->
 <!--[if gt IE 9]>  <html> <![endif]-->
 <!--[if !IE]><!--> <html> <!--<![endif]-->
+
 <head>
-    <script>
-        (function (win, doc) {
-
-            doc.documentElement.removeAttribute('class');
-            
-            var pixelRatio = 'undefined' !== typeof win.devicePixelRatio ? win.devicePixelRatio : '1',
-                actualScreenWidth = parseInt(Math.max(doc.documentElement.clientWidth, doc.documentElement.clientHeight) * pixelRatio, 10),
-                viewportSize,
-                expiresTime = new Date;
-
-            expiresTime.setDate(expiresTime.getDate() + 1000);
-
-            switch (true) {
-                case actualScreenWidth <= 800:
-                    viewportSize = 'small';
-                    break;
-                case actualScreenWidth > 800 && actualScreenWidth <= 1200:
-                    viewportSize = 'medium';
-                    break;
-                case actualScreenWidth > 1200:
-                    viewportSize = 'large';
-                    break;
-                default:
-                    viewportSize = 'small';
-                    break;
-            }
-
-            doc.cookie = 'viewportsize=' + viewportSize + '; screenwidth=' + actualScreenWidth + '; expires=' + expiresTime.toUTCString() + '; path=/';
-        }(window, document));
-    </script>
 <meta charset="utf-8">
-<meta name="viewport"                   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<meta name="HandheldFriendly"           content="true"/>
-<meta name="apple-touch-fullscreen"     content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="author"                     content="feedMyPixel&#46;com"/>
-<meta name="description"                content="Time - A Lazy Gramophone Press collaborative project"/>
-<meta name="keywords"                   content="Time, lazy gramophone, LazyGramophone"/>
-<meta name="copyright"                  content="LazyGramophone&copy;"/>
-<meta name="rating"                     content="general"/>
-<meta http-equiv="imagetoolbar"         content="no"/>
-<meta name="Rating"                     content="general"/>
-<meta name="Distribution"               content="Global"/>
-<meta http-equiv="content-script-type"  content="text/javascript"/>
+<meta name="viewport"                       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="HandheldFriendly"               content="true"/>
+<meta name="apple-touch-fullscreen"         content="yes" />
+<meta name="apple-mobile-web-app-capable"   content="yes">
+<meta name="author"                         content="feedMyPixel&#46;com"/>
+<meta name="description"                    content="Time - A Lazy Gramophone Press collaborative project"/>
+<meta name="keywords"                       content="Time, lazy gramophone, LazyGramophone"/>
+<meta name="copyright"                      content="LazyGramophone&copy;"/>
+<meta name="rating"                         content="general"/>
+<meta http-equiv="imagetoolbar"             content="no"/>
+<meta name="Rating"                         content="general"/>
+<meta name="Distribution"                   content="Global"/>
+<meta http-equiv="content-script-type"      content="text/javascript"/>
 
 <!-- twitter card -->
 <meta name="twitter:card" content="summary">
@@ -82,28 +50,21 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<?php
 
-    $environment = getenv('APPLICATION_ENVIRONMENT');
+<!-- build:css assets/css/time.css -->
+<link href="assets/css/reset.css" rel="stylesheet"/>
+<link href="assets/css/master.css" rel="stylesheet"/>
+<link href="assets/css/type.css" rel="stylesheet"/>
+<link href="assets/css/font.css" rel="stylesheet"/>
+<link href="assets/css/layout.css" rel="stylesheet"/>
+<link href="assets/css/picture.css" rel="stylesheet"/>
+<link href="assets/css/carousel.css" rel="stylesheet"/>
+<link href="assets/css/artists.css" rel="stylesheet"/>
+<link href="assets/css/footer.css" rel="stylesheet"/>
+<link href="assets/css/mediaQuery.css" rel="stylesheet"/>
+<link href="assets/css/ie.css" rel="stylesheet"/>
+<!-- endbuild -->
 
-    if ('development' === $environment) {
-?>
-        <!-- dev non concatenated styles -->
-        <link href="assets/style/reset.css" rel="stylesheet"/>
-        <link href="assets/style/master.css" rel="stylesheet"/>
-        <link href="assets/style/mediaQuery.css" rel="stylesheet"/>
-<?php
-    } else { ?>
-        <!-- build:css assets/style/time.min.css -->
-        <link href="assets/style/time.min.css" rel="stylesheet"/>
-        <!-- endbuild -->
-<?php
-    }
-?>
-
-<!--[if lte IE 6]>
-    <link href="assets/style/ie6.css" rel="stylesheet"/>
-<![endif]-->
 
 <title>Time. - A collaborative project from Lazy Gramophone | Arts Collective & Independent Publisher</title>
 </head>
@@ -117,16 +78,16 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/ie6warning.inc.php' );
 ?>
 <![endif]-->
-        <div class="center-positioned limited-width header" role="banner">
+        <div class="header" role="banner">
             <h1 class="time-logo">Lazy Gramophone - Time.</h1>
-            <div class="static-clock-wrapper center-positioned" id="clock">
+            <div class="static-clock-wrapper" id="clock">
                 <img alt="Time." src="assets/img/static_clock.png" />
             </div>
         </div>
 
-        <div class="center-positioned full-width" role="main">
-            <div class="center-positioned main-information limited-width group">
-                <h2 class="large-text quote full-width center-aligned">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</h2>
+        <div role="main">
+            <div class="main-information group">
+                <h2 class="large-text quote">&#34;It is through Time that we pay testament to the power of collaboration.&#34;</h2>
                 <div class="separator"></div>
                 <div class="third-width feedback">
                     <p class="gutter-right medium-text light-text">&quot;Time is a treasure box brimming with creativity and fresh talent.&quot; <a class="source highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank"><h2>Rooms Magazine</h2></a></p>
@@ -140,7 +101,7 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
                     <p class="gutter-right medium-text light-text">&quot;&#133;we'll bet you've never seen time as it's portrayed in this stunning new publication.&quot; <a class="source highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank"><h2>Fabric Magazine</h2></a></p>
                 </div>
             </div>
-            <div class="center-positioned main-information limited-width group">
+            <div class="main-information group">
                 <div class="separator"></div>
                 <div class="third-width feedback">
                     <p class="gutter-right medium-text light-text">&quot;Lazy Gramophone’s anthology, Time, lives up to the high bar it sets for itself.&quot; <a class="source highlight" href="http://annexemagazine.com/review-time-edited-by-sam-rawlings/" target="_blank"><h2>Annexe Magazine</h2></a></p>
@@ -154,20 +115,15 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
                     <p class="gutter-right medium-text light-text">&quot;Time is a fascinating collection littered with not only wonderful literature but also fabulous illustrations that ultimately make it a credit to any book-lover's shelves.&quot; <a class="source highlight" href="http://sabotagereviews.com/2013/08/04/time-ed-sam-rawlings/" target="_blank"><h2>Sabotage</h2></a></p>
                 </div>
             </div>
-            <a href="http://www.lazygramophone.com/shop/time" class="large-big-text buy-book center-aligned center-positioned" target="_blank"><h2>Buy Time.</h2></a>
+            <a href="http://www.lazygramophone.com/shop/time" class="large-big-text buy-book" target="_blank"><h2>Buy Time.</h2></a>
         </div>
 
         <div class="section-separator"></div>
 
-        <div class="center-positioned full-width">
-            <div id="carousel">
-                <noscript>
-                    <?php
-                        /* display list of images and text when JS is off */
-                        require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/carouselNoScript.inc.php' );
-                    ?>
-                </noscript>
-            </div>
+        <div id="book-preview">
+            <?php
+                require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/carousel.inc.php' );
+            ?>
         </div>
 
         <div class="section-separator"></div>
@@ -176,8 +132,8 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/artists.inc.php' );
 ?>
 
-        <div class="footer full-width group" role="contentinfo">
-            <div class="inner-footer limited-width center-positioned">
+        <div class="footer group" role="contentinfo">
+            <div class="inner-footer">
                 <h2><a href="http://www.lazygramophone.com" class="lazygramophone" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">Lazygramophone</a></h2>
                 <ul class="group social-links">
                     <li>
@@ -210,25 +166,15 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
             </div>
         </div>
 
-<?php
-    if ('development' === $environment) {
-?>
-        <!-- dev non concatenated scripts -->
-        <script type="text/javascript" src="assets/script/jessie.js"></script>
-        <script type="text/javascript" src="assets/script/time.js"></script>
-        <script type="text/javascript" src="assets/script/time.config.js"></script>
-        <script type="text/javascript" src="assets/script/time.utils.js"></script>
-        <script type="text/javascript" src="assets/script/time.clock.js"></script>
-        <script type="text/javascript" src="assets/script/time.carousel.js"></script>
-<?php
-    } else {
-?>
-        <!-- build:js assets/script/time.min.js -->
-        <script type="text/javascript" src="assets/script/time.min.js"></script>
+
+        <!-- build:js assets/js/time.js -->
+        <script type="text/javascript" src="assets/js/jessie.js"></script>
+        <script type="text/javascript" src="assets/js/time.js"></script>
+        <script type="text/javascript" src="assets/js/time.config.js"></script>
+        <script type="text/javascript" src="assets/js/time.utils.js"></script>
+        <script type="text/javascript" src="assets/js/time.clock.js"></script>
+        <script type="text/javascript" src="assets/js/time.carousel.js"></script>
         <!-- endbuild -->
-<?php
-    }
-?>
 
         <script type="text/javascript">
             time.utils.initApp();

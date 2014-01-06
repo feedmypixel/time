@@ -1,0 +1,30 @@
+.massive-text {
+    font-size: 2.2em;
+}
+
+.large-text {
+    font-size: 1.8em;
+    line-height: 1.4em;
+    letter-spacing: .04em;
+}
+
+.large-big-text {
+    font-weight: 900;
+    font-size: 1.6em;
+}
+
+.big-text {
+    font-size: 1.3em;
+}
+
+.medium-text {
+    font-size: .9em;
+}
+
+.small-text {
+    font-size: .8em;
+}
+
+.mini-text {
+    font-size: .7em;
+}

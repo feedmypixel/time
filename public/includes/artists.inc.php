@@ -36,51 +36,41 @@ $artists = array(
     (object) array('name' => 'Hannah Stephenson', 'uri' => 'journal/hannah-stephensons-five-things'),
     (object) array('name' => 'Zophiel Webb', 'uri' => 'journal/zophiel-webbs-five-things'),
     (object) array('name' => 'Adam Green', 'uri' => 'journal/adam-greens-five-things'),
-    (object) array('name' => 'Paula Afonso', 'uri' => ''),
-    (object) array('name' => 'Francis K Wolfe', 'uri' => 'franceskwolfe'),
-    (object) array('name' => 'Diego Mallo', 'uri' => 'http://www.diegomallo.com/'),
-    (object) array('name' => 'Vincent J Prince', 'uri' => 'journal/vincent-j-princes-five-things'),
-    (object) array('name' => 'Matt Black', 'uri' => 'journal/matt-blacks-five-things'),
-    (object) array('name' => 'Rupert J. Munck', 'uri' => 'rupertjmunck'),
-    (object) array('name' => 'Mina Milk', 'uri' => 'mina_milk'),
-    (object) array('name' => 'Charlie Cottrell', 'uri' => 'charliecottrell'),
-    (object) array('name' => 'Paul Bloom', 'uri' => 'pauladambloom'),
-    (object) array('name' => 'Claire Fletcher', 'uri' => 'journal/claire-fletchers-five-things'),
-    (object) array('name' => 'Tim Greaves', 'uri' => ''),
-    (object) array('name' => 'Alexander Aspinall', 'uri' => 'alexanderaspinall'),
-    (object) array('name' => 'Sorana Santos', 'uri' => 'journal/sorana-santos-five-things'),
-    (object) array('name' => 'Kaitlin Beckett', 'uri' => 'journal/kaitlin-becketts-five-things'),
-    (object) array('name' => 'Daniel Chidgey', 'uri' => ''),
-    (object) array('name' => 'Eliza Gregory', 'uri' => 'journal/eliza-gregorys-five-things'),
-    (object) array('name' => 'Dan Prescott', 'uri' => 'd_j_prescott'),
-    (object) array('name' => 'Stacie Withers', 'uri' => 'journal/stacie-withers-five-things'),
-    (object) array('name' => 'Claud Forsbrey', 'uri' => 'claudforsb'),
+    (object) array('name' => 'Paula Afonso', 'uri' => '')
 );
 
+$artistUri = 'http://www.lazygramophone.com/';
 $i = 1;
 $horizontal = $vertical = 0;
-$html = '<div class="center-positioned full-width">
-            <ul class="artists group">
-                <li class="separator"></li>';
+$html = '<div class="center-positioned full-width"><ul class="artists group"><li class="separator"></li>';
+
+$template = '<li class="artist-detail {lastListInSectionClass}">';
+$template .= '<a href="{artistUri}" target="_blank">';
+$template .= '<span class="artist-image" style="{backgroundStyle}"></span>';
+$template .= '<h4 class="artist-name">{artistName}</h4>';
+$template .= '</a>';
+$template .= '</li>';
 
 foreach ($artists as $artist) {
 
     $lastListInSectionClass = (($i % 6) === 0) ? 'last' : '';
 
-    $artistUri = 'http' === substr($artist->uri, 0, 4) ? $artist->uri : 'http://www.lazygramophone.com/' . $artist->uri;
+    if ('' !== $artist->uri) {
+        $artistUri = 'http' === substr($artist->uri, 0, 4) ? $artist->uri : 'http://www.lazygramophone.com/' . $artist->uri;
+    }
 
     $className = strtolower(str_replace(' ', '-', $artist->name));
 
-    $style = 'background-position: ' . ($horizontal === 0 ? $horizontal : '-' . $horizontal . 'px') .' '
-                                     . ($vertical === 0 ? $vertical : '-' . $vertical . 'px');
+    $backgroundHorizontalCSS = ($horizontal === 0 ? $horizontal : '&#45;' . $horizontal . 'px');
+    $backgroundVerticalCSS = ($vertical === 0 ? $vertical : '&#45;' . $vertical . 'px');
+    $backgroundStyle = 'background-position &#58; ' . $backgroundHorizontalCSS . ' ' . $backgroundVerticalCSS;
 
-    $html .= '<li class="' . $lastListInSectionClass . '">
-                  <a href="' . $artistUri . '" target="_blank">
-                      <span style="' . $style . '"></span>
-                      <h4 class="artist-name">' . $artist->name . '</h4>
-                  </a>
-              </li>';
-
+    $html .= strtr($template, array(
+        '{lastListInSectionClass}'  => $lastListInSectionClass,
+        '{artistUri}'               => $artistUri,
+        '{backgroundStyle}'         => $backgroundStyle,
+        '{artistName}'              => $artist->name
+    ));
 
     $horizontal += 80;
 
@@ -96,7 +86,6 @@ foreach ($artists as $artist) {
     $i++;
 }
 
-$html .= '</ul>
-       </div>';
+$html .= '</ul></div>';
 
 echo $html;

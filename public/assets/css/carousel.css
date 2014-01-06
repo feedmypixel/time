@@ -1,0 +1,356 @@
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    margin: .2em auto 0;
+    height: 860px;
+}
+
+.carousel {
+    position: absolute;
+    width: 10000px;
+    left: 0;
+    top: 0;
+    -webkit-transition: left 500ms ease-in-out;
+       -moz-transition: left 500ms ease-in-out;
+         -o-transition: left 500ms ease-in-out;
+            transition: left 500ms ease-in-out;
+/*    -moz-transform: translate3d( 0, 0, 0 );
+    -webkit-transform: translate3d( 0, 0, 0 );
+    -o-transform: translate3d( 0, 0, 0 );
+    transform: translate3d( 0, 0, 0 );*/
+}
+
+.carousel .book-article {
+    opacity: 1;
+    display: table-cell;
+    -webkit-transition: opacity 400ms ease-in-out;
+       -moz-transition: opacity 400ms ease-in-out;
+         -o-transition: opacity 400ms ease-in-out;
+            transition: opacity 400ms ease-in-out;
+/*    -moz-transform: translate3d( 0, 0, 0 );
+    -webkit-transform: translate3d( 0, 0, 0 );
+    -o-transform: translate3d( 0, 0, 0 );
+    transform: translate3d( 0, 0, 0 );*/
+}
+
+/*.carousel-wrap li.hidden {
+    opacity: 0.03;
+}*/
+
+/*.image {
+    padding: .8em;
+    background-color: #fff;
+}*/
+
+/*.carousel-detail .no-edge img {
+    padding: 0;
+}*/
+
+.image-wrapper {
+    position: relative;
+    border: 6px solid transparent;
+}
+
+.image-title,
+.image-illustrator {
+    position: absolute;
+    background-color: rgba( 255, 255, 255, .92 );
+    color: #575656;
+    font-weight: bold;
+}
+
+.image-title {
+    padding: .8em .5em .2em 1em;
+    top: 2px;
+    left: 2px;
+    font-size: 1em;
+}
+
+.image-illustrator {
+    padding: .2em 1em .6em .5em;
+    right: 2px;
+    bottom: 9px;
+    font-size: .8em;
+}
+
+.carousel-button,
+.carousel-button:link,
+.carousel-button:visited {
+    z-index: 1;
+    position: absolute;
+    font-size: 3em;
+    color: rgba(126, 126, 126, .4);
+    text-decoration: none;
+    padding: .6em;
+    top: 12%;
+}
+
+.carousel-button:hover {
+    color: #0076a5;
+}
+
+.carousel-button-left {
+    margin-left: -.6em;
+}
+
+.carousel-button-right {
+    margin-right: -.6em;
+}
+
+
+
+.picture-indicator {
+    margin: 2em 0 .4em;
+    text-align: center;
+}
+
+.picture-indicator li {
+    width: .5em;
+    height: .5em;
+    border-radius: 20px;
+    border: 1px solid #c1bebe;
+    border: 1px solid rgba(193, 190, 190, .4);
+    background-color: #191715;
+    display: inline-block;
+    margin: .1em;
+}
+
+.picture-indicator .active {
+    background-color: #0076a5;
+    border: 1px solid #0076a5;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+
+
+
+
+
+
+.square {
+    width: 290px;
+
+}
+
+/*.square .img-artist {
+    width: 290px;
+    height: auto;
+}*/
+
+.rectangle {
+    width: 290px;
+}
+
+/*.rectangle .img-artist {
+    width: 290px;
+    height: auto;
+}*/
+
+
+
+
+
+/* throbber and error message */
+/*.carousel-wrap .square .throbber,
+.carousel-wrap .rectangle .throbber {
+    width: 290px;
+    height: 287px;
+}
+
+.carousel-wrap .throbber .loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin-top: 12em;
+    padding: 0;
+}
+
+.error {
+    background-color: #db602f;
+    color: #fff;
+    padding: .2em;
+    border-radius: 4px;
+    margin: 3em 1em;
+    text-align: center;
+    font-weight: 500;
+}*/
+
+
+
+
+.extract {
+    color: #fff;
+    padding: 0 .4em;
+}
+
+.extract-title {
+    font-weight: bold;
+    margin: 1em 0 .6em;
+}
+
+.extract-title h3 {
+    font-style: italic;
+}
+
+.extract-title em {
+    display: block;
+    font-weight: normal;
+}
+
+.extract-title em h2 {
+    display: inline;
+}
+
+.extract-blurb {
+    color: #fff;
+}
+
+.extract-blurb .tab-left {
+    padding-left: 2em;
+}
+
+.extract-blurb .top-margin {
+    padding-top: 1em;
+}
+
+.extract-blurb .bottom-margin {
+    padding-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img-artist {
+
+}
+
+.bryn-hall {
+    background: url( '../img/responsiveImages/small/brynHall.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 371px;
+}
+
+.lee-holland {
+    background: url( '../img/responsiveImages/small/leeHolland.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 427px;
+}
+
+.time-book-illustrations {
+    background: url( '../img/responsiveImages/small/timeBookIllustrations.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 290px;
+}
+
+.claud-forsbrey {
+    background: url( '../img/responsiveImages/small/claudForsbrey.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 440px;
+}
+
+.carl-laurance {
+    background: url( '../img/responsiveImages/small/carlLaurance.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 185px;
+}
+
+.rima-staines {
+    background: url( '../img/responsiveImages/small/rimaStaines.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 479px;
+}
+
+.time-book-text {
+    background: url( '../img/responsiveImages/small/timeBookText.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 290px;
+}
+
+.andrew-walter {
+    background: url( '../img/responsiveImages/small/andrewWalter.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 397px;
+}
+
+.time-cover {
+    background: url( '../img/responsiveImages/small/timeCover.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 287px;
+}
+
+.jeannie-paske {
+    background: url( '../img/responsiveImages/small/jeanniePaske.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 436px;
+}
+
+.tom-harris {
+    background: url( '../img/responsiveImages/small/tomHarris.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 347px;
+}
+
+.time-book-first-page {
+    background: url( '../img/responsiveImages/small/timeBookFirstPage.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 290px;
+}
+
+.rima-staines-gospel {
+    background: url( '../img/responsiveImages/small/rimaStainesGospel.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 478px;
+}
+
+.time-diagram {
+    background: url( '../img/responsiveImages/small/timeDiagram.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 439px;
+}
+
+.time-book-printing {
+    background: url( '../img/responsiveImages/small/timeBookPrinting.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 290px;
+}
+
+.kaitlin-beckett {
+    background: url( '../img/responsiveImages/small/kaitlinBeckett.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 437px;
+}
+
+.tim-greaves {
+    background: url( '../img/responsiveImages/small/timGreaves.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 289px;
+}
+
+.rima-staines-circus {
+    background: url( '../img/responsiveImages/small/rimaStainesCircus.jpg' ) no-repeat right top;
+    width: 290px;
+    height: 483px;
+}
+
+

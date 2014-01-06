@@ -1,0 +1,85 @@
+/** footer **/
+.footer {
+    background: #fff;
+    height: 17em;
+}
+
+.inner-footer {
+    padding: 2em 0 0;
+    display: table;
+}
+
+.footer a:hover,
+.footer a:link,
+.footer a:visited,
+.copyright {
+    background: #fff;
+    color: #818181;
+}
+
+.copyright {
+    margin: 0 auto;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.twitter {
+    color: #4099FF;
+}
+
+.youtube {
+    color: #cb322c;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.twitter:hover,
+.youtube:hover,
+.facebook:hover {
+    color: #818181;
+}
+
+.lazygramophone {
+    font-weight: bold;
+}
+
+.lazygramophone em {
+    font-weight: normal;
+}
+
+.social-links {
+	margin: 0 auto;
+    padding: 3.4em 0;
+	display: table;
+}
+
+.social-links li {
+	text-align: center;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.social-links li a {
+    display: block;
+}
+
+.social-links li a:hover {
+    text-decoration: none;
+}
+
+.social-links li a:hover em {
+    text-decoration: underline;
+}
+
+.social-links em {
+    font-size: .4em;
+    font-size: .8rem;
+    font-style: normal;
+    padding-left: .2em;
+    color: #818181;
+    vertical-align: middle;
+}

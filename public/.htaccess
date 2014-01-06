@@ -2,21 +2,6 @@ SetEnv APPLICATION_ENVIRONMENT development
 
 RewriteEngine On
 
-#redirect carousel images to appropriate folder
-#no cookie set default to small folder
-RewriteCond %{REQUEST_URI} ^/assets/img/responsiveImages/
-RewriteCond %{REQUEST_URI} !^/assets/img/responsiveImages/(?:large|medium|small)(?:.*)?$
-RewriteCond %{HTTP_COOKIE} !^.*viewportsize.*$ [NC]
-RewriteRule assets/img/responsiveImages/([^\.]+)(?:\.jpg)$ assets/img/responsiveImages/small/$1.jpg?cb=small [NC,L]
-
-#cookie set use value
-RewriteCond %{REQUEST_URI} ^/assets/img/responsiveImages/
-RewriteCond %{REQUEST_URI} !^/assets/img/responsiveImages/(?:large|medium|small)(?:.*)?$
-RewriteCond %{HTTP_COOKIE} viewportsize=(small|medium|large) [NC]
-RewriteRule assets/img/responsiveImages/([^\.]+)(?:\.jpg)$ assets/img/responsiveImages/%1/$1.jpg?cb=%1 [NC,L]
-
-
-
 #VARIOUS
 DirectoryIndex index.php
 Options -Indexes
@@ -26,13 +11,13 @@ Options +FollowSymlinks
 FileETag None
 
 #MOD_EXPIRES and MOD_HEADERS
-# Turn on Expires and set default to 10 years
+# Turn on Expires and set default to 20 years
 ExpiresActive On
-ExpiresDefault "access plus 10 years"
+ExpiresDefault "access plus 20 years"
 
-# Set up caching for 1 year (forever?)
+# Set up caching for 20 years
 <FilesMatch "\.(ico|png|html|css|js|php)$">
-ExpiresDefault A29030400
+ExpiresDefault "access plus 20 years"
 Header append Cache-Control "public"
 </FilesMatch>
 
