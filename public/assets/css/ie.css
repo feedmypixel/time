@@ -12,6 +12,9 @@
     display: none;
 }
 
+
+
+
 .lt-ie8 .picture-indicator li,
 .lt-ie8 .artist-detail,
 .lt-ie8 .carousel .book-article {
@@ -25,7 +28,9 @@
 }
 
 
-
+.lt-ie8 .clock {
+    background: url( '../img/static_clock_8bit.png' );
+}
 
 
 

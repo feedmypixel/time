@@ -42,7 +42,7 @@ $artists = array(
 $artistUri = 'http://www.lazygramophone.com/';
 $i = 1;
 $horizontal = $vertical = 0;
-$html = '<div class="center-positioned full-width"><ul class="artists group"><li class="separator"></li>';
+$html = '<ul class="artists group"><li class="separator"></li>';
 
 $template = '<li class="artist-detail {lastListInSectionClass}">';
 $template .= '<a href="{artistUri}" target="_blank">';
@@ -86,6 +86,6 @@ foreach ($artists as $artist) {
     $i++;
 }
 
-$html .= '</ul></div>';
+$html .= '</ul>';
 
 echo $html;

@@ -42,6 +42,7 @@
             var pictureIndicator = doc.createElement( 'ul' );
             var pictureIndicatorLi = doc.createElement( 'li' );
             var pictureElems;
+            var pictureElem;
             var active;
 
 
@@ -68,10 +69,14 @@
            // preserve the index of the pictures
             for ( var i = 0; i < pictureElems.length; i++ ) {
 
+                pictureElem = pictureElems[ i ];
+
                 this.pictureElems.push({
                     index: i,
-                    elem: pictureElems[ i ]
+                    elem: pictureElem
                 });
+
+                j.addClass( pictureElem, CLASS_HIDDEN );
             }
 
             pictureIndicator.className = 'picture-indicator';
@@ -100,7 +105,6 @@
         addResizeHandler: function(){
 
             j.attachWindowListener( 'resize', utils.debounce( j.bind( function(){
-                console.log( 'fired' );
 
                 this.centerCarousel();
 
@@ -250,7 +254,7 @@
 
                 this.updateCurrentPictureIndex( direction );
                 this.calcPictureOffset( direction, picture.index );
-                //this.hidePreviouslyFocusedList( direction );
+                this.hidePreviouslyFocusedList( direction );
             }
         },
 
@@ -284,7 +288,7 @@
 
                 this.calcPictureOffset( DIRECTION_FORWARD );
                 this.updateCurrentPictureIndex( DIRECTION_FORWARD );
-                //this.hidePreviouslyFocusedList( DIRECTION_FORWARD );
+                this.hidePreviouslyFocusedList( DIRECTION_FORWARD );
                 this.setPictureOffset();
                 this.setPictureIndicator();
             }
@@ -296,7 +300,7 @@
 
                 this.calcPictureOffset( DIRECTION_BACKWARD );
                 this.updateCurrentPictureIndex( DIRECTION_BACKWARD );
-                //this.hidePreviouslyFocusedList( DIRECTION_BACKWARD );
+                this.hidePreviouslyFocusedList( DIRECTION_BACKWARD );
                 this.setPictureOffset();
                 this.setPictureIndicator();
             }
@@ -351,26 +355,33 @@
             calculateOffset[ direction ].call( this );
         },
 
-/*        hidePreviouslyFocusedList: function( direction ){
+        hidePreviouslyFocusedList: function( direction ){
 
             var locatePreviouslyFocused = {
+
                     forward: function(){
+
                         return this.pictureElems[this.currentPictureIndex - 1].elem;
                     },
+
                     backward: function(){
+
                         return this.pictureElems[this.currentPictureIndex + 1].elem;
                     }
-                }, elem = locatePreviouslyFocused[direction].call( this );
+
+                };
+            var elem = locatePreviouslyFocused[direction].call( this );
 
             if( !j.hasClass( elem, CLASS_HIDDEN ) ){
+
                 j.toggleClass( elem, CLASS_HIDDEN );
             }
-        },*/
+        },
 
         centerImageInViewPort: function(){
 
-            this.carouselViewPortWidth = j.getOuterSize( this.carouselContainer )[1];
-            this.currentPictureWidth = j.getOuterSize( this.pictureElems[ this.currentPictureIndex ].elem )[1];
+            this.carouselViewPortWidth = j.getOuterSize( this.carouselContainer )[ 1 ] ;
+            this.currentPictureWidth = j.getOuterSize( this.pictureElems[ this.currentPictureIndex ].elem )[ 1 ];
 
             return ( this.carouselViewPortWidth - this.currentPictureWidth ) / 2;
         },
@@ -390,7 +401,7 @@
 
         positionCarouselButtons: function(){
 
-            var carouselButtonOffset = ( (this.carouselViewPortWidth / 2 ) - ( this.currentPictureWidth / 2 ) );
+            var carouselButtonOffset = ( ( this.carouselViewPortWidth / 2 ) - ( this.currentPictureWidth / 1.6 ) );
 
             this.carouselButtons[ 0 ].style.left = carouselButtonOffset + 'px';
             this.carouselButtons[ 1 ].style.right = carouselButtonOffset + 'px';

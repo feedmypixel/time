@@ -2,7 +2,7 @@
 
 $carouselDetails = array(
     (object) array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'bryn-hall',
         ),
@@ -15,7 +15,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'lee-holland',
         ),
@@ -28,7 +28,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'time-book-illustrations',
         ),
@@ -41,7 +41,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'claud-forsbrey',
         ),
@@ -54,7 +54,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'carl-laurance',
         ),
@@ -67,7 +67,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle no-edge',
+        'klassName' => 'book-preview-rectangle no-edge',
         'img' => (object) array(
             'klassName' => 'rima-staines',
         ),
@@ -80,7 +80,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'time-book-text',
         ),
@@ -93,7 +93,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'andrew-walter',
         ),
@@ -106,7 +106,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'time-cover',
         ),
@@ -119,7 +119,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'jeannie-paske',
         ),
@@ -132,7 +132,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'tom-harris',
         ),
@@ -145,7 +145,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'time-book-first-page',
         ),
@@ -158,7 +158,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle no-edge',
+        'klassName' => 'book-preview-rectangle no-edge',
         'img' => (object) array(
             'klassName' => 'rima-staines-gospel',
         ),
@@ -171,7 +171,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'time-diagram',
         ),
@@ -184,7 +184,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'time-book-printing',
         ),
@@ -197,7 +197,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle',
+        'klassName' => 'book-preview-rectangle',
         'img' => (object) array(
             'klassName' => 'kaitlin-beckett',
         ),
@@ -210,7 +210,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'square',
+        'klassName' => 'book-preview-square',
         'img' => (object) array(
             'klassName' => 'tim-greaves',
         ),
@@ -223,7 +223,7 @@ $carouselDetails = array(
         )
     ),
     (object)array(
-        'klassName' => 'rectangle no-edge',
+        'klassName' => 'book-preview-rectangle no-edge',
         'img' => (object) array(
             'klassName' => 'rima-staines-circus',
         ),
@@ -237,27 +237,27 @@ $carouselDetails = array(
     )
 );
 
-$html = '<ul class="pictures">';
+$html = '<ul class="book-previews">';
 
-$template = '<li class="book-article {klassName}">';
+$template = '<li class="book-preview {klassName}">';
 $template .= '<div class="image-wrapper group">';
-$template .= '<h2 class="image-title">{pictureTitle}</h2>';
-$template .= '<div class="load image {imgKlassName}"></div>';
+$template .= '<h2 class="image-title image-heading font-18pt">{pictureTitle}</h2>';
+$template .= '<div class="image {imgKlassName}"></div>';
 $template .= '{pictureIllustrator}';
 $template .= '</div>';
 $template .= '<div class="extract group">';
-$template .= '<div class="extract-title big-text">{extractTitle}{extractWriter}</div>';
-$template .= '<p class="extract-blurb medium-text">{extractBlurb}</p>';
+$template .= '<div class="extract-title font-24pt">{extractTitle}{extractWriter}</div>';
+$template .= '<div class="extract-blurb font-12pt">{extractBlurb}</div>';
 $template .= '</div>';
 $template .= '</li>';
 
 
 foreach ($carouselDetails as $artistDetail) {
 
-    $pictureIllustrator = !empty($artistDetail->illustrator) ? ('<h3 class="img-illustrator"><em>by ' . $artistDetail->illustrator . '</em></h3>') : '';
-    $extractTitle = !empty($artistDetail->extract->title) ? "<h2>{$artistDetail->extract->title}</h2>" : '';
-    $extractWriter = !empty($artistDetail->extract->writer) ? '<h3 class="highlight mini-text">by ' . $artistDetail->extract->writer . '</h3>' : '';
-    $extractBlurb = !empty($artistDetail->extract->blurb) ? '<div class="extract-blurb medium-text">' . $artistDetail->extract->blurb . '</p>' : '';
+    $pictureIllustrator = !empty($artistDetail->illustrator) ? ('<h3 class="image-illustrator image-heading font-12pt"><em>by ' . $artistDetail->illustrator . '</em></h3>') : '';
+    $extractTitle = !empty($artistDetail->extract->title) ? "<h2 class=\"sub-header\">{$artistDetail->extract->title}</h2>" : '';
+    $extractWriter = !empty($artistDetail->extract->writer) ? '<h3 class="highlight font-9pt">by ' . $artistDetail->extract->writer . '</h3>' : '';
+    $extractBlurb = !empty($artistDetail->extract->blurb) ? $artistDetail->extract->blurb : '';
 
     $html .= strtr($template,
         array(

@@ -1,0 +1,24 @@
+.clock-container {
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.clock {
+    display: inline-block;
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background-size: 100%;
+    background-image: url( '../img/static_clock.png' );
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.inner-clock {
+    display: block;
+    height: 0;
+    padding-top: 99.81%;
+}

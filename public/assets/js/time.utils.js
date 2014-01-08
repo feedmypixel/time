@@ -3,7 +3,7 @@ time.utils = (function( win, doc, j, time ){
     var userHasScrolled = false;
 
     function buildCarousel(){
-        var bookPreviewElem = doc.getElementById( 'book-preview' );
+        var bookPreviewElem = doc.getElementById( 'book-previews-container' );
 
         new time.Carousel( bookPreviewElem );
     }
@@ -95,13 +95,26 @@ time.utils = (function( win, doc, j, time ){
         return userHasScrolled;
     }
 
+    function getFirstElemChild( elem ){
+
+        var child = elem.firstChild;
+
+        while( ( child.nodeType !== 1 ) ){
+
+            child = child.nextSibling;
+        }
+
+        return child;
+    }
+
     return {
         initApp: initWhenReady,
         isTouchAvailable: isTouchAvailable,
         getCookie: getCookie,
         debounce: debounce,
         hideAddressBar: hideAddressBar,
-        hasUserScrolled: hasUserScrolled
+        hasUserScrolled: hasUserScrolled,
+        getFirstElemChild: getFirstElemChild
     };
 
 }( window, document, jessie, time ));
