@@ -55,6 +55,11 @@ Carousel
             transform: translatez(0);
 }
 
+.carousel .hidden {
+    opacity: 0.04;
+}
+
+
 /**************************************
 Image Detail
 **************************************/
