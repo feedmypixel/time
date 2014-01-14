@@ -1,9 +1,9 @@
 /* 475px/16px = 29.687em */
 @media all and (min-width: 29.687em) {
 
-    body {
+/*    body {
         color: #b8860b;
-    }
+    }*/
 
     .carousel-button {
         display: block;
@@ -15,9 +15,9 @@
 /* 528px/16px = 33em */
 @media all and (min-width: 33em) {
 
-    body {
+/*    body {
         color: orange;
-    }
+    }*/
 
     html {
         font-size: 1.2em;
@@ -78,9 +78,13 @@
 */
 @media all and (min-width: 33em) {
 
-	body {
+/*	body {
 		color: cadetblue;
-	}
+	}*/
+
+    .carousel .hidden {
+        opacity: 0.04;
+    }
 
     .extract,
     .book-preview-square,
@@ -94,7 +98,7 @@
     }
 
     .clock {
-        background-image: url( '../img/responsiveImages/medium/static_clock.png' );
+        background-image: url( '../img/responsiveImages/medium/staticClock.jpg' );
     }
 
     .bryn-hall {
@@ -216,9 +220,9 @@
 */
 @media all and (min-width: 75em) {
 
-    body {
+/*    body {
         color: pink;
-    }
+    }*/
 
     .book-quote {
         margin: 0 auto 1em;
@@ -246,7 +250,7 @@
     }
 
     .clock {
-        background-image: url( '../img/responsiveImages/large/static_clock.png' );
+        background-image: url( '../img/responsiveImages/large/staticClock.jpg' );
     }
 
     .bryn-hall {
