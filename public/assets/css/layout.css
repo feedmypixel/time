@@ -5,7 +5,7 @@
 }
 
 .page-body {
-    margin: .8em;
+    margin: .4em;
 }
 
 .third-width {
@@ -18,14 +18,19 @@
     word-wrap: break-word;
 }
 
+.artists .separator:hover,
+.artists .separator,
 .section-separator {
     border-style: solid;
-    border-width: 0 0 1px 0;
+    border-width: 0 0 .063em 0;
     border-color: #5f5f5f;
     border-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, .05);
-    display: none;
-    margin: 3em 10em;
+    box-shadow: 0 .063em 0 0 rgba(255, 255, 255, .05);
+    margin: 3em 1em;
+}
+
+.small-section-separator {
+    margin: .4em 1em;
 }
 
 .hidden {

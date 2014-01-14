@@ -1,14 +1,12 @@
-/* 320px/16px = 20em */
-@media all and (min-width: 20em) {
-    body {
-        color: #ff1493;
-    }
-}
+/* 475px/16px = 29.687em */
+@media all and (min-width: 29.687em) {
 
-/* 380px/16px = 23.750em */
-@media all and (min-width: 23.750em) {
     body {
-        color: #b22222;
+        color: #b8860b;
+    }
+
+    .carousel-button {
+        display: block;
     }
 
 }
@@ -16,32 +14,13 @@
 
 /* 528px/16px = 33em */
 @media all and (min-width: 33em) {
+
     body {
-        color: blue;
+        color: orange;
     }
-
-
-}
-
-/*
-592px/16px = 37em
-    clock becomes part of the background
-*/
-@media all and (min-width: 37em) {
 
     html {
         font-size: 1.2em;
-    }
-
-    body {
-        color: yellow;
-    }
-
-    .clock-container {
-        position: absolute;
-        z-index: 1;
-        left: -35%;
-        opacity: .1;
     }
 
     .page-body {
@@ -55,21 +34,11 @@
     }
 
     .book-cta {
-        width: 6em;
+        width: 10em;
         margin: 0 auto;
     }
 
-
-    .separator {
-        display: none;
-    }
-
-
-
-
-
     .artists {
-        display: table;
         text-align: center;
     }
 
@@ -86,36 +55,34 @@
         font-size: .8em;
     }
 
-    .section-separator {
-        display: block;
+    .small-section-separator {
+        display: none;
     }
 
-
-}
-
-/* 768px/16px = 48em */
-@media all and (min-width: 48em) {
-    body {
-        color: orange;
+    .social-link {
+        text-align: center;
+        display: inline-block;
+        margin-right: .4em;
     }
 
+    .picture-indicator {
+        height: 1.2em;
+        width: 1.2em;
+        margin: .2em;
+    }
 }
 
 /*
 800px/16px = 50em
     used for medium image delivery
 */
-@media all and (min-width: 50em) {
-
+@media all and (min-width: 33em) {
 
 	body {
 		color: cadetblue;
 	}
 
-    .carousel-container {
-        height: 1030px;
-    }
-
+    .extract,
     .book-preview-square,
     .book-preview-square .image {
         width: 420px;
@@ -126,142 +93,120 @@
         width: 353px;
     }
 
-
-
-
+    .clock {
+        background-image: url( '../img/responsiveImages/medium/static_clock.png' );
+    }
 
     .bryn-hall {
-        background: #fff url( '../img/responsiveImages/medium/brynHall.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/brynHall.jpg' ) no-repeat center center;
         width: 353px;
         height: 453px;
     }
 
     .lee-holland {
-        background: #fff url( '../img/responsiveImages/medium/leeHolland.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/leeHolland.jpg' ) no-repeat center center;
         width: 353px;
         height: 521px;
     }
 
     .time-book-illustrations {
-        background: #fff url( '../img/responsiveImages/medium/timeBookIllustrations.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timeBookIllustrations.jpg' ) no-repeat center center;
         width: 420px;
         height: 420px;
     }
 
     .claud-forsbrey {
-        background: #fff url( '../img/responsiveImages/medium/claudForsbrey.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/claudForsbrey.jpg' ) no-repeat center center;
         width: 353px;
         height: 536px;
     }
 
     .carl-laurance {
-        background: #fff url( '../img/responsiveImages/medium/carlLaurance.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/carlLaurance.jpg' ) no-repeat center center;
         width: 420px;
         height: 270px;
     }
 
     .rima-staines {
-        background: #fff url( '../img/responsiveImages/medium/rimaStaines.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/rimaStaines.jpg' ) no-repeat center center;
         width: 353px;
         height: 584px;
     }
 
     .time-book-text {
-        background: #fff url( '../img/responsiveImages/medium/timeBookText.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timeBookText.jpg' ) no-repeat center center;
         width: 420px;
         height: 420px;
     }
 
     .andrew-walter {
-        background: #fff url( '../img/responsiveImages/medium/andrewWalter.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/andrewWalter.jpg' ) no-repeat center center;
         width: 353px;
         height: 485px;
     }
 
     .time-cover {
-        background: #fff url( '../img/responsiveImages/medium/timeCover.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timeCover.jpg' ) no-repeat center center;
         width: 420px;
         height: 419px;
     }
 
     .jeannie-paske {
-        background: #fff url( '../img/responsiveImages/medium/jeanniePaske.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/jeanniePaske.jpg' ) no-repeat center center;
         width: 353px;
         height: 531px;
     }
 
     .tom-harris {
-        background: #fff url( '../img/responsiveImages/medium/tomHarris.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/tomHarris.jpg' ) no-repeat center center;
         width: 353px;
         height: 423px;
     }
 
     .time-book-first-page {
-        background: #fff url( '../img/responsiveImages/medium/timeBookFirstPage.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timeBookFirstPage.jpg' ) no-repeat center center;
         width: 420px;
         height: 420px;
     }
 
     .rima-staines-gospel {
-        background: #fff url( '../img/responsiveImages/medium/rimaStainesGospel.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/rimaStainesGospel.jpg' ) no-repeat center center;
         width: 353px;
         height: 582px;
     }
 
     .time-diagram {
-        background: #fff url( '../img/responsiveImages/medium/timeDiagram.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timeDiagram.jpg' ) no-repeat center center;
         width: 353px;
         height: 536px;
     }
 
     .time-book-printing {
-        background: #fff url( '../img/responsiveImages/medium/timeBookPrinting.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timeBookPrinting.jpg' ) no-repeat center center;
         width: 420px;
         height: 420px;
     }
 
     .kaitlin-beckett {
-        background: #fff url( '../img/responsiveImages/medium/kaitlinBeckett.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/kaitlinBeckett.jpg' ) no-repeat center center;
         width: 353px;
         height: 532px;
     }
 
     .tim-greaves {
-        background: #fff url( '../img/responsiveImages/medium/timGreaves.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/timGreaves.jpg' ) no-repeat center center;
         width: 420px;
         height: 419px;
     }
 
     .rima-staines-circus {
-        background: #fff url( '../img/responsiveImages/medium/rimaStainesCircus.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/medium/rimaStainesCircus.jpg' ) no-repeat center center;
         width: 353px;
         height: 589px;
     }
 
-    .artists span {
-        background-image: #fff url(../img/responsiveImages/medium/artistsSprite.jpg);
-    }
-}
-
-/* 960px/16px = 60em */
-@media all and (min-width: 60em) {
-
-	body {
-		color: green;
-	}
-}
-
-/* 1018px/16px = 63.625em
-        clock background becomes static
-*/
-@media all and (min-width: 63.625em) {
-
-	body {
-		color: cadetblue;
-	}
-
-    .clock-container {
-        left: -356px;
+    .artist-image {
+        background-image: url(../img/responsiveImages/medium/artistsSprite.jpg);
     }
 }
 
@@ -275,19 +220,21 @@
         color: pink;
     }
 
-
     .book-quote {
         margin: 0 auto 1em;
-        width: 90%;
+        width: 94%;
     }
-
-
-
 
     .carousel-container {
-        height: 1070px;
+        height: 42.4em;
     }
 
+    .picture-indicator {
+        height: 1.4em;
+        width: 1.4em;
+    }
+
+    .extract,
     .book-preview-square,
     .book-preview-square .image {
         width: 498px;
@@ -298,119 +245,127 @@
         width: 418px;
     }
 
-
-
-
+    .clock {
+        background-image: url( '../img/responsiveImages/large/static_clock.png' );
+    }
 
     .bryn-hall {
-        background: #fff url( '../img/responsiveImages/large/brynHall.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/brynHall.jpg' ) no-repeat center center;
         width: 418px;
         height: 536px;
     }
 
     .lee-holland {
-        background: #fff url( '../img/responsiveImages/large/leeHolland.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/leeHolland.jpg' ) no-repeat center center;
         width: 418px;
         height: 617px;
     }
 
     .time-book-illustrations {
-        background: #fff url( '../img/responsiveImages/large/timeBookIllustrations.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timeBookIllustrations.jpg' ) no-repeat center center;
         width: 498px;
         height: 498px;
     }
 
     .claud-forsbrey {
-        background: #fff url( '../img/responsiveImages/large/claudForsbrey.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/claudForsbrey.jpg' ) no-repeat center center;
         width: 418px;
         height: 635px;
     }
 
     .carl-laurance {
-        background: #fff url( '../img/responsiveImages/large/carlLaurance.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/carlLaurance.jpg' ) no-repeat center center;
         width: 498px;
         height: 319px;
     }
 
     .rima-staines {
-        background: #fff url( '../img/responsiveImages/large/rimaStaines.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/rimaStaines.jpg' ) no-repeat center center;
         width: 418px;
         height: 691px;
     }
 
     .time-book-text {
-        background: #fff url( '../img/responsiveImages/large/timeBookText.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timeBookText.jpg' ) no-repeat center center;
         width: 498px;
         height: 498px;
     }
 
     .andrew-walter {
-        background: #fff url( '../img/responsiveImages/large/andrewWalter.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/andrewWalter.jpg' ) no-repeat center center;
         width: 418px;
         height: 574px;
     }
 
     .time-cover {
-        background: #fff url( '../img/responsiveImages/large/timeCover.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timeCover.jpg' ) no-repeat center center;
         width: 498px;
         height: 496px;
     }
 
     .jeannie-paske {
-        background: #fff url( '../img/responsiveImages/large/jeanniePaske.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/jeanniePaske.jpg' ) no-repeat center center;
         width: 418px;
         height: 629px;
     }
 
     .tom-harris {
-        background: #fff url( '../img/responsiveImages/large/tomHarris.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/tomHarris.jpg' ) no-repeat center center;
         width: 418px;
         height: 501px;
     }
 
     .time-book-first-page {
-        background: #fff url( '../img/responsiveImages/large/timeBookFirstPage.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timeBookFirstPage.jpg' ) no-repeat center center;
         width: 498px;
         height: 498px;
     }
 
     .rima-staines-gospel {
-        background: #fff url( '../img/responsiveImages/large/rimaStainesGospel.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/rimaStainesGospel.jpg' ) no-repeat center center;
         width: 418px;
         height: 689px;
     }
 
     .time-diagram {
-        background: #fff url( '../img/responsiveImages/large/timeDiagram.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timeDiagram.jpg' ) no-repeat center center;
         width: 418px;
         height: 634px;
     }
 
     .time-book-printing {
-        background: #fff url( '../img/responsiveImages/large/timeBookPrinting.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timeBookPrinting.jpg' ) no-repeat center center;
         width: 498px;
         height: 498px;
     }
 
    .kaitlin-beckett {
-        background: #fff url( '../img/responsiveImages/large/kaitlinBeckett.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/kaitlinBeckett.jpg' ) no-repeat center center;
         width: 418px;
         height: 630px;
     }
 
     .tim-greaves {
-        background: #fff url( '../img/responsiveImages/large/timGreaves.jpg' ) no-repeat center center;
+        background: url(  '../img/responsiveImages/large/timGreaves.jpg' ) no-repeat center center;
         width: 498px;
         height: 495px;
     }
 
-    rima-staines-circus {
-        background: #fff url( '../img/responsiveImages/large/rimaStainesCircus.jpg' ) no-repeat center center;
+    .rima-staines-circus {
+        background: url(  '../img/responsiveImages/large/rimaStainesCircus.jpg' ) no-repeat center center;
         width: 418px;
         height: 691px;
     }
 
-    .artists span {
-        background-image: #fff url(../img/responsiveImages/large/artistsSprite.jpg);
+    .artist-image {
+        background-image: url(../img/responsiveImages/large/artistsSprite.jpg);
+    }
+
+    .artists {
+        margin-top: 3em;
+    }
+
+    .artists .separator {
+        display: none;
     }
 }

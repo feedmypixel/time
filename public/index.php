@@ -63,6 +63,7 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
 <link href="assets/css/carousel.css" rel="stylesheet"/>
 <link href="assets/css/artists.css" rel="stylesheet"/>
 <link href="assets/css/footer.css" rel="stylesheet"/>
+<link href="assets/css/touch.css" rel="stylesheet"/>
 <link href="assets/css/mediaQuery.css" rel="stylesheet"/>
 <link href="assets/css/ie.css" rel="stylesheet"/>
 <!-- endbuild -->
@@ -85,6 +86,7 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
         <div role="banner">
 
             <h1 class="outside-viewport-text">Lazy Gramophone - Time.</h1>
+
             <div class="clock-container" id="clock">
                 <span class="clock">
                     <span class="inner-clock"></span>
@@ -96,7 +98,7 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
         <div class="page-body" role="main">
 
             <h2 class="font-36pt book-quote">
-                <span class="quote-start font-18pt"></span>It is through Time that we pay testament to the power of collaboration.<span class="quote-end font-18pt"></span>
+                <span class="quote-start font-24pt"></span>It is through <span class="highlight">Time</span> that we pay testament to the power of collaboration.<span class="quote-end font-24pt"></span>
             </h2>
 
             <div class="page-reviews">
@@ -104,58 +106,68 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
                 <div class="group">
 
                     <div class="third-width">
-                        <p class="gutter font-16pt">
-                            <span class="quote-start font-18pt"></span>Time is a treasure box brimming with creativity and fresh talent.<span class="quote-end font-18pt"></span>
+                        <p class="gutter font-18pt">
+                            <span class="quote-start font-24pt"></span>Time is a treasure box brimming with creativity and fresh talent.<span class="quote-end font-24pt"></span>
                             <a class="highlight" href="http://www.roomsmagazine.com/index.php/2013/05/lazy-gramophone-launches-new-book/" target="_blank">
-                                <h2 class="font-12pt">Rooms Magazine</h2>
+                                <h2 class="font-16pt">Rooms Magazine</h2>
                             </a>
                         </p>
                     </div>
 
+                    <div class="section-separator small-section-separator"></div>
+
                     <div class="third-width">
-                        <p class="gutter font-16pt">
-                            <span class="quote-start font-18pt"></span>An intriguing book project from one of the most innovative groups of creative people in the city.<span class="quote-end font-18pt"></span>
+                        <p class="gutter font-18pt">
+                            <span class="quote-start font-24pt"></span>An intriguing book project from one of the most innovative groups of creative people in the city.<span class="quote-end font-24pt"></span>
                             <a class="highlight" href="http://www.huffingtonpost.co.uk/musa-okwonga/the-time-project-by-lazy-gramophone-interview_b_3529191.html" target="_blank">
-                                <h2 class="font-12pt">Huffington Post</h2>
+                                <h2 class="font-16pt">Huffington Post</h2>
                             </a>
                         </p>
                     </div>
 
+                    <div class="section-separator small-section-separator"></div>
+
                     <div class="third-width">
-                        <p class="gutter font-16pt">
-                            <span class="quote-start font-18pt"></span>we'll bet you've never seen time as it's portrayed in this stunning new publication.<span class="quote-end font-18pt"></span>
+                        <p class="gutter font-18pt">
+                            <span class="quote-start font-24pt"></span>we'll bet you've never seen time as it's portrayed in this stunning new publication.<span class="quote-end font-24pt"></span>
                             <a class="highlight" href="http://theforwardgroup.ceros.com/fabricmagazine/may2013/page/39" target="_blank">
-                                <h2 class="font-12pt">Fabric Magazine</h2>
+                                <h2 class="font-16pt">Fabric Magazine</h2>
                             </a>
                         </p>
                     </div>
                 </div>
 
+                <div class="section-separator small-section-separator"></div>
+
                 <div class="group">
 
                     <div class="third-width">
-                        <p class="gutter font-16pt">
-                            <span class="quote-start font-18pt"></span>Lazy Gramophone’s anthology, Time, lives up to the high bar it sets for itself.<span class="quote-end font-18pt"></span>
+                        <p class="gutter font-18pt">
+                            <span class="quote-start font-24pt"></span>Lazy Gramophone’s anthology, Time, lives up to the high bar it sets for itself.<span class="quote-end font-24pt"></span>
                             <a class="highlight" href="http://annexemagazine.com/review-time-edited-by-sam-rawlings/" target="_blank">
-                                <h2 class="font-12pt">Annexe Magazine</h2>
+                                <h2 class="font-16pt">Annexe Magazine</h2>
                             </a>
                         </p>
                     </div>
 
+                    <div class="section-separator small-section-separator"></div>
+
                     <div class="third-width">
-                        <p class="gutter font-16pt">
-                            <span class="quote-start font-18pt"></span>Time is a bold multimedia enigma, unafraid to take risks, and almost always compelling.<span class="quote-end font-18pt"></span>
+                        <p class="gutter font-18pt">
+                            <span class="quote-start font-24pt"></span>Time is a bold multimedia enigma, unafraid to take risks, and almost always compelling.<span class="quote-end font-24pt"></span>
                             <a class="highlight" href="http://www.litro.co.uk/2013/08/book-review-time-an-anthology-by-lazy-gramophone-ed-sam-rawlings/" target="_blank">
-                                <h2 class="font-12pt">Litro</h2>
+                                <h2 class="font-16pt">Litro</h2>
                             </a>
                         </p>
                     </div>
 
+                    <div class="section-separator small-section-separator"></div>
+
                     <div class="third-width">
-                        <p class="gutter font-16pt">
-                            <span class="quote-start font-18pt"></span>Time is a fascinating collection littered with not only wonderful literature but also fabulous illustrations that ultimately make it a credit to any book-lover's shelves.<span class="quote-end font-18pt"></span>
+                        <p class="gutter font-18pt">
+                            <span class="quote-start font-24pt"></span>Time is a fascinating collection littered with not only wonderful literature but also fabulous illustrations that ultimately make it a credit to any book-lover's shelves.<span class="quote-end font-24pt"></span>
                             <a class="highlight" href="http://sabotagereviews.com/2013/08/04/time-ed-sam-rawlings/" target="_blank">
-                                <h2 class="font-12pt">Sabotage</h2>
+                                <h2 class="font-16pt">Sabotage</h2>
                             </a>
                         </p>
                     </div>
@@ -163,8 +175,6 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
                 </div>
 
             </div>
-
-            <a class="font-30pt book-cta" href="http://www.lazygramophone.com/shop/time" target="_blank"><h2>Buy Time</h2></a>
 
             <div class="section-separator"></div>
 
@@ -176,45 +186,45 @@ Initially inspired by a discussion on gamebooks, this project has taken over thr
 
             <div class="section-separator"></div>
 
+            <a class="font-30pt book-cta" href="http://www.lazygramophone.com/shop/time" target="_blank"><h2>Buy Time</h2></a>
+
 <?php
     require_once( $_SERVER['DOCUMENT_ROOT'] . '/includes/artists.inc.php' );
 ?>
-
-
         </div>
 
         <div class="footer group" role="contentinfo">
 
-            <div class="inner-footer">
+            <div class="footer-body">
 
                 <h2>
-                    <a href="http://www.lazygramophone.com" class="lazygramophone" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">Lazygramophone</a>
+                    <a class="link primary-link font-30pt" href="http://www.lazygramophone.com" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">Lazygramophone</a>
                 </h2>
 
-                <ul class="group social-links">
+                <ul class="social-links group">
 
-                    <li>
-                        <a href="https://www.facebook.com/pages/Lazy-Gramophone-Artists-Press/183721095020338" title="Lazy gramophone on facebook" target="_blank" role="link">
-                            <h4 class="facebook massive-text"><em>facebook</em></h4>
+                    <li class="social-link">
+                        <a class="link" href="https://www.facebook.com/pages/Lazy-Gramophone-Artists-Press/183721095020338" title="Lazy gramophone on facebook" target="_blank" role="link">
+                            <h4 class="social-text facebook-text font-18pt"><span class="social-icon facebook font-36pt"></span>facebook</h4>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="https://twitter.com/lazygramophone" title="Lazy gramophone on Twitter" target="_blank" role="link">
-                            <h4 class="twitter massive-text"><em>Twitter</em></h4>
+                    <li class="social-link">
+                        <a class="link" href="https://twitter.com/lazygramophone" title="Lazy gramophone on Twitter" target="_blank" role="link">
+                            <h4 class="social-text twitter-text font-18pt"><span class="social-icon twitter font-36pt"></span>twitter</h4>
                         </a>
                     </li>
 
-                    <li class="last">
-                        <a href="http://www.youtube.com/lazygramophone?hl=en-GB&amp;gl=GB" title="Time on YouTube" target="_blank" role="link">
-                            <h4 class="youtube massive-text"><em>YouTube</em></h4>
+                    <li class="last social-link">
+                        <a class="link" href="http://www.youtube.com/lazygramophone?hl=en-GB&amp;gl=GB" title="Time on YouTube" target="_blank" role="link">
+                            <h4 class="social-text youtube-text font-18pt"><span class="social-icon youtube font-36pt"></span>YouTube</h4>
                         </a>
                     </li>
 
                 </ul>
 
-                <div class="mini-text copyright" role="contentinfo">
-                    <p>&#169; All content copyright <a href="http://www.lazygramophone.com" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">www.lazygramophone.com</a> &amp; respective artists
+                <div class="font-12pt" role="contentinfo">
+                    <p>&#169; All content copyright <a class="link link-inline" href="http://www.lazygramophone.com" target="_blank" title="Lazy Gramophone | Arts Collective & Independent Publisher" role="link">www.lazygramophone.com</a> &amp; respective artists
 <?php
 
 ini_set('date.timezone', 'Europe/London');
@@ -229,6 +239,7 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
 
         </div>
 
+        <img id="time-logo-svg" class="hidden" src="assets/img/time_title.svg" alt=""/>
 
         <!-- build:js assets/js/time.js -->
         <script type="text/javascript" src="assets/js/jessie.js"></script>
@@ -239,7 +250,9 @@ echo $yearDisplay; ?>&#46; Do not copy or link any content without permission&#4
         <!-- endbuild -->
 
         <script type="text/javascript">
+
             time.utils.initApp();
+
         </script>
 
     </div>

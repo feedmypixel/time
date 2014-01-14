@@ -36,7 +36,25 @@ $artists = array(
     (object) array('name' => 'Hannah Stephenson', 'uri' => 'journal/hannah-stephensons-five-things'),
     (object) array('name' => 'Zophiel Webb', 'uri' => 'journal/zophiel-webbs-five-things'),
     (object) array('name' => 'Adam Green', 'uri' => 'journal/adam-greens-five-things'),
-    (object) array('name' => 'Paula Afonso', 'uri' => '')
+    (object) array('name' => 'Paula Afonso', 'uri' => ''),
+    (object) array('name' => 'Francis K Wolfe', 'uri' => 'franceskwolfe'),
+    (object) array('name' => 'Diego Mallo', 'uri' => 'http://www.diegomallo.com/'),
+    (object) array('name' => 'Vincent J Prince', 'uri' => 'journal/vincent-j-princes-five-things'),
+    (object) array('name' => 'Matt Black', 'uri' => 'journal/matt-blacks-five-things'),
+    (object) array('name' => 'Rupert J. Munck', 'uri' => 'rupertjmunck'),
+    (object) array('name' => 'Mina Milk', 'uri' => 'mina_milk'),
+    (object) array('name' => 'Charlie Cottrell', 'uri' => 'charliecottrell'),
+    (object) array('name' => 'Paul Bloom', 'uri' => 'pauladambloom'),
+    (object) array('name' => 'Claire Fletcher', 'uri' => 'journal/claire-fletchers-five-things'),
+    (object) array('name' => 'Tim Greaves', 'uri' => ''),
+    (object) array('name' => 'Alexander Aspinall', 'uri' => 'alexanderaspinall'),
+    (object) array('name' => 'Sorana Santos', 'uri' => 'journal/sorana-santos-five-things'),
+    (object) array('name' => 'Kaitlin Beckett', 'uri' => 'journal/kaitlin-becketts-five-things'),
+    (object) array('name' => 'Daniel Chidgey', 'uri' => ''),
+    (object) array('name' => 'Eliza Gregory', 'uri' => 'journal/eliza-gregorys-five-things'),
+    (object) array('name' => 'Dan Prescott', 'uri' => 'd_j_prescott'),
+    (object) array('name' => 'Stacie Withers', 'uri' => 'journal/stacie-withers-five-things'),
+    (object) array('name' => 'Claud Forsbrey', 'uri' => 'claudforsb'),
 );
 
 $artistUri = 'http://www.lazygramophone.com/';
@@ -44,18 +62,13 @@ $i = 1;
 $horizontal = $vertical = 0;
 $html = '<ul class="artists group"><li class="separator"></li>';
 
-$template = '<li class="artist-detail {lastListInSectionClass}">';
-$template .= '<a href="{artistUri}" target="_blank">';
-$template .= '<span class="artist-image" style="{backgroundStyle}"></span>';
-$template .= '<h4 class="artist-name">{artistName}</h4>';
-$template .= '</a>';
-$template .= '</li>';
+$template = '<li class="artist-detail {lastListInSectionClass}"><a class="artist-link" href="{artistUri}" target="_blank"><span class="artist-image" style="{backgroundStyle}"></span><h4 class="artist-name font-18pt">{artistName}</h4></a></li>';
 
 foreach ($artists as $artist) {
 
     $lastListInSectionClass = (($i % 6) === 0) ? 'last' : '';
 
-    if ('' !== $artist->uri) {
+    if (!empty($artist->uri)) {
         $artistUri = 'http' === substr($artist->uri, 0, 4) ? $artist->uri : 'http://www.lazygramophone.com/' . $artist->uri;
     }
 

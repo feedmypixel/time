@@ -1,14 +1,13 @@
 (function( win, doc, j, time ){
     'use strict';
 
-    var START_PICTURE_INDEX = 0;
     var DIRECTION_FORWARD = 'forward';
     var DIRECTION_BACKWARD = 'backward';
     var CLASS_HIDDEN = 'hidden';
     var ACTIVE_PICTURE = 'active';
     var carouselClass;
     var utils = time.utils; 
-    var isTouchAvailable = utils.isTouchAvailable();
+    var isTouchAvailable = utils.isTouch();
 
 
     function Carousel( container ){
@@ -79,12 +78,12 @@
                 j.addClass( pictureElem, CLASS_HIDDEN );
             }
 
-            pictureIndicator.className = 'picture-indicator';
+            pictureIndicator.className = 'picture-indicator-container';
 
             j.forEach( this.pictureElems, function( picture, i ) {
 
                 active = 0 === i ? ' active' : '';
-                pictureIndicatorLi.className = 'picture picture-' + i + active;
+                pictureIndicatorLi.className = 'picture-indicator picture-' + i + active;
 
                 pictureIndicator.appendChild( pictureIndicatorLi.cloneNode( true ) );
             });
@@ -113,7 +112,7 @@
 
         centerCarousel: function(){
 
-            this.moveToPicture( START_PICTURE_INDEX );
+            this.moveToPicture( this.currentPictureIndex );
             this.setPictureOffset();
             this.setPictureIndicator();
             this.positionCarouselButtons();
@@ -204,10 +203,13 @@
                 return;
             }
 
-            var touchDetail = e.touches && e.touches.length ? e.touches[0] : e, deltaX = this.startXpos - touchDetail.pageX, deltaY = this.startYpos - touchDetail.pageY;
+            var touchDetail = e.touches && e.touches.length ? e.touches[0] : e;
+            var deltaX = this.startXpos - touchDetail.pageX;
+            var deltaY = this.startYpos - touchDetail.pageY;
 
-            //stop the screen from scrolling up/down if they have only moved up/down by a certain amount
-            if( Math.abs( deltaX ) > 15 || Math.abs( deltaY ) < 5 ){
+            //if we have a definite carousel side swipe then stop the page from scrolling
+            if( Math.abs( deltaX ) > ( Math.abs( deltaY ) * 3 ) ){
+
                 e.preventDefault();
             }
         },
@@ -220,10 +222,13 @@
 
             this.isActive = false;
 
-            var touchDetail = e.changedTouches && e.changedTouches.length ? e.changedTouches[0] : e, deltaX = this.startXpos - touchDetail.pageX, deltaY = this.startYpos - touchDetail.pageY, isLeft = deltaX > 0;
+            var touchDetail = e.changedTouches && e.changedTouches.length ? e.changedTouches[0] : e;
+            var deltaX = this.startXpos - touchDetail.pageX;
+            var deltaY = this.startYpos - touchDetail.pageY;
+            var isLeft = deltaX > 0;
 
-            //only change the picture if they have moved more in the x plane
-            if( Math.abs( deltaX ) > Math.abs( deltaY ) ){
+            //only swipe carousel if they have performed an exaggerated move in the x plane
+            if( Math.abs( deltaX ) > ( Math.abs( deltaY ) * 2 ) ){
 
                 carouselClass[ isLeft ? 'next' : 'previous' ]();
             }
@@ -231,30 +236,23 @@
 
         moveToPicture: function( pictureIndex ){
 
-            /* picture you wish to move to is the same as the current one, when resizing the browser due to image
-             dimension changes we need to force a recalculation of distance to travel */
-            if( pictureIndex === this.currentPictureIndex ){
-                this.currentPictureIndex = 0;
-                this.offset = 0;
-            }
-
             var pictureIndexArray = [ this.currentPictureIndex, pictureIndex ].sort( function( a, b ){
                     return a - b;
                 } );
-            var direction = this.currentPictureIndex > pictureIndex ? DIRECTION_BACKWARD : DIRECTION_FORWARD;
+            var directionToTravel = this.currentPictureIndex > pictureIndex ? DIRECTION_BACKWARD : DIRECTION_FORWARD;
             var picturesToTravelAcross = this.pictureElems.slice( this.pictureElems[ pictureIndexArray[ 0 ] ].index, this.pictureElems[ pictureIndexArray[ 1 ] ].index );
             var i = 0;
             var picture;
 
-            if( DIRECTION_BACKWARD === direction ){
+            if( DIRECTION_BACKWARD === directionToTravel ){
                 picturesToTravelAcross.reverse();
             }
 
             while( ( picture = picturesToTravelAcross[ i++ ] ) ){
 
-                this.updateCurrentPictureIndex( direction );
-                this.calcPictureOffset( direction, picture.index );
-                this.hidePreviouslyFocusedList( direction );
+                this.updateCurrentPictureIndex( directionToTravel );
+                this.calcPictureOffset( directionToTravel, picture.index );
+                this.hidePreviouslyFocusedList( directionToTravel );
             }
         },
 
@@ -288,7 +286,9 @@
 
                 this.calcPictureOffset( DIRECTION_FORWARD );
                 this.updateCurrentPictureIndex( DIRECTION_FORWARD );
+
                 this.hidePreviouslyFocusedList( DIRECTION_FORWARD );
+
                 this.setPictureOffset();
                 this.setPictureIndicator();
             }
@@ -298,9 +298,11 @@
 
             if( !this.hasExceededCarouselBounds( DIRECTION_BACKWARD ) ){
 
-                this.calcPictureOffset( DIRECTION_BACKWARD );
                 this.updateCurrentPictureIndex( DIRECTION_BACKWARD );
+                this.calcPictureOffset( DIRECTION_BACKWARD );
+
                 this.hidePreviouslyFocusedList( DIRECTION_BACKWARD );
+
                 this.setPictureOffset();
                 this.setPictureIndicator();
             }
@@ -335,20 +337,18 @@
 
         calcPictureOffset: function( direction, pictureIndex ){
 
-            pictureIndex = pictureIndex || this.currentPictureIndex;
+            pictureIndex = typeof pictureIndex === 'undefined' ? this.currentPictureIndex : pictureIndex;
 
             var calculateOffset = {
 
                 forward: function(){
 
-                    return this.offset -= j.getOuterSize( this.pictureElems[ pictureIndex ].elem )[ 1 ];
+                    this.offset -= j.getOuterSize( this.pictureElems[ pictureIndex ].elem )[ 1 ];
                 },
 
                 backward: function(){
 
-                    var pictureElemIndex = pictureIndex !== 0 ? pictureIndex - 1 : pictureIndex;
-
-                    return this.offset += j.getOuterSize( this.pictureElems[ pictureElemIndex ].elem )[ 1 ];
+                    this.offset += j.getOuterSize( this.pictureElems[ pictureIndex ].elem )[ 1 ];
                 }
             };
 
@@ -361,12 +361,12 @@
 
                     forward: function(){
 
-                        return this.pictureElems[this.currentPictureIndex - 1].elem;
+                        return this.pictureElems[ this.currentPictureIndex - 1 ].elem;
                     },
 
                     backward: function(){
 
-                        return this.pictureElems[this.currentPictureIndex + 1].elem;
+                        return this.pictureElems[ this.currentPictureIndex + 1 ].elem;
                     }
 
                 };
@@ -401,7 +401,7 @@
 
         positionCarouselButtons: function(){
 
-            var carouselButtonOffset = ( ( this.carouselViewPortWidth / 2 ) - ( this.currentPictureWidth / 1.6 ) );
+            var carouselButtonOffset = ( ( this.carouselViewPortWidth / 2 ) - ( this.currentPictureWidth / 1.4 ) );
 
             this.carouselButtons[ 0 ].style.left = carouselButtonOffset + 'px';
             this.carouselButtons[ 1 ].style.right = carouselButtonOffset + 'px';

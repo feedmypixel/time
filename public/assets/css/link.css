@@ -2,21 +2,29 @@
     border-radius: .25em;
     display: block;
     padding: 1em 2em;
-    border: .063em solid #ff8400;
     background-color: #ff8400;
     text-align: center;
+    color: #fff;
+    -webkit-transition: background-color 200ms ease-in-out;
+       -moz-transition: background-color 200ms ease-in-out;
+         -o-transition: background-color 200ms ease-in-out;
+            transition: background-color 200ms ease-in-out;
 }
 
 .book-cta:hover,
 .book-cta:active,
-.book-cta:link {
-
+.book-cta:focus {
+    background-color: #ff9c33;
 }
 
 .highlight,
-a.highlight {
-    display: block;
-    margin-top: .4em;
+.highlight-link:link,
+.highlight-link:visited,
+.highlight-link:hover,
+.highlight-link:active {
     color: #0076a5;
-    font-style: italic;
+}
+
+.highlight {
+    margin-top: .4em;
 }

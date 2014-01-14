@@ -3,24 +3,24 @@
 
     //http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
     (function(){
-        var lastTime = 0, vendors =
-                [
-                    'ms',
-                    'moz',
-                    'webkit',
-                    'o'
-                ], x;
 
-        for( x = 0; x < vendors.length && !window.requestAnimationFrame; ++x ){
-            window.requestAnimationFrame = window[ vendors[ x ] + 'RequestAnimationFrame' ];
-            window.cancelRequestAnimationFrame = window[ vendors[ x ] + 'CancelRequestAnimationFrame' ];
+        var lastTime = 0;
+        var vendors = [ 'ms', 'webkit', 'moz', 'webkit' ];
+        var x;
+
+        for( x = 0; x < vendors.length && !win.requestAnimationFrame; ++x ){
+
+            win.requestAnimationFrame = win[ vendors[ x ] + 'RequestAnimationFrame' ];
+            win.cancelRequestAnimationFrame = win[ vendors[ x ] + 'CancelRequestAnimationFrame' ];
         }
 
-        if( !window.requestAnimationFrame ){
-            window.requestAnimationFrame = function( callback ){
+        if( !win.requestAnimationFrame ){
+
+            win.requestAnimationFrame = function( callback ){
+
                 var currTime = new Date().getTime();
                 var timeToCall = Math.max( 0, 16 - (currTime - lastTime) );
-                var id = window.setTimeout( function(){
+                var id = win.setTimeout( function(){
                         callback( currTime + timeToCall );
                     }, timeToCall );
 
@@ -30,8 +30,9 @@
             };
         }
 
-        if( !window.cancelAnimationFrame ){
-            window.cancelAnimationFrame = function( id ){
+        if( !win.cancelAnimationFrame ){
+
+            win.cancelAnimationFrame = function( id ){
                 clearTimeout( id );
             };
         }
@@ -41,9 +42,8 @@
     var CLOCK_CANVAS_ID = 'clock';
     var CLOCK_BACK_DETAIL_COLOUR = '#0076a5';
     var CLOCK_HAND_COLOUR = '#191715';
-    var CLOCK_MAX_SIZE = 1000;
-    var CLOCK_MIN_SIZE = 315; 
-    var CLOCK_RESIZE_BUFFER = 20; 
+    var CLOCK_MAX_SIZE = 500;
+    var CLOCK_MIN_SIZE = 315;
     var backwardThreeSecondStore; 
     var backwardFiveMinuteStore; 
     var ctx; 
@@ -58,19 +58,14 @@
          hours: 0
     };
     var utils = time.utils;
-    var logoImage = new Image();
+    var timeLogoImage = doc.getElementById( 'time-logo-svg' );
 
     function init(){
 
         var staticClock;
+        var isFirefoxMobile = ( utils.isFirefox() && utils.isTouch() && utils.isAndroid() );
 
-        logoImage.src = 'assets/img/time_title.svg';
-
-        clockContainer = doc.getElementById( CLOCK_CANVAS_ID );
         canvas = doc.createElement( 'canvas' );
-        staticClock = utils.getFirstElemChild( clockContainer );
-
-        clockContainer.replaceChild( canvas, staticClock );
 
         try {
 
@@ -78,12 +73,18 @@
 
         } catch( e ){}
 
-        if( ctx ){
+        /**
+         * firefox mobile on android does not seem to be able to handle the clock but everything else does.
+         * //TODO future profiling needed
+         */
+        if( ctx && !isFirefoxMobile ){
+
+            clockContainer = doc.getElementById( CLOCK_CANVAS_ID );
+            staticClock = utils.getFirstElemChild( clockContainer );
+            clockContainer.replaceChild( canvas, staticClock );
 
             buildClock();
         }
-
-        //utils.hideAddressBar();
     }
 
     function buildClock(){
@@ -103,8 +104,8 @@
 
     function calcClockDimensions(){
 
-        var innerWidth = win.innerWidth - CLOCK_RESIZE_BUFFER;
-        var diameter = innerWidth > CLOCK_MAX_SIZE ? CLOCK_MAX_SIZE : ( ( innerWidth < CLOCK_MIN_SIZE ) ? CLOCK_MIN_SIZE : innerWidth );
+       var innerWidth = win.innerWidth;
+        var diameter = innerWidth > CLOCK_MAX_SIZE ? CLOCK_MAX_SIZE : ( innerWidth < CLOCK_MIN_SIZE ) ? CLOCK_MIN_SIZE : innerWidth;
 
         canvasDetail = {
             width: diameter,
@@ -118,7 +119,7 @@
 
         clockDetail = {
             devicePixelRatio: {
-                center: -( canvasDetail.devicePixelRatio.width / 14.5454545 ),
+                center: -( canvasDetail.devicePixelRatio.width / 10 ),
                 radius: ( diameter * DEVICE_PIXEL_RATIO ) / 2.67037037
             }
         };
@@ -134,8 +135,10 @@
         canvas.width = canvasDetail.devicePixelRatio.width;
         canvas.height = canvasDetail.devicePixelRatio.height;
 
-        canvas.style.width = canvasDetail.width + 'px';
-        canvas.style.height = canvasDetail.height + 'px';
+        canvas.style.cssText = [
+            'height:', canvasDetail.width, 'px;',
+            'width:', canvasDetail.height, 'px;'
+        ].join('');
 
         ctx.clearRect( 0, 0, canvasDetail.devicePixelRatio.width, canvasDetail.devicePixelRatio.height );
         ctx.translate( positionXAndY, positionXAndY );
@@ -161,12 +164,12 @@
         var imageScaledHeight = ( canvasDetail.devicePixelRatio.width / 1.3 );
         var imageScaledWidth = imageScaledHeight * 0.77182404; //aspect ratio of svg dimensions
         var devicePixelRatioWidthDivideByTwo = ( canvasDetail.devicePixelRatio.width / 2 );
-        var buffer = imageScaledWidth / 16;
+        var buffer = imageScaledWidth / 10;
 
         ctx.save();
         ctx.rotate( Math.PI / 2 );
         ctx.translate( ( devicePixelRatioWidthDivideByTwo - imageScaledWidth - buffer ), -devicePixelRatioWidthDivideByTwo + buffer );
-        ctx.drawImage( logoImage, 0, 0, imageScaledWidth, imageScaledHeight );
+        ctx.drawImage( timeLogoImage, 0, 0, imageScaledWidth, imageScaledHeight );
         ctx.restore();
     }
 

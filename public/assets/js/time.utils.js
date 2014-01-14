@@ -1,57 +1,99 @@
 time.utils = (function( win, doc, j, time ){
 
-    var userHasScrolled = false;
+    var htmlElem;
+    var hideAddressBarTimer;
+    var userScrollInterval;
+    var ua = win.navigator.userAgent.toLowerCase();
 
-    function buildCarousel(){
-        var bookPreviewElem = doc.getElementById( 'book-previews-container' );
+    function isFirefox(){
 
-        new time.Carousel( bookPreviewElem );
+        return (/firefox/).test( ua );
     }
 
-    function buildClock(){
-        time.clock.init();
+    function isAndroid(){
+
+        return (/android/).test( ua );
     }
 
-    function isTouchAvailable(){
-        return 'undefined' !== typeof win.ontouchstart;
-    }
+    function initApp(){
 
-    function initWhenReady(){
         if( doc.addEventListener ){
+
             return doc.addEventListener( 'DOMContentLoaded', initApplication(), false );
+
         } else if( win.attachEvent ){
+
             return win.attachEvent( 'onload', initApplication );
         }
     }
 
     function initApplication(){
-        buildClock();
+
+        addHtmlClass();
+        hasUserScrolledWindow();
+
+        time.clock.init();
+
         buildCarousel();
-        addEvents();
+
+        hideAddressBar();
     }
 
-    function addEvents(){
-        var htmlElem = doc.getElementsByTagName( 'html' )[0];
+    function buildCarousel(){
 
-        j.attachListener( htmlElem, 'touchmove', function(){
-            userHasScrolled = true;
-        } );
+        var bookPreviewElem = doc.getElementById( 'book-previews-container' );
+
+        new time.Carousel( bookPreviewElem );
     }
 
-    // Cookie functions from http://www.quirksmode.org/js/cookies.html
-    function getCookie( name ){
-        var nameEQ = name + "=", ca = doc.cookie.split( ';' ), c;
 
-        for( var i = 0; i < ca.length; i++ ){
-            c = ca[i];
-            while( c.charAt( 0 ) === ' ' ){
-                c = c.substring( 1, c.length );
+    function isTouch(){
+
+        return typeof win.ontouchstart !== 'undefined';
+    }
+
+    function getWinScrollPosition(){
+
+        var x = ( typeof win.pageXOffset === 'undefined' ) ? ( doc.documentElement || doc.body.parentNode || doc.body ).scrollLeft : win.pageXOffset;
+        var y = ( typeof win.pageYOffset === 'undefined' ) ? ( doc.documentElement || doc.body.parentNode || doc.body ).scrollTop : win.pageYOffset;
+
+        return [ x, y ];
+    }
+
+    function hasUserScrolledWindow(){
+
+        userScrollInterval = setInterval( function(){
+
+            var winScrollY = getWinScrollPosition()[ 1 ];
+
+            if( winScrollY > 1 ){
+
+                clearInterval( userScrollInterval );
+                clearTimeout( hideAddressBarTimer );
             }
-            if( c.indexOf( nameEQ ) === 0 ){
-                return c.substring( nameEQ.length, c.length );
-            }
+
+        }, 500 );
+    }
+
+    function hideAddressBar(){
+
+        hideAddressBarTimer = setTimeout( function(){
+
+            win.scrollTo( 0, 1 );
+
+            clearInterval( userScrollInterval );
+
+        }, 1000 );
+    }
+
+    function addHtmlClass(){
+
+        htmlElem = doc.getElementsByTagName('html')[0];
+
+        if( isTouch() ){
+
+            htmlElem.className = 'touch';
         }
-        return null;
     }
 
     /**
@@ -85,16 +127,6 @@ time.utils = (function( win, doc, j, time ){
         };
     }
 
-    function hideAddressBar(){
-        setTimeout( function(){
-            win.scrollTo( 0, 1 );
-        }, 1000 );
-    }
-
-    function hasUserScrolled(){
-        return userHasScrolled;
-    }
-
     function getFirstElemChild( elem ){
 
         var child = elem.firstChild;
@@ -108,12 +140,13 @@ time.utils = (function( win, doc, j, time ){
     }
 
     return {
-        initApp: initWhenReady,
-        isTouchAvailable: isTouchAvailable,
-        getCookie: getCookie,
+
+        isAndroid: isAndroid,
+        isFirefox: isFirefox,
+        initApp: initApp,
+        isTouch: isTouch,
         debounce: debounce,
         hideAddressBar: hideAddressBar,
-        hasUserScrolled: hasUserScrolled,
         getFirstElemChild: getFirstElemChild
     };
 

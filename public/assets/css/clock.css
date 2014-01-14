@@ -1,6 +1,6 @@
 .clock-container {
-    max-width: 1000px;
-    min-width: 300px;
+    max-width: 500px;
+    max-height: 500px;
     margin: 0 auto;
     display: block;
 }
@@ -12,7 +12,7 @@
     line-height: 0;
     vertical-align: middle;
     background-size: 100%;
-    background-image: url( '../img/static_clock.png' );
+    background-image: url( '../img/responsiveImages/small/static_clock.png' );
     background-repeat: no-repeat;
     background-position: center center;
 }

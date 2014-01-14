@@ -22,7 +22,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 /*
 Return URI:
-http://127.0.0.1:1337/?getEventTarget=2&attachListener=3&toArray=1&getElementParentElement=1&getElementTagName=1&delegateListener=1&getDescendantsByTagName=1&hasClass=3&addClass=3&removeClass=3&toggleClass=1&setHtml=1&attachWindowListener=3&getOuterSize=1&delegateTagNameListener=1&getDescendantsByClassName=2&cancelDefault=3&forEach=2&bind=2&delegateBoundClassNameListener=1&delegateBoundListener=1
+http://127.0.0.1:1337/?getEventTarget=2&attachListener=3&toArray=1&getElementParentElement=1&getElementTagName=1&delegateListener=1&getDescendantsByTagName=1&hasClass=3&addClass=3&removeClass=3&toggleClass=1&setHtml=1&attachWindowListener=3&getOuterSize=1&delegateTagNameListener=1&getDescendantsByClassName=2&cancelDefault=3&forEach=2&bind=3&delegateBoundClassNameListener=1&delegateBoundListener=1
 */
 
 var jessie;
@@ -58,7 +58,7 @@ jessie = jessie || {};
 
 /*
 Description:
-Relies on `Function.prototype.apply` and `Array.prototype.slice`
+Relies on `Function.prototype.bind` and `Function.prototype.apply` and `Array.prototype.slice`
 */
 
 /*
@@ -66,26 +66,27 @@ Degrades:
 IE5, IE4, IE3
 */
 
-/*
-Author:
-David Mark
-*/
-
 var bind;
 
-if(canCall && Array.prototype.slice) {
-  bind = function(fn, context) {
-    var prependArgs = Array.prototype.slice.call(arguments, 2);
+if(canCall && Function.prototype.bind){
+	bind = function(fn, thisObject) {
+		return fn.bind.apply(fn, Array.prototype.slice.call(arguments, 1));
+	};
+}
+else if(canCall && Array.prototype.slice) {
+	bind = function(fn, context) {
+		var prependArgs = Array.prototype.slice.call(arguments, 2);
 
-    if (prependArgs.length) {
-      return function() {
-        fn.apply(context, Array.prototype.concat.apply(prependArgs, arguments));
-      };
-    }
-    return function() {
-      fn.apply(context, arguments);
-    };
-  };
+		if (prependArgs.length) {
+			return function() {
+				fn.apply(context, Array.prototype.concat.apply(prependArgs, arguments));
+			};
+		}
+		return function() {
+			fn.apply(context, arguments);
+		};
+	};
+
 }
 
 

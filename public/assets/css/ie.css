@@ -1,52 +1,348 @@
+.lt-ie9 a:active,
+.lt-ie9 a:visited {
+    border: none;
+    outline: none;
+}
+
 .lt-ie9 .artist-detail {
     display: inline-block;
     padding: 1em 0;
     text-align: center;
 }
 
-.lt-ie9 .artist-name {
-    display: block;
+.lt-ie9 body {
+    font-size: 1.2em;
 }
 
-.lt-ie9 .separator {
+.lt-ie9 .clock-container {
+    width: 500px;
+    height: 500px;
+}
+
+.lt-ie9 .clock {
+    background-image: url( '../img/responsiveImages/large/static_clock.png' );
+}
+
+.lt-ie9 .third-width {
+    width: 33.333%;
+    float: left;
+}
+
+.lt-ie9 .book-cta {
+    width: 10em;
+    margin: 0 auto;
+}
+
+.lt-ie9 .artist-name {
+    display: block;
+    width: 10em;
+    margin: 0 auto;
+    font-size: .8em;
+}
+
+.lt-ie9 .separator,
+.lt-ie9 .small-section-separator,
+.lt-ie9 .artists .separator {
     display: none;
 }
 
+.lt-ie9 .social-link {
+    text-align: center;
+    display: inline-block;
+    margin-right: .4em;
+}
+
+.lt-ie9 .book-quote {
+    margin: 0 auto 1em;
+    width: 94%;
+}
+
+.lt-ie9 .carousel-container {
+    height: 42em;
+}
+
+.lt-ie9 .picture-indicator {
+    height: 1.4em;
+    width: 1.4em;
+}
+
+.lt-ie9 .extract,
+.lt-ie9 .book-preview-square,
+.lt-ie9 .book-preview-square .image {
+    width: 498px;
+}
+
+.lt-ie9 .book-preview-rectangle,
+.lt-ie9 .book-preview-rectangle .image {
+    width: 418px;
+}
+
+.lt-ie9 .bryn-hall {
+    background: url( '../img/responsiveImages/large/brynHall.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 536px;
+}
+
+.lt-ie9 .lee-holland {
+    background: url( '../img/responsiveImages/large/leeHolland.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 617px;
+}
+
+.lt-ie9 .time-book-illustrations {
+    background: url( '../img/responsiveImages/large/timeBookIllustrations.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 498px;
+}
+
+.lt-ie9 .claud-forsbrey {
+    background: url( '../img/responsiveImages/large/claudForsbrey.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 635px;
+}
+
+.lt-ie9 .carl-laurance {
+    background: url( '../img/responsiveImages/large/carlLaurance.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 319px;
+}
+
+.lt-ie9 .rima-staines {
+    background: url( '../img/responsiveImages/large/rimaStaines.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 691px;
+}
+
+.lt-ie9 .time-book-text {
+    background: url( '../img/responsiveImages/large/timeBookText.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 498px;
+}
+
+.lt-ie9 .andrew-walter {
+    background: url( '../img/responsiveImages/large/andrewWalter.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 574px;
+}
+
+.lt-ie9 .time-cover {
+    background: url( '../img/responsiveImages/large/timeCover.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 496px;
+}
+
+.lt-ie9 .jeannie-paske {
+    background: url( '../img/responsiveImages/large/jeanniePaske.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 629px;
+}
+
+.lt-ie9 .tom-harris {
+    background: url( '../img/responsiveImages/large/tomHarris.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 501px;
+}
+
+.lt-ie9 .time-book-first-page {
+    background: url( '../img/responsiveImages/large/timeBookFirstPage.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 498px;
+}
+
+.lt-ie9 .rima-staines-gospel {
+    background: url( '../img/responsiveImages/large/rimaStainesGospel.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 689px;
+}
+
+.lt-ie9 .time-diagram {
+    background: url( '../img/responsiveImages/large/timeDiagram.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 634px;
+}
+
+.lt-ie9 .time-book-printing {
+    background: url( '../img/responsiveImages/large/timeBookPrinting.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 498px;
+}
+
+.lt-ie9 .kaitlin-beckett {
+    background: url( '../img/responsiveImages/large/kaitlinBeckett.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 630px;
+}
+
+.lt-ie9 .tim-greaves {
+    background: url( '../img/responsiveImages/large/timGreaves.jpg' ) no-repeat center center;
+    width: 498px;
+    height: 495px;
+}
+
+.lt-ie9 .rima-staines-circus {
+    background: url( '../img/responsiveImages/large/rimaStainesCircus.jpg' ) no-repeat center center;
+    width: 418px;
+    height: 691px;
+}
+
+.lt-ie9 .artist-image {
+    background-image: url(../img/responsiveImages/large/artistsSprite.jpg);
+}
+
+.lt-ie9 .artists {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.lt-ie9 .carousel .hidden .image,
+.lt-ie9 .carousel .hidden .sub-heading,
+.lt-ie9 .carousel .hidden .highlight,
+.lt-ie9 .carousel .hidden {
+    filter: alpha(opacity=20);
+}
+
+.lt-ie9 .carousel-button {
+    display: block;
+}
 
 
 
-.lt-ie8 .picture-indicator li,
+
+
+.lt-ie8 .quote-start,
+.lt-ie8 .quote-end,
+.lt-ie8 .carousel-button-left,
+.lt-ie8 .carousel-button-right,
+.lt-ie8 .youtube,
+.lt-ie8 .twitter,
+.lt-ie8 .facebook {
+    font-size: 0;
+    background: url( '../img/ie_sprite.png' ) no-repeat;
+}
+
+
+.lt-ie8 .quote-start {
+    background-position: 0 0;
+    width: 38px;
+    height: 30px;
+}
+
+.lt-ie8 .quote-end {
+    background-position: 0 -30px;
+    width: 38px;
+    height: 30px;
+}
+
+
+.lt-ie8 .carousel-button-right,
+.lt-ie8 .carousel-button-left {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    margin: .6em;
+}
+
+.lt-ie8 .carousel-button-right {
+    background-position: 0 -62px;
+}
+
+.lt-ie8 .carousel-button-left {
+    background-position: 0 -114px;
+
+}
+
+.lt-ie8 .youtube {
+    background-position: 0 -166px;
+    width: 52px;
+    height: 36px;
+}
+
+.lt-ie8 .facebook {
+    background-position: 0 -202px;
+    width: 43px;
+    height: 45px;
+}
+
+.lt-ie8 .twitter {
+    background-position: 0 -245px;
+    width: 46px;
+    height: 37px;
+}
+
+
+
+
+
+
+
+.lt-ie8 .page-body {
+    margin: 1em;
+}
+
+.lt-ie8 .quote-start,
+.lt-ie8 .quote-end,
+.lt-ie8 .carousel-button-left,
+.lt-ie8 .carousel-button-right,
+.lt-ie8 .youtube,
+.lt-ie8 .twitter,
+.lt-ie8 .facebook,
+.lt-ie8 .social-link,
+.lt-ie8 .link-inline,
+.lt-ie8 .picture-indicator,
 .lt-ie8 .artist-detail,
-.lt-ie8 .carousel .book-article {
+.lt-ie8 .carousel .book-preview {
     display: inline;
     zoom: 1;
 }
 
+.lt-ie8 .carousel {
+    width: 20000px;
+}
+
 .lt-ie8 .artist-detail {
-    padding: 1em 0;
+    width: 9em;
+}
+
+.lt-ie8 .social-link {
     text-align: center;
-}
-
-
-.lt-ie8 .clock {
-    background: url( '../img/static_clock_8bit.png' );
+    margin-right: .4em;
 }
 
 
 
+.lt-ie8 .book-preview {
+    float: left;
+}
+
+.lt-ie8 .book-preview-square {
+    width: 520px;
+}
+
+.lt-ie8 .extract-preview,
+.lt-ie8 .extract {
+    width: 460px;
+}
+
+.lt-ie8 .book-preview-rectangle {
+    width: 480px;
+}
 
 
 
+
+.lt-ie7 .image-container {
+    border: none;
+}
 
 .lt-ie7 .alert-box {
-    width: 960px;
+    width: 60em;
     margin: 0 auto;
+    padding: 1em;
     background-color: #ffde00;
-    border: 1px solid #c1a800;
+    border: .063em solid #c1a800;
     color: #000;
-    padding: 5px;
     text-align:left;
-    font-size: .9em;
+    font-size: 1.2em;
 }
 
 .lt-ie7 .alert-box a {

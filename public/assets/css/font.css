@@ -29,31 +29,31 @@
 }
 
 .twitter:before {
-	content: '\f099';
+	content: '\74';
 }
 
 .youtube:before {
-	content: '\f16a';
+	content: '\79';
 }
 
 .facebook:before {
-	content: '\e000';
+	content: '\66';
 }
 
 .carousel-button-left:before {
-	content: '\f137';
+	content: '\3c';
 }
 
 .carousel-button-right:before {
-	content: '\f138';
+	content: '\3e';
 }
 
 .quote-start:before {
-	content: '\e601';
+	content: '\201c';
 }
 
 .quote-end:before {
-    content: '\e600';
+    content: '\201d';
 }
 
 .quote-start {

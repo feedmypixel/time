@@ -5,14 +5,23 @@ h1, h2, h3, h4, h5, h6 {
 .book-quote {
     line-height: 1.2em;
     margin-bottom: 1em;
+    text-align: center;
+-ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+    overflow: visible;
 }
 
-.sub-header {
+.sub-heading {
     line-height: 1.3em;
+    padding-bottom: .4em;
 }
 
 .outside-viewport-text {
-    text-indent: -9999px;
+    text-indent: -624.938em;
     display: none;
 }
 

@@ -1,3 +1,8 @@
+
+/**************************************
+Static Carousel
+**************************************/
+
 .book-previews {
     text-align: center;
 }
@@ -6,19 +11,28 @@
     text-align: initial;
     display: inline-block;
     vertical-align: top;
-    margin: 0 .4em;
+    margin: 0 .4em 2em;
 }
+
+.carousel .book-preview {
+    margin-bottom: 0;
+}
+
+
+/**************************************
+Carousel
+**************************************/
 
 .carousel-container {
     overflow: hidden;
     position: relative;
     margin: .2em auto 0;
-    height: 860px;
+    height: 39em;
 }
 
 .carousel {
     position: absolute;
-    width: 10000px;
+    width: 62.500em;
     left: 0;
     top: 0;
     -webkit-transition: left 500ms ease-in-out;
@@ -30,60 +44,50 @@
 .carousel .book-preview {
     opacity: 1;
     display: table-cell;
-    -webkit-transition: opacity 400ms ease-in-out;
-       -moz-transition: opacity 400ms ease-in-out;
-         -o-transition: opacity 400ms ease-in-out;
-            transition: opacity 400ms ease-in-out;
+    -webkit-transition: opacity 500ms ease-in-out;
+       -moz-transition: opacity 500ms ease-in-out;
+         -o-transition: opacity 500ms ease-in-out;
+            transition: opacity 500ms ease-in-out;
+    -webkit-transform: translatez(0);
+       -moz-transform: translatez(0);
+        -ms-transform: translatez(0);
+         -o-transform: translatez(0);
+            transform: translatez(0);
 }
 
 .carousel .hidden {
-    opacity: 0.06;
+    opacity: 0.04;
 }
 
 
-.image-wrapper {
+/**************************************
+Image Detail
+**************************************/
+
+.image-container {
     position: relative;
-    border: 6px solid transparent;
 }
 
-.image-heading {
-    position: absolute;
-    background-color: #fff;
-    background-color: rgba( 255, 255, 255, .92 );
-    color: #000;
-    font-weight: bold;
-}
-
-.image-title {
-    padding: .8em .5em .2em 1em;
-    top: 2px;
-    left: 2px;
-}
-
-.image-illustrator {
-    padding: .2em 1em .6em .5em;
-    right: 2px;
-    bottom: 9px;
+.carousel .image-container {
+    border: 1em solid transparent;
+    border-width: 0 1em;
 }
 
 .image {
     padding: .6em;
-    border-radius: .25em;
+    border-radius: .4em;
 }
+
+
+
+
+/**************************************
+Extract Detail
+**************************************/
 
 .extract {
     color: #fff;
     padding: 0 .4em;
-}
-
-.extract-title {
-    font-weight: bold;
-    margin: 1em 0 .6em;
-}
-
-
-.extract-title em h2 {
-    display: inline;
 }
 
 .extract-blurb {
@@ -103,33 +107,28 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+/**************************************
+Carousel Buttons
+**************************************/
 
 .carousel-button,
 .carousel-button:link,
 .carousel-button:visited {
+    text-decoration: none;
+}
+
+.carousel-button {
+    display: none;
     z-index: 1;
     position: absolute;
     font-size: 3em;
-    color: #fff;
-    text-decoration: none;
+    color: #0076a5;
     padding: .6em;
-    top: 12%;
+    top: 26%;
 }
 
 .carousel-button:hover {
-    color: #0076a5;
-    color: rgba( 0, 118, 165, .8);
+    color: #fff;
 }
 
 .carousel-button-left {
@@ -141,36 +140,39 @@
 }
 
 
+/**************************************
+Picture Indicator
+**************************************/
 
-
-
-
-
-.picture-indicator {
-    margin: 2em 0 .4em;
+.picture-indicator-container {
+    margin: 1em 0;
     text-align: center;
 }
 
-.picture-indicator li {
-    width: .5em;
-    height: .5em;
-    border-radius: 20px;
-    border: 1px solid #c1bebe;
-    border: 1px solid rgba(193, 190, 190, .4);
-    background-color: #191715;
+.picture-indicator {
+    width: .6em;
+    height: .6em;
+    border-radius: 1.250em;
+    background-color: #212121;
     display: inline-block;
     margin: .1em;
+    cursor: pointer;
 }
 
-.picture-indicator .active {
+.picture-indicator:hover {
     background-color: #0076a5;
-    border: 1px solid #0076a5;
-    -webkit-transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out;
-    transition: all 250ms ease-in-out;
+    background-color: rgba( 0, 118, 165, .6 );
 }
 
+.picture-indicator-container .active {
+    background-color: #0076a5;
+    -webkit-transition: background-color 400ms ease-in-out;
+       -moz-transition: background-color 400ms ease-in-out;
+         -o-transition: background-color 400ms ease-in-out;
+            transition: background-color 400ms ease-in-out;
+}
+
+.extract,
 .book-preview-square {
     width: 290px;
 }
@@ -180,145 +182,114 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.img-artist {
-
-}
+/**************************************
+Artist Images
+**************************************/
 
 .bryn-hall {
-    background: #fff url( '../img/responsiveImages/small/brynHall.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/brynHall.jpg' ) no-repeat center center;
     width: 290px;
     height: 371px;
 }
 
 .lee-holland {
-    background: #fff url( '../img/responsiveImages/small/leeHolland.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/leeHolland.jpg' ) no-repeat center center;
     width: 290px;
     height: 427px;
 }
 
 .time-book-illustrations {
-    background: #fff url( '../img/responsiveImages/small/timeBookIllustrations.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timeBookIllustrations.jpg' ) no-repeat center center;
     width: 290px;
     height: 290px;
 }
 
 .claud-forsbrey {
-    background: #fff url( '../img/responsiveImages/small/claudForsbrey.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/claudForsbrey.jpg' ) no-repeat center center;
     width: 290px;
     height: 440px;
 }
 
 .carl-laurance {
-    background: #fff url( '../img/responsiveImages/small/carlLaurance.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/carlLaurance.jpg' ) no-repeat center center;
     width: 290px;
     height: 185px;
 }
 
 .rima-staines {
-    background: #fff url( '../img/responsiveImages/small/rimaStaines.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/rimaStaines.jpg' ) no-repeat center center;
     width: 290px;
     height: 479px;
 }
 
 .time-book-text {
-    background: #fff url( '../img/responsiveImages/small/timeBookText.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timeBookText.jpg' ) no-repeat center center;
     width: 290px;
     height: 290px;
 }
 
 .andrew-walter {
-    background: #fff url( '../img/responsiveImages/small/andrewWalter.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/andrewWalter.jpg' ) no-repeat center center;
     width: 290px;
     height: 397px;
 }
 
 .time-cover {
-    background: #fff url( '../img/responsiveImages/small/timeCover.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timeCover.jpg' ) no-repeat center center;
     width: 290px;
     height: 287px;
 }
 
 .jeannie-paske {
-    background: #fff url( '../img/responsiveImages/small/jeanniePaske.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/jeanniePaske.jpg' ) no-repeat center center;
     width: 290px;
     height: 436px;
 }
 
 .tom-harris {
-    background: #fff url( '../img/responsiveImages/small/tomHarris.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/tomHarris.jpg' ) no-repeat center center;
     width: 290px;
     height: 347px;
 }
 
 .time-book-first-page {
-    background: #fff url( '../img/responsiveImages/small/timeBookFirstPage.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timeBookFirstPage.jpg' ) no-repeat center center;
     width: 290px;
     height: 290px;
 }
 
 .rima-staines-gospel {
-    background: #fff url( '../img/responsiveImages/small/rimaStainesGospel.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/rimaStainesGospel.jpg' ) no-repeat center center;
     width: 290px;
     height: 478px;
 }
 
 .time-diagram {
-    background: #fff url( '../img/responsiveImages/small/timeDiagram.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timeDiagram.jpg' ) no-repeat center center;
     width: 290px;
     height: 439px;
 }
 
 .time-book-printing {
-    background: #fff url( '../img/responsiveImages/small/timeBookPrinting.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timeBookPrinting.jpg' ) no-repeat center center;
     width: 290px;
     height: 290px;
 }
 
 .kaitlin-beckett {
-    background: #fff url( '../img/responsiveImages/small/kaitlinBeckett.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/kaitlinBeckett.jpg' ) no-repeat center center;
     width: 290px;
     height: 437px;
 }
 
 .tim-greaves {
-    background: #fff url( '../img/responsiveImages/small/timGreaves.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/timGreaves.jpg' ) no-repeat center center;
     width: 290px;
     height: 289px;
 }
 
 .rima-staines-circus {
-    background: #fff url( '../img/responsiveImages/small/rimaStainesCircus.jpg' ) no-repeat center center;
+    background: url( '../img/responsiveImages/small/rimaStainesCircus.jpg' ) no-repeat center center;
     width: 290px;
     height: 483px;
 }
-
-
