@@ -28,7 +28,7 @@
         buildCarousel: function(){
 
             this.setupCarousel();
-            this.centerCarousel();
+            this.centerCarousel( this.currentPictureIndex );
             this.addEvents();
         },
 
@@ -105,17 +105,27 @@
 
             j.attachWindowListener( 'resize', utils.debounce( j.bind( function(){
 
-                this.centerCarousel();
+                this.handleResize();
 
             }, this ), 10, false ) );
         },
 
-        centerCarousel: function(){
+        centerCarousel: function( pictureIndex ){
 
-            this.moveToPicture( this.currentPictureIndex );
+            this.moveToPicture( pictureIndex );
             this.setPictureOffset();
             this.setPictureIndicator();
             this.positionCarouselButtons();
+        },
+
+        handleResize: function(){
+
+            var currentPictureIndex = this.currentPictureIndex;
+
+            this.currentPictureIndex = 0;
+            this.offset = 0;
+
+            this.centerCarousel( currentPictureIndex );
         },
 
         addEvents: function(){
@@ -207,14 +217,9 @@
             var deltaX = this.startXpos - touchDetail.pageX;
             var deltaY = this.startYpos - touchDetail.pageY;
 
-
-            console.log( Math.abs( deltaX ), 'deltaX' );
-            console.log( Math.abs( deltaY ), 'deltaY' );
-
             //if we have a definite carousel side swipe then stop the page from scrolling
             if( Math.abs( deltaX ) > 15 && Math.abs( deltaY ) < 10 ){
 
-                console.log( 'preventDefault' );
                 e.preventDefault();
             }
         },
@@ -234,8 +239,6 @@
 
             //only swipe carousel if they have performed an exaggerated move in the x plane
             if( Math.abs( deltaX ) > ( Math.abs( deltaY ) * 3 ) ){
-
-                console.log( 'moved' );
                 carouselClass[ isLeft ? 'next' : 'previous' ]();
             }
         },
