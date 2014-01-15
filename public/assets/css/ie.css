@@ -1,3 +1,4 @@
+
 .lt-ie9 a:active,
 .lt-ie9 a:visited {
     border: none;
@@ -208,7 +209,6 @@
 
 
 
-
 .lt-ie8 .quote-start,
 .lt-ie8 .quote-end,
 .lt-ie8 .carousel-button-left,
@@ -295,6 +295,12 @@
     zoom: 1;
 }
 
+.lt-ie8 .carousel .book-preview {
+    padding: 0;
+    margin: 0;
+}
+
+
 .lt-ie8 .carousel {
     width: 20000px;
 }
@@ -308,31 +314,6 @@
     margin-right: .4em;
 }
 
-
-
-.lt-ie8 .book-preview {
-    float: left;
-}
-
-.lt-ie8 .book-preview-square {
-    width: 520px;
-}
-
-.lt-ie8 .extract-preview,
-.lt-ie8 .extract {
-    width: 460px;
-}
-
-.lt-ie8 .book-preview-rectangle {
-    width: 480px;
-}
-
-
-
-
-.lt-ie7 .image-container {
-    border: none;
-}
 
 .lt-ie7 .alert-box {
     width: 60em;

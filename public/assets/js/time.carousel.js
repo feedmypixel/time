@@ -395,7 +395,7 @@
 
             if( j.hasClass( pictureElem, CLASS_HIDDEN ) ){
 
-                j.toggleClass( this.pictureElems[ this.currentPictureIndex ].elem, CLASS_HIDDEN );
+                j.toggleClass( pictureElem, CLASS_HIDDEN );
             }
         },
 
