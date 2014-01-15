@@ -207,9 +207,14 @@
             var deltaX = this.startXpos - touchDetail.pageX;
             var deltaY = this.startYpos - touchDetail.pageY;
 
-            //if we have a definite carousel side swipe then stop the page from scrolling
-            if( Math.abs( deltaX ) > ( Math.abs( deltaY ) * 3 ) ){
 
+            console.log( Math.abs( deltaX ), 'deltaX' );
+            console.log( Math.abs( deltaY ), 'deltaY' );
+
+            //if we have a definite carousel side swipe then stop the page from scrolling
+            if( Math.abs( deltaX ) > 15 && Math.abs( deltaY ) < 10 ){
+
+                console.log( 'preventDefault' );
                 e.preventDefault();
             }
         },
@@ -228,8 +233,9 @@
             var isLeft = deltaX > 0;
 
             //only swipe carousel if they have performed an exaggerated move in the x plane
-            if( Math.abs( deltaX ) > ( Math.abs( deltaY ) * 2 ) ){
+            if( Math.abs( deltaX ) > ( Math.abs( deltaY ) * 3 ) ){
 
+                console.log( 'moved' );
                 carouselClass[ isLeft ? 'next' : 'previous' ]();
             }
         },
